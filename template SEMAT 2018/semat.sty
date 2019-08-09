@@ -1,0 +1,100 @@
+%======================================
+% Modelo TeX para artigo/resumo da SEMAT
+%======================================
+
+\ProvidesPackage{semat}[2018/05/17 package for SEMAT-SEMEST]
+\RequirePackage[usenames, dvipsnames]{xcolor}
+\RequirePackage{titlesec}
+\RequirePackage{authblk}
+
+\renewcommand\Authfont{\bfseries}
+\renewcommand*{\Authsep}{, }
+\renewcommand*{\Authand}{e }
+\renewcommand*{\Authands}{e }
+
+\titleformat*{\section}{\mysection}
+\titlespacing{\section}{0mm}{4mm}{0mm}
+
+\definecolor{sematcolor2}{rgb}{0.09, 0.41, 0.56}
+\definecolor{sematcolor}{rgb}{0.05, 0.25, 0.50}
+%section boxes
+\newcommand{\mysection}[1]{%
+    \large\sf\bf%
+    \setlength{\fboxsep}{0mm}%already boxed
+    \color{white}
+    \colorbox{sematcolor2}{%
+         \begin{minipage}{\linewidth}%
+%        \vspace*{1pt}%Space before
+         #1
+%        \vspace*{1pt}%Space after
+         \end{minipage}%
+    }
+}
+
+
+% Espaçamento do Título/Seção (Ex: 1. Introdução)
+\titlelabel{\hspace{2mm}}
+
+%\bibliographystyle{abntex2-alf}
+\renewcommand\refname{\hspace{2mm}Referências}
+\newcommand*{\evento}[1]{\gdef\@evento{#1}}
+\newcommand*{\instituicao}[1]{\gdef\@instituicao{#1}}
+\newcommand*{\@instituicao}{Universidade Federal de Uberlândia}
+\newcommand*{\keywords}[1]{\gdef\@keywords{#1}}
+\newcommand*{\@keywords}{\keywords}
+
+
+%\makeatletter
+\def\@maketitle{%
+  %\newpage
+  %\null
+  \vskip 1.5em%
+  \begin{center}%
+  \let \footnote \thanks
+    {\Large \bf \@title \par}%
+    \vskip 1.5em%
+    {\large
+      \lineskip .5em%
+      \begin{tabular}[t]{c}%
+        \@author
+      \end{tabular}
+      \par}%
+    %\vskip 1em%
+    %{\large \@date}%
+  \end{center}%
+  %\par
+  \vskip 2mm
+%{\textit\@contatoemail\unskip\strut\par}
+%\vspace*{4mm}
+{\textbf{Palavras-chave:} \textit\@keywords}
+ }
+
+%==============================
+
+ 	
+%title boxe
+\newcommand*{\inserirtitulo}{%
+
+\hspace*{-6mm}
+\setlength{\fboxsep}{2mm}%already boxed
+\colorbox{sematcolor}{%
+	\color{white}
+	\includegraphics[width=0.1\textwidth]{ufulogowhite}%
+\begin{minipage}[b]{0.88\linewidth}
+	%\begin{minipage}{\linewidth}%
+		\vspace*{2mm}%Space before
+		\centering
+		{\Large\bf\MakeUppercase{\@evento}\unskip\strut\par}
+		{\large\bf\@instituicao\unskip\strut\par}
+		{\large\bf\@date\unskip\strut\par}
+		%\vspace*{2mm}%Space after
+\end{minipage}%
+	%\includegraphics[angle=30,origin=c,width=0.1\textwidth]{logosemat}
+}
+
+{\let\newpage\relax\maketitle}
+}
+
+%==============================
+
+\endinput
