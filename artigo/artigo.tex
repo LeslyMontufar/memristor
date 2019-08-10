@@ -44,9 +44,9 @@
 
 \section{Introdução}
 %% completar com a palestra de R. Stanley Williams
-A teoria de circuitos elétricos abrangia, 150 anos atrás, basicamente três componentes passivos fundamentais: o capacitor (1745), o resistor (1827) e o indutor (1831). No entanto, o professor phD da Universidade da Califórnia, Leon Chua, teve novas considerações a partir da análise de possíveis combinações entre as quatro variáveis fundamentais de circuitos: corrente elétrica $i$, tensão elétrica $v$, carga $q$ e fluxo magnético $\phi$ – sendo as duas últimas descritas como integrais no tempo da corrente e da tensão respectivamente.
+A teoria de circuitos elétricos abrangia, 150 anos atrás, basicamente três componentes passivos fundamentais: o capacitor (1745), o resistor (1827) e o indutor (1831). No entanto, o professor phD da Universidade da Califórnia, Leon Chua, teve novas considerações a partir da análise de possíveis combinações entre as quatro variáveis fundamentais de circuitos: corrente elétrica $i$, tensão elétrica $v$, carga $q$ e fluxo magnético $\varphi$ – sendo as duas últimas descritas como integrais no tempo da corrente e da tensão respectivamente.
 
-Chua observou que o capacitor é definido pela relação entre carga $q(t)$ e tensão $v(t)$ via $qd=C dv$. Similarmente, o resistor pela relação entre a corrente $i(t)$ e tensão $v(t)$ via $dv=R di$, e o indutor pela relação entre o fluxo magnético $\phi(t)$ e a corrente $i(t)$ via $d\phi(t)=L di$. Teria-se então que a combinação das quatro variáveis fundamentais de circuitos resultaria em somente três componentes fundamentais passivos. Assim, baseando-se no argumento de simetria, o estudioso postulou que haveria um elemento de circuito faltante capaz de associar a carga $q(t)$ e o fluxo magnético $\phi(t)$. Sob essa conjectura, em 1971 publicou um artigo no qual idealiza um novo componente por intermédio de demonstrações matemáticas e definido pela relação $d\phi=M dq$, o qual denominou de \emph{memristor}, uma contração de \emph{memory resistor} \cite{artigo}. 
+Chua observou que o capacitor é definido pela relação entre carga $q(t)$ e tensão $v(t)$ via $qd=C dv$. Similarmente, o resistor pela relação entre a corrente $i(t)$ e tensão $v(t)$ via $dv=R di$, e o indutor pela relação entre o fluxo magnético $\varphi(t)$ e a corrente $i(t)$ via $d\varphi(t)=L di$. Teria-se então que a combinação das quatro variáveis fundamentais de circuitos resultaria em somente três componentes fundamentais passivos. Assim, baseando-se no argumento de simetria, o estudioso postulou que haveria um elemento de circuito faltante capaz de associar a carga $q(t)$ e o fluxo magnético $\varphi(t)$. Sob essa conjectura, em 1971 publicou um artigo no qual idealiza um novo componente por intermédio de demonstrações matemáticas e definido pela relação $d\varphi=M dq$, o qual denominou de \emph{memristor}, uma contração de \emph{memory resistor} \cite{artigo}. 
 
 Então considerado o quarto elemento fundamental dos circuitos eletrônicos, ao lado do capacitor, resistor e indutor, o \emph{memristor} destaca-se por apresentar uma propriedade peculiar que o torna promissor em aplicações. Assim como um resistor não-linear, seria definido como um componente eletrônico passivo de duplo terminal utilizado para limitar a corrente em um circuito e dissipar energia térmica, mas também essa limitação, chamada de resistência ou impedância, para o \emph{memristor}, além de se alterar conforme a quantidade de carga elétrica que flui em si, manteria a última resistência obtida até a aplicação de uma nova carga.
 
@@ -106,8 +106,29 @@ Ainda pode-se analisar o comportamento do memristor nos momentos em que não há
 
 Assim, o princípio básico do funcionamento de um memristor é a mudança de posição dos átomos quando sofre influência de uma tensão elétrica, processo que é facilitado por ocorrer em escala nanométrica. %% por que?
 
-\section{Análise Matemática}\label{analise-matematica}
-O \emph{memristor}, a princípio, foi definido por Chua pela relação $d\phi=M dq$, equivalentemente tem-se $v=M(q)i$, do que se conclui que a \emph{memristência} $M$ é mensurada na mesma unidade que a resistência. Entretanto, a simples relação é incapaz de descrever o dispositivo completamente, diante disso, a equipe HP Laboratories decidiu que essencialmente seriam necessárias duas equações para descrevê-lo: Equações \ref{eq01} e \ref{eq02}, sendo que a Equação \ref{eq02} envolve o aspecto físico do componente, já apresentado na Seção \ref{funcionamento-estrutural}.
+\section{Fundamentos Matemáticos}\label{analise-matematica}
+O \emph{memristor}, a princípio, em 1971, foi definido por Chua \cite{artigo} como elemento de circuito de duplo-terminal caracterizado pela relação do tipo $g(\varphi, q)=0$. Diz-se que um memristor é controlado por carga se a relação entre fluxo e carga é expressa como uma função de carga elétrica $q$, e diz-se que é controlado por fluxo se é expressa em função do $\varphi$. Para um memristor controlado por carga tem-se:
+
+\begin{equation}\label{mem-charge}
+\varphi = f(q)
+\end{equation}
+
+Derivando ambos termos da Equação (\ref{mem-charge}):
+
+\begin{equation}\label{derivate-q}
+\dfrac{d\varphi}{dt}=\dfrac{f(q)}{dq} \ \dfrac{dq}{dt}
+\end{equation}
+
+Sabendo-se ainda que $v(t)=\dfrac{d\varphi}{dt}$ e $i(t)=\dfrac{dq}{dt}$, reescreve-se a Equação (\ref{derivate-q}) como:
+
+\begin{equation}\label{derivate-q}
+v(t)=M(q)\ i(t)
+\end{equation}
+\noindent onde $M(q) =\dfrac{df(q)}{dq}$.
+
+%pela relação $d\varphi=M dq$, da qual equivalentemente tem-se $v=M(q)i$.
+%, na qual tem-se que a \emph{memristência} $M$ é mensurada na mesma unidade que a resistência. 
+Entretanto, a simples relação é incapaz de descrever o dispositivo completamente, diante disso, a equipe HP Laboratories observou que seriam necessárias essencialmente duas equações: Equações (\ref{eq01}) e (\ref{eq02}), sendo que a Equação (\ref{eq02}) abrange o aspecto físico do componente, já apresentado na Seção \ref{funcionamento-estrutural}.
 
 \begin{equation}\label{eq01}
 v=M( w) \ i
@@ -117,15 +138,14 @@ v=M( w) \ i
 \dfrac{dw}{dt} =f(i) 
 \end{equation}
 
-Assim, a definição matemática rigorosa revela que a \emph{memristência} $M$ depende da variável estática $w$, que por sua vez referencia-se na função contínua de corrente $f$.
+Assim, a definição matemática rigorosa revela que a \emph{memristência} $M$ depende da variável de estado $w$, ilustrada na Figura \ref{w}, que por sua vez é a integral da função contínua de corrente $f$.
 %% Lisajous Figures
-
 
 \begin{minipage}[h]{\columnwidth}
 \centering
 \captionsetup{type=figure}
 \includegraphics[width=0.8\columnwidth]{memristor004}
-\caption{Memristor}\label{memristor}
+\caption{Memristor}\label{w}
 \end{minipage}
 
 \section{Aplicações}\label{aplicacoes}
