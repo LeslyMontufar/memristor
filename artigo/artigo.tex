@@ -51,36 +51,31 @@ A teoria de circuitos elétricos abrangia, há 150 anos, basicamente três compo
 Chua observou que o capacitor é definido pela relação entre carga $q(t)$ e tensão $v(t)$ via $qd=C dv$. Similarmente, o resistor pela relação entre a corrente $i(t)$ e tensão $v(t)$ via $dv=R di$, e o indutor pela relação entre o fluxo magnético $\varphi(t)$ e a corrente $i(t)$ via $d\varphi(t)=L di$. Teria-se então que a combinação das quatro variáveis fundamentais de circuitos resultaria em somente três componentes fundamentais passivos. Desse modo, baseando-se no argumento de simetria, o estudioso postulou que haveria um elemento de circuito faltante capaz de associar a carga $q(t)$ e o fluxo magnético $\varphi(t)$, o que o levou, em 1971, a publicar um artigo no qual idealiza um novo componente, definido pela relação $d\varphi=M dq$ e denominado de \emph{memristor}, uma contração de \emph{memory resistor} \cite{artigo}. 
 
 %, em português \emph{resistor com memória} 
-Considerado, então, o quarto elemento fundamental dos circuitos eletrônicos, ao lado do capacitor, resistor e indutor, o \emph{memristor} destaca-se por apresentar uma propriedade peculiar que o torna promissor em aplicações. Assim como um resistor não-linear, seria definido como um componente eletrônico passivo de duplo terminal utilizado para limitar a corrente em um circuito e dissipar energia térmica, mas também essa limitação, chamada de resistência ou impedância, para o \emph{memristor}, além de se alterar conforme a quantidade de carga elétrica que flui em si, manteria a última resistência obtida até a aplicação de uma nova carga.
+Portanto, considerado como o quarto elemento fundamental dos circuitos eletrônicos, ao lado do capacitor, resistor e indutor, o \emph{memristor} destaca-se por apresentar uma propriedade peculiar, cuja explanação e abordagem teórica é tratada adiante. Assim como um resistor não-linear, é definido como um componente eletrônico passivo de duplo terminal utilizado para limitar a corrente em um circuito e dissipar energia térmica, entretanto, para o \emph{memristor}, essa limitação, chamada de resistência ou impedância, além de se alterar conforme a quantidade de carga elétrica que flui em si, mantém o valor da última resistência obtida até a aplicação de nova carga.
 
-Apesar da proposta teórica do \emph{memristor} ter sido apresentada por Chua em 1971, sua primeira implementação prática ocorreu apenas em 2008, nos Laboratórios da Hewllet-Packard (HP), pela equipe liderada pelo físico químico Dr. Richard Stanley Williams. A demora deve-se, principalmente, à inexistência de materiais criação de circuitos, até então, que fossem capazes de conferir a propriedade de reter memória ao dispositivo.
+Apesar da proposta teórica do \emph{memristor} ter sido apresentada por Chua em 1971, sua primeira implementação prática ocorreu apenas em 2008, nos Laboratórios da Hewllet-Packard (HP), graças à equipe liderada pelo físico-químico Dr. Richard Stanley Williams, que desenvolveu memristores com base no dióxido de titânio ($TiO_2$) \cite{nature}. A demora deve-se, principalmente, à dificuldade em encontrar materiais que fossem capazes de conferir a propriedade de reter memória ao dispositivo eletrônico e satisfazer a base teórica apresentada por Chua \cite{artigo}.
+Dessa forma, o componente recentemente sintetizado apresenta a propriedade da não-volatilidade, que, aliada a possibilidade de ser trabalhado em escala nanométrica, o torna promissor em aplicações e garante sua contribuição na validação da Lei de Moore.
 
-Dessa forma, o componente recentemente sintetizado apresenta a propriedade da não-volatilidade, que, aliada a possibilidade de ser trabalhado em escala nanométrica, garante sua participação na Lei de Moore e expande a aplicabilidade em inúmeraos setores.
-Pissardini \cite{memcomputacao} atenta para aplicações de memelementos na elaboração de novas arquiteturas, que, corroborado pelos ideais da Arquitetura de Von Neumann, são capazes de realizar tarefas específicas. 
+Pissardini \cite{memcomputacao} atenta para aplicações de memelementos na elaboração de novas arquiteturas computacionais, que, corroborado pelos ideais da Arquitetura de Von Neumann, são capazes de realizar tarefas específicas. 
 %% que tarefas? não sei
 
-\begin{comment}
-Simulações computacionais representam uma maneira conveniente de estudar circuitos memresistivos. Desse modo, um quadro geral para modelagem de sistemas memristivos, memcapacitivos e memindutivos na família de simuladores SPICE foi proposto em \cite{cibelly1}.
-	
-A primeira geração de modelos  memristor é baseada em aproximação da dinâmica dos memristores HP TiO2 introduzida em \cite{cibelly2}, entretanto, esses modelos são populares por sua simplicidade, mas sua linear característica estática não é adequada para dispositivos reais. O termo “estática” refere-se a um memristor com variável (s) de estado “congelada”.
-\end{comment}
-
-%% mais um paragrafo de aplicacoes:
+%% completar paragrafo de aplicacoes:
 %% circuitos lógicos CMOS
 %% voice encryption - drive
 %% memória ReRam !!
 %% Computacao neuromorfica, AI, redes neurais CNN
+%% Termistores - proposto primeiramente por Chua
 
-Sob essa perspectiva, a temática deste artigo basear-se-á na descrição detalhada desse novo componente, no âmbito físico, químico e eletrônico, com intuito de compreender o mecanismo interno que atribui propriedades ao \emph{memristor}. É de interesse ainda discutir acerca de algumas das aplicabilidades do dispositivo, para assim poder expor o impacto de sua descoberta para a teoria de circuitos e para o crescimento tecnológico.
+Sob essa perspectiva, a temática deste artigo basear-se-á na descrição detalhada desse novo componente, nos âmbito físico, químico, eletrônico e matemático, com intuito de compreender como o mecanismo interno converge para as propriedades impostas a um elemento \emph{memristor} por Chua. É de interesse ainda discutir acerca de aplicabilidades do dispositivo, para assim poder expor o impacto de sua descoberta na teoria de circuitos e importância para o crescimento tecnológico. %% eletronico com SPICE
 %% se formos acrescentar mais alguma coisa como circuito LTSpice.
 %% depende das aplicacoes
 
-Na Seção \ref{funcionamento-estrutural} é apresentado o funcionamento estrutural do \emph{memristor} no sentido físico químico. Para, na Seção \ref{analise-matematica}, analisá-lo matematicamente e, assim, provar a natureza de suas propriedades a partir do equaciomento e ilustração gráfica. Finalmente, na Seção \ref{aplicacoes}, é explicitada algumas de suas aplicações e recentes estudos.
+Na Seção \ref{estrutura} são apresentadas as características estruturais, físico-químicas, de um \emph{memristor}, com ênfase para o modelo da \emph{HP Labs}. Para, na Seção \ref{analise-matematica}, analisá-lo matematicamente e, assim, provar a natureza de suas propriedades e peculiaridades a partir do equaciomento e disposição de gráficos. Além disso, a Seção \ref{sim} apresenta simulações computacionais nos ambientes \emph{MATLAB} e \emph{LTSPICE} que exemplificam suas características marcantes. Finalmente, na Seção \ref{aplicacoes}, é explicitada algumas de suas aplicações e recentes estudos.
 
 
 %% precisa colocar imagem pequena para explicar que a propriedade do memristor deve-se basicamente à redistribuição das lacunas(+) devido à deficiencia em oxigenio.
 %% de preferencia a msm imagem do R. Stanley Williams
-\section{Funcionamento estrutural de um memristor} \label{funcionamento-estrutural}
+\section{Características estruturais de um memristor} \label{estrutura}
 Dispositivos constituídos por óxidos com a capacidade de mudar o valor de resistência, %% existe algum dispositivo constuido por óxido que mude outra grandeza? qual? (apresentação)
 assim como os \emph{memristores}, são bastante úteis para diversos processos, pois %% ?
 admitem as características de operação em baixas tensões, alta velocidade e densidade, %% ?
@@ -204,6 +199,8 @@ Assim, a definição matemática rigorosa revela que, conforme a Equação (\ref
 
 \subsection{Modelo de Deriva Linear}
 
+\section{Simulações} \label{sim}
+
 
 \section{Aplicações}\label{aplicacoes}
 \subsection{Mémorias ReRam}
@@ -212,8 +209,7 @@ Essa tecnologia assemelha ao uso de transistores nas memórias Flash, com a dife
 O reRAM, portanto, tem o potencial de ser extremamente denso, de baixa potência, com alta resistência, tornando-se uma tecnologia atraente para armazenamento secundário e níveis de memória de classe de armazenamento \cite{prog}. Segundo a HP, dispositivos contendo memristores oferecem em média algo em torno de 20GB por centímetro quadrado, o dobro da capacidade projetada para as memórias flash \cite{hp}.
 Dispositivos memresistivos podem mudar o paradigma padrão da computação ao permitir que cálculos sejam executados nos chips onde a informação está armazenada \cite{hp}. Além disso, essa tecnologia é passível de utilização em todo o tipo de dispositivo, desde celulares e MP3 players, que primariamente utilizam memórias flash NAND, como SSD (solid state disk, as memórias flash) e DRAM.
 
-\subsection{Circuitos Lógicos}
-
+\subsection{Circuitos Lógicos} %  logic, hybrid circuits with CMOS, and neuromorphic computing.
 
 
 \section{CONCLUSÕES}
@@ -236,9 +232,6 @@ Dispositivos memresistivos podem mudar o paradigma padrão da computação ao pe
 COMPUTAÇÃO PARALELA”, Escola Politécnica da Universidade de São Paulo, Departamento de Engenharia de Transportes, Laboratório de Topografia e Geodesia.
  Disponível em:
  \url{https://www.ime.usp.br/~gold/cursos/2015/MAC5742/reports/MemComputacao.pdf}. Acesso em: jun. 2019.
-
- 
-
    
 \bibitem{nature}	
      D.B. Strukov, G.S. Snider, D.R. Stewart,  R.S Williams, 
