@@ -1,0 +1,15 @@
+Bom
+Primeiramente Boa Tarde,
+
+Começo introduzindo uma frase de Stanley Willians numa 
+de suas palestras.
+
+"Leon Chua é para a teoria de circuitos, o que Albert Einstein foi 
+para a Teoria da Relatividade."
+
+E a importância de ambos será frizada com o decorrer da apresentação.
+
+O contexto histórico é bastante interessante e extenso, mas resumindo 
+em 1971 Leon Chua generalizou o conceito do quarto elemento de 
+circuito que chamou de memristor, uma contração para "memory 
+resistor", em português "resistor com memória".

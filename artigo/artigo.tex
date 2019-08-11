@@ -6,6 +6,7 @@
 \usepackage{verbatim}
 \usepackage{array}
 \usepackage{amsmath}
+\usepackage{subcaption, float}
 %%===========================
 
 % Dados do trabalho
@@ -45,7 +46,7 @@
 
 \section{Introdução}
 %% completar com a palestra de R. Stanley Williams
-A teoria de circuitos elétricos abrangia, 150 anos atrás, basicamente três componentes passivos fundamentais: o capacitor (1745), o resistor (1827) e o indutor (1831). No entanto, o professor phD da Universidade da Califórnia, Leon Chua, teve novas considerações a partir da análise de possíveis combinações entre as quatro variáveis fundamentais de circuitos: corrente elétrica $i$, tensão elétrica $v$, carga $q$ e fluxo magnético $\varphi$ – sendo as duas últimas descritas como integrais no tempo da corrente e da tensão respectivamente.
+A teoria de circuitos elétricos abrangia, 150 anos atrás, basicamente três componentes passivos fundamentais: o capacitor (1745), o resistor (1827) e o indutor (1831). No entanto, o professor phD da Universidade da Califórnia, Leon Chua, teve novas considerações a partir da análise de possíveis combinações entre as quatro variáveis fundamentais de circuitos: corrente elétrica $i$, tensão elétrica $v$, carga $q$ e fluxo magnético $\varphi$ – sendo as duas últimas descritas como integrais no tempo da corrente $q(t)=\int\limits_{-\infty}^t i(\tau)\, d\tau$ e da tensão $\varphi(t)=\int\limits_{-\infty}^t v(\tau)\, d\tau$, respectivamente.
 
 Chua observou que o capacitor é definido pela relação entre carga $q(t)$ e tensão $v(t)$ via $qd=C dv$. Similarmente, o resistor pela relação entre a corrente $i(t)$ e tensão $v(t)$ via $dv=R di$, e o indutor pela relação entre o fluxo magnético $\varphi(t)$ e a corrente $i(t)$ via $d\varphi(t)=L di$. Teria-se então que a combinação das quatro variáveis fundamentais de circuitos resultaria em somente três componentes fundamentais passivos. Assim, baseando-se no argumento de simetria, o estudioso postulou que haveria um elemento de circuito faltante capaz de associar a carga $q(t)$ e o fluxo magnético $\varphi(t)$. Sob essa conjectura, em 1971 publicou um artigo no qual idealiza um novo componente por intermédio de demonstrações matemáticas e definido pela relação $d\varphi=M dq$, o qual denominou de \emph{memristor}, uma contração de \emph{memory resistor} \cite{artigo}. 
 
@@ -166,7 +167,7 @@ i(t)=W(\varphi)\ v(t)
 Então, $W$ é chamado de \textit{memductância} e tem mesma unidade da condutância (\textit{Siemens} - $S$).
 
 Entretanto, a relação não abrange a propriedade de memória do dispositivo, o que levou Chua juntamente com seu aluno de graduação Kang \cite{1976}, em 1976, a reconhecer que, enfaticamente, o \emph{memristor} seria um componente passivo com \emph{estado}, ou seja é um componente cuja propriedade de memória é definida por um ou mais \emph{variáveis de estado}.
-Diante disso, a equipe HP Laboratories modelou matematicamente um \emph{memristor}, essencialmente, a partir de duas equações (Equações (\ref{eq01}) e (\ref{eq02})), sendo que a Equação (\ref{eq02}) considera a interação física intrínseca do componente por meio da variável de estado $w$.
+Diante disso, a equipe HP Laboratories modelou matematicamente um \emph{memristor}, essencialmente, a partir de duas equações: a Equação (\ref{eq01}) - similar à Equação (\ref{derivate-q}) - e a Equação (\ref{eq02}) - que considera a interação física intrínseca do componente.
 
 \begin{equation}\label{eq01}
 v=M( w) \ i
@@ -176,15 +177,32 @@ v=M( w) \ i
 \dfrac{dw}{dt} =f(i) 
 \end{equation}
 
-Assim, a definição matemática rigorosa revela que a \emph{memristência} $M$ depende da variável de estado $w$, ilustrada na Figura \ref{w}, que por sua vez é a integral da função contínua de corrente $f$.
+Assim, a definição matemática rigorosa revela que, conforme a Equação (\ref{eq01}), a \emph{memristência} $M$ depende do estado do dispositivo, em determinado instante de tempo $t$, que por sua vez também varia com o tempo como integral da função contínua de corrente $f$, como descrito pela Equação (\ref{eq02}).  Uma representação física da variável de estado $w$ é ilustrada na Figura \ref{w}. 
+
+
+\begin{figure}[H]
+\centering
+
+\begin{subfigure}{0.49\columnwidth}
+\centering
+\includegraphics[width=\columnwidth]{memristor-w}
+\caption{Left figure} \label{fig:left}
+\end{subfigure}
+\hfill
+\begin{subfigure}{0.49\columnwidth}
+\centering
+\includegraphics[width=\columnwidth]{memristor-w}
+\caption{Right figure} \label{fig:right}
+\end{subfigure}
+
+\caption{}\label{}
+\end{figure}
+
 %% Lisajous Figures
 
-\begin{minipage}[h]{\columnwidth}
-\centering
-\captionsetup{type=figure}
-\includegraphics[width=0.8\columnwidth]{memristor004}
-\caption{Memristor}\label{w}
-\end{minipage}
+
+\subsection{Modelo de Deriva Linear}
+
 
 \section{Aplicações}\label{aplicacoes}
 \subsection{Mémorias ReRam}
@@ -218,10 +236,7 @@ COMPUTAÇÃO PARALELA”, Escola Politécnica da Universidade de São Paulo, Dep
     “Memristor - the missing circuit element”, 
     in \emph{IEEE Transactions on circuit theory}, VOL. CT-18, NO. 5, Setembro 1971.
  
-\bibitem{1976}	
-    L. Chua, S. M. Kang,
-    “Memristive devices and systems”, 
-    in \emph{Proceedings IEEE}, 1976, vol. CT-18, no. 5, pp. 507-519.
+
    
 \bibitem{nature}	
      D.B. Strukov, G.S. Snider, D.R. Stewart,  R.S Williams, 
@@ -256,18 +271,23 @@ COMPUTAÇÃO PARALELA”, Escola Politécnica da Universidade de São Paulo, Dep
 \bibitem{elusive} % indescritivel
     Y. N. Joglekar, S. J. Wolf, "The elusive memristor: properties of basic electrical circuits", Department of Physics, Indiana University Purdue, 2009.
 
+\bibitem{1976}	
+    L. Chua, S. M. Kang,
+    “Memristive devices and systems”, 
+    in \emph{Proceedings IEEE}, 1976, vol. CT-18, no. 5, pp. 507-519.
+
 %% APLICACOES
 
 %% MEMORIAS RERAM
 \bibitem{blog}
-   E. Alecrim, ”Os primeiros chips ReRAM fabricados em larga escala chegarão em breve”, 2013. Disponível em: \url{https://tecnoblog.net/136874/primeiros-chips-reram-em-larga-escala/}. Acesso em ago. 2019.
+   E. Alecrim, "Os primeiros chips ReRAM fabricados em larga escala chegarão em breve", 2013. Disponível em: \url{https://tecnoblog.net/136874/primeiros-chips-reram-em-larga-escala/}. Acesso em ago. 2019.
    
 \bibitem{prog}
     M. Ramadan, N. Wainstein, R. Ginosar, S. Kvatinsky, "Adaptive programming in multi-level cell ReRAM", Microelectronics Journal, Volume 90, 2019. %% MULTI-LEVEL CELL == MLC ?!
     %% bem recente :)
     
 \bibitem{hp}
-A. Martins, “ReRAM - A próxima geração de memórias e CPU’s”,2010. Disponível em: <https://brainstormdeti.wordpress.com/2010/09/15/reram-\%E2\%80\%93-a-proxima-geracao-de-memorias-e-cpu\%E2\%80\%99s/>. Acesso em ago.2019
+A. Martins, "ReRAM - A próxima geração de memórias e CPU’s", 2010. Disponível em: \url{https://brainstormdeti.wordpress.com/2010/09/15/reram-\%E2\%80\%93-a-proxima-geracao-de-memorias-e-cpu\%E2\%80\%99s/}. Acesso em ago.2019
 
 %% CIRCUITOS LOGICOS
 
