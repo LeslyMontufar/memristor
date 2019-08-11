@@ -10,7 +10,7 @@
 %%===========================
 
 % Dados do trabalho
-\title{Análise Físico-química e Fundamentos Matemáticos de um Memristor}
+\title{Fundamentos Físico-químicos e Matemáticos de um Memristor}
 
 \author[1]{\underline{Lesly Viviane Montúfar Berrios}\thanks{leslymontufar@ufu.br}}
 \author[1]{Cibelly Cristina Rodrigues Couto\thanks{cibelly.cris@ufu.br}}
@@ -26,7 +26,7 @@
 
 \begin{multicols}{2}
 
-\textbf{\emph{Resumo} - O objetivo do artigo é estudar o comportamento do quarto elemento de circuito fundamental idealizado por Leon Chua em 1971. Denominado de memristor, sua propriedade de memorizar o último valor de resistência após cessar a passagem de corrente permite aplicá-lo em diversos contextos, como nas memórias ReRam e inteligência artificial.}
+\textbf{\emph{Resumo} - Um estudo sobre o comportamento do quarto elemento de circuito fundamental idealizado por Leon Chua em 1971 e implementado primeiramente pela equipe da HP Labs liderada por Stanley Williams em 2008 é apresentado. Chamado de \emph{memristor}, o novo elemento de circuito passivo de duplo terminal relaciona as variáveis de carga $q(t)=\int_{-\infty}^t i(\tau)\, d\tau$ e fluxo $\varphi(t)=\int_{-\infty}^t v(\tau)\, d\tau$ e comporta-se como um resistor não-linear com memória. Sua propriedade peculiar advém da capacidade do material de manter seu último estado, e permite aplicações em diversos contextos, como em memórias ReRam e inteligência artificial.} %% aplicacoes a completar
 \vspace*{10pt}
 
 \textbf{\emph{Palavras-Chave} - Inteligência Artificial, Memórias ReRam, Memristor.}
@@ -35,10 +35,10 @@
 \begin{center}
 
 %Insira aqui o Título do trabalho em inglês
-\noindent\textbf{\large \uppercase{Physicochemical Analysis and Mathematical Foundations of a Memristor}}
+\noindent\textbf{\large \uppercase{Physicochemical and Mathematical Foundations of a Memristor}}
 \end{center}
 
-\textbf{\emph{Abstract} - The paper purpose is to study the behavior of the fourth fundamental circuit element idealized by Leon Chua in 1971. Called memristor, his property of memorizing the last resistance value after the current flow ceases allows applications in various contexts, as in ReRam memories and artificial intelligence.}
+\textbf{\emph{Abstract} - A study of the behavior of the fourth fundamental circuit element devised by Leon Chua in 1971 and first implemented by the HP Labs team led by Stanley Williams in 2008 is presented. Called \emph {memristor}, the new two-terminal passive circuit element lists the variables of charge $q(t)=\int_{-\infty}^t i(\tau)\, d\tau$ and flux $\varphi(t)=\int_{-\infty}^t v(\tau)\, d\tau$ and behaves like a nonlinear resistor with memory. Its peculiar property comes from the material's ability to maintain its last state, and allows applications in various contexts, such as ReRam memories and artificial intelligence.}
 \vspace*{10pt}
 
 \textbf{\emph{Keywords} - Artificial Intelligence, Memristor, ReRam memories.}
@@ -46,11 +46,12 @@
 
 \section{Introdução}
 %% completar com a palestra de R. Stanley Williams
-A teoria de circuitos elétricos abrangia, 150 anos atrás, basicamente três componentes passivos fundamentais: o capacitor (1745), o resistor (1827) e o indutor (1831). No entanto, o professor phD da Universidade da Califórnia, Leon Chua, teve novas considerações a partir da análise de possíveis combinações entre as quatro variáveis fundamentais de circuitos: corrente elétrica $i$, tensão elétrica $v$, carga $q$ e fluxo magnético $\varphi$ – sendo as duas últimas descritas como integrais no tempo da corrente $q(t)=\int\limits_{-\infty}^t i(\tau)\, d\tau$ e da tensão $\varphi(t)=\int\limits_{-\infty}^t v(\tau)\, d\tau$, respectivamente.
+A teoria de circuitos elétricos abrangia, há 150 anos, basicamente três componentes passivos fundamentais: o capacitor (1745), o resistor (1827) e o indutor (1831). No entanto, em 1971, o professor phD da Universidade da Califórnia, Leon Chua, apresentou novas considerações a partir da análise de possíveis combinações entre as quatro variáveis fundamentais de circuitos: corrente elétrica $i$, tensão elétrica $v$, carga $q$ e fluxo magnético $\varphi$ – sendo as duas últimas descritas como integrais no tempo da corrente mediante $q(t)=\int_{-\infty}^t i(\tau)\, d\tau$ e da tensão mediante $\varphi(t)=\int_{-\infty}^t v(\tau)\, d\tau$, respectivamente.
 
-Chua observou que o capacitor é definido pela relação entre carga $q(t)$ e tensão $v(t)$ via $qd=C dv$. Similarmente, o resistor pela relação entre a corrente $i(t)$ e tensão $v(t)$ via $dv=R di$, e o indutor pela relação entre o fluxo magnético $\varphi(t)$ e a corrente $i(t)$ via $d\varphi(t)=L di$. Teria-se então que a combinação das quatro variáveis fundamentais de circuitos resultaria em somente três componentes fundamentais passivos. Assim, baseando-se no argumento de simetria, o estudioso postulou que haveria um elemento de circuito faltante capaz de associar a carga $q(t)$ e o fluxo magnético $\varphi(t)$. Sob essa conjectura, em 1971 publicou um artigo no qual idealiza um novo componente por intermédio de demonstrações matemáticas e definido pela relação $d\varphi=M dq$, o qual denominou de \emph{memristor}, uma contração de \emph{memory resistor} \cite{artigo}. 
+Chua observou que o capacitor é definido pela relação entre carga $q(t)$ e tensão $v(t)$ via $qd=C dv$. Similarmente, o resistor pela relação entre a corrente $i(t)$ e tensão $v(t)$ via $dv=R di$, e o indutor pela relação entre o fluxo magnético $\varphi(t)$ e a corrente $i(t)$ via $d\varphi(t)=L di$. Teria-se então que a combinação das quatro variáveis fundamentais de circuitos resultaria em somente três componentes fundamentais passivos. Desse modo, baseando-se no argumento de simetria, o estudioso postulou que haveria um elemento de circuito faltante capaz de associar a carga $q(t)$ e o fluxo magnético $\varphi(t)$, o que o levou, em 1971, a publicar um artigo no qual idealiza um novo componente, definido pela relação $d\varphi=M dq$ e denominado de \emph{memristor}, uma contração de \emph{memory resistor} \cite{artigo}. 
 
-Então considerado o quarto elemento fundamental dos circuitos eletrônicos, ao lado do capacitor, resistor e indutor, o \emph{memristor} destaca-se por apresentar uma propriedade peculiar que o torna promissor em aplicações. Assim como um resistor não-linear, seria definido como um componente eletrônico passivo de duplo terminal utilizado para limitar a corrente em um circuito e dissipar energia térmica, mas também essa limitação, chamada de resistência ou impedância, para o \emph{memristor}, além de se alterar conforme a quantidade de carga elétrica que flui em si, manteria a última resistência obtida até a aplicação de uma nova carga.
+%, em português \emph{resistor com memória} 
+Considerado, então, o quarto elemento fundamental dos circuitos eletrônicos, ao lado do capacitor, resistor e indutor, o \emph{memristor} destaca-se por apresentar uma propriedade peculiar que o torna promissor em aplicações. Assim como um resistor não-linear, seria definido como um componente eletrônico passivo de duplo terminal utilizado para limitar a corrente em um circuito e dissipar energia térmica, mas também essa limitação, chamada de resistência ou impedância, para o \emph{memristor}, além de se alterar conforme a quantidade de carga elétrica que flui em si, manteria a última resistência obtida até a aplicação de uma nova carga.
 
 Apesar da proposta teórica do \emph{memristor} ter sido apresentada por Chua em 1971, sua primeira implementação prática ocorreu apenas em 2008, nos Laboratórios da Hewllet-Packard (HP), pela equipe liderada pelo físico químico Dr. Richard Stanley Williams. A demora deve-se, principalmente, à inexistência de materiais criação de circuitos, até então, que fossem capazes de conferir a propriedade de reter memória ao dispositivo.
 
@@ -224,6 +225,11 @@ Dispositivos memresistivos podem mudar o paradigma padrão da computação ao pe
 \begin{thebibliography}{9}
 
 %% INTRODUCAO
+\bibitem{artigo}	
+    L. Chua,
+    “Memristor - the missing circuit element”, 
+    in \emph{IEEE Transactions on circuit theory}, VOL. CT-18, NO. 5, Setembro 1971.
+
 \bibitem{memcomputacao}
     R. S. Pissardini,
     “MEMCOMPUTAÇÃO: CARACTERÍSTICAS E APLICAÇÕES EM
@@ -231,10 +237,6 @@ COMPUTAÇÃO PARALELA”, Escola Politécnica da Universidade de São Paulo, Dep
  Disponível em:
  \url{https://www.ime.usp.br/~gold/cursos/2015/MAC5742/reports/MemComputacao.pdf}. Acesso em: jun. 2019.
 
-\bibitem{artigo}	
-    L. Chua,
-    “Memristor - the missing circuit element”, 
-    in \emph{IEEE Transactions on circuit theory}, VOL. CT-18, NO. 5, Setembro 1971.
  
 
    
