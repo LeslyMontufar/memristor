@@ -53,7 +53,7 @@ Chua observou que o capacitor é definido pela relação entre carga $q(t)$ e te
 %, em português \emph{resistor com memória} 
 Portanto, considerado como o quarto elemento fundamental dos circuitos eletrônicos, ao lado do capacitor, resistor e indutor, o \emph{memristor} destaca-se por apresentar uma propriedade peculiar, cuja explanação e abordagem teórica é tratada adiante. Assim como um resistor não-linear, é definido como um componente eletrônico passivo de duplo terminal utilizado para limitar a corrente em um circuito e dissipar energia térmica, entretanto, para o \emph{memristor}, essa limitação, chamada de resistência ou impedância, além de se alterar conforme a quantidade de carga elétrica que flui em si, mantém o valor da última resistência obtida até a aplicação de nova carga.
 
-Apesar da proposta teórica do \emph{memristor} ter sido apresentada por Chua em 1971, sua primeira implementação prática ocorreu apenas em 2008, nos Laboratórios da Hewllet-Packard (HP), graças à equipe liderada pelo físico-químico Dr. Richard Stanley Williams, que desenvolveu memristores com base no dióxido de titânio ($TiO_2$) \cite{nature}. A demora deve-se, principalmente, à dificuldade em encontrar materiais que fossem capazes de conferir a propriedade de reter memória ao dispositivo eletrônico e satisfazer a base teórica apresentada por Chua \cite{artigo}.
+Apesar da proposta teórica do \emph{memristor} ter sido apresentada por Chua em 1971, sua primeira implementação prática ocorreu apenas em 2008, nos \emph{Laboratórios da Hewllet-Packard} (\emph{HP}), graças à equipe liderada pelo físico-químico Dr. Richard Stanley Williams, que desenvolveu memristores com base no dióxido de titânio ($TiO_2$) \cite{nature}. A demora deve-se, principalmente, à dificuldade em encontrar materiais que fossem capazes de conferir a propriedade de reter memória ao dispositivo eletrônico e satisfazer a base teórica apresentada por Chua \cite{artigo}.
 Dessa forma, o componente recentemente sintetizado apresenta a propriedade da não-volatilidade, que, aliada a possibilidade de ser trabalhado em escala nanométrica, o torna promissor em aplicações e garante sua contribuição na validação da Lei de Moore.
 
 Pissardini \cite{memcomputacao} atenta para aplicações de memelementos na elaboração de novas arquiteturas computacionais, que, corroborado pelos ideais da Arquitetura de Von Neumann, são capazes de realizar tarefas específicas. 
@@ -76,10 +76,28 @@ Na Seção \ref{estrutura} são apresentadas as características estruturais, f�
 %% precisa colocar imagem pequena para explicar que a propriedade do memristor deve-se basicamente à redistribuição das lacunas(+) devido à deficiencia em oxigenio.
 %% de preferencia a msm imagem do R. Stanley Williams
 \section{Características estruturais de um memristor} \label{estrutura}
-Dispositivos constituídos por óxidos com a capacidade de mudar o valor de resistência, %% existe algum dispositivo constuido por óxido que mude outra grandeza? qual? (apresentação)
-assim como os \emph{memristores}, são bastante úteis para diversos processos, pois %% ?
-admitem as características de operação em baixas tensões, alta velocidade e densidade, %% ?
-assim como a não-volatilidade \cite{conceito}, o que significa que o dispositivo possui determinada estabilidade no armazenamento do valor da última resistência obtida. 
+Dispositivos de resistência variável com base em óxidos 
+possuem vasta aplicabilidade devido à capacidade de reter memória, como são definidos os \emph{memristores}, uma vez que
+admitem características de alta velocidade, alta densidade e operação em baixa energia, 
+assim como a não-volatilidade, do que se conclui que o dispositivo possui certa estabilidade no armazenamento da última resistência obtida \cite{conceito}. 
+
+\begin{figure}[H]
+\centering
+
+\begin{subfigure}{0.49\columnwidth}
+\centering
+\includegraphics[width=\columnwidth]{oxygen-vacancies}
+\caption{Left figure} \label{fig:left}
+\end{subfigure}
+\hfill
+\begin{subfigure}{0.49\columnwidth}
+\centering
+\includegraphics[width=\columnwidth]{HP-model}
+\caption{Right figure} \label{fig:right}
+\end{subfigure}
+
+\caption{}\label{}
+\end{figure}
 
 A fim de cumprir tais características e funções no circuito, o memristor deve ser construído de maneira específica. A estrutura de um dispositivo memristor, basicamente, possui dois eletrodos entre os quais existe uma área isolante, porém com uma nanopartícula que fornece um caminho condutivo entre os eletrodos. %% continuar essa parte
 %% aqui comeca assunto diferente, pode ficar para o final da seção
@@ -94,7 +112,7 @@ Os valores limite de tensão e de tempo necessários para ser formado o canal co
 %% memórias MLC são muito usadas em SSDs para computadores domésticos.
 
 Para analisar o funcionamento prático de um memristor, pode-se analisar o funcionamento prático de um dispositivo que foi a base para a existência do memristor, o "crossbarlatch", estudado em 2006 pelos %% volta no tempo, poderia colocar essa parte mais para o inicio antes do electroforming
-laboratórios da HP. Tal dispositivo passou a ser conhecido como o próprio memristor posteriormente. O "crossbarlatch" era uma espécie de sanduíche, possuindo suas partes externas constituídas por Platina(Pt), com espessura inferior a 3 nanômetros, e sua camada intermediária sendo dividida em duas partes, sendo a primeira formada de óxido de titânio($TiO_2$) e a segunda formada pela mesma substânica, porém deficiente em oxigênio ($TiO_2-x$) \cite{construcao}.  
+laboratórios da HP. Tal dispositivo passou a ser conhecido como o próprio memristor posteriormente. O "crossbarlatch" era uma espécie de sanduíche, possuindo suas partes externas constituídas por Platina(Pt), com espessura cerca de 3 nanômetros, e sua camada intermediária sendo dividida em duas partes, sendo a primeira formada de óxido de titânio($TiO_2$) e a segunda formada pela mesma substânica, porém deficiente em oxigênio ($TiO_2-x$) \cite{construcao}.  
 
 A parte constituída por $TiO_2$ é conhecida como a parte pura(ou não dopada) e a parte deficiente em oxigênio é conhecida como a parte dopada. Ao se aplicar uma tensão elétrica positiva 
 no terminal dopado, as lacunas (onde falta oxigênio) se comportam como cargas positivas e "migram" para o outro lado, ou seja, cargas negativas se deslocam para a parte dopada. Dessa 
@@ -226,17 +244,18 @@ Dispositivos memresistivos podem mudar o paradigma padrão da computação ao pe
     “Memristor - the missing circuit element”, 
     in \emph{IEEE Transactions on circuit theory}, VOL. CT-18, NO. 5, Setembro 1971.
 
+\bibitem{nature}	
+     D.B. Strukov, G.S. Snider, D.R. Stewart,  R.S Williams, 
+"The missing memristor found", 
+\emph{Nature}, 2008, 1 May 2008, vol. 453, pp. 80-83.
+
 \bibitem{memcomputacao}
     R. S. Pissardini,
     “MEMCOMPUTAÇÃO: CARACTERÍSTICAS E APLICAÇÕES EM
 COMPUTAÇÃO PARALELA”, Escola Politécnica da Universidade de São Paulo, Departamento de Engenharia de Transportes, Laboratório de Topografia e Geodesia.
  Disponível em:
  \url{https://www.ime.usp.br/~gold/cursos/2015/MAC5742/reports/MemComputacao.pdf}. Acesso em: jun. 2019.
-   
-\bibitem{nature}	
-     D.B. Strukov, G.S. Snider, D.R. Stewart,  R.S Williams, 
-"The missing memristor found", 
-\emph{Nature}, 2008, 1 May 2008, vol. 453, pp. 80-83.
+  
 
 
 \begin{comment}
