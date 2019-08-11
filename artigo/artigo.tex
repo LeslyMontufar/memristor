@@ -5,6 +5,7 @@
 \usepackage{hyperref}
 \usepackage{verbatim}
 \usepackage{array}
+\usepackage{amsmath}
 %%===========================
 
 % Dados do trabalho
@@ -98,38 +99,74 @@ Os valores limite de tensão e de tempo necessários para ser formado o canal co
 Para analisar o funcionamento prático de um memristor, pode-se analisar o funcionamento prático de um dispositivo que foi a base para a existência do memristor, o "crossbarlatch", estudado em 2006 pelos %% volta no tempo, poderia colocar essa parte mais para o inicio antes do electroforming
 laboratórios da HP. Tal dispositivo passou a ser conhecido como o próprio memristor posteriormente. O "crossbarlatch" era uma espécie de sanduíche, possuindo suas partes externas constituídas por Platina(Pt), com espessura inferior a 3 nanômetros, e sua camada intermediária sendo dividida em duas partes, sendo a primeira formada de óxido de titânio($TiO_2$) e a segunda formada pela mesma substânica, porém deficiente em oxigênio ($TiO_2-x$) \cite{construcao}.  
 
-A parte constituída por $TiO_2$ é conhecida como a parte pura(ou não dopada) e a parte deficiente em oxigênio é conhecida como a parte dopada. Ao se aplicar uma tensão elétrica positiva no terminal dopado, as lacunas (onde falta oxigênio) se comportam como cargas positivas e "migram" para o outro lado, ou seja, cargas negativas se deslocam para a parte dopada. Dessa forma, a espessura da camada intermediária diminui, ao mesmo tempo que a espessura da camada condutora aumenta, o que resulta na diminuição do valor da resistência do dispositivo. Tal estado do memristor é conhecido como "ON", ou baixa resistência. %% Stanley fala isso na palestra, procurar documento que tem oq ele diz na forma de artigo fácil de entender
+A parte constituída por $TiO_2$ é conhecida como a parte pura(ou não dopada) e a parte deficiente em oxigênio é conhecida como a parte dopada. Ao se aplicar uma tensão elétrica positiva 
+no terminal dopado, as lacunas (onde falta oxigênio) se comportam como cargas positivas e "migram" para o outro lado, ou seja, cargas negativas se deslocam para a parte dopada. Dessa 
+forma, a espessura da camada intermediária diminui, ao mesmo tempo que a espessura da camada condutora aumenta, o que resulta na diminuição do valor da resistência do dispositivo. Tal 
+estado do memristor é conhecido como "ON", ou baixa resistência. %% Stanley fala isso na palestra, procurar documento que tem oq ele diz na forma de artigo fácil de entender
 
-Por outro lado, ao se aplicar uma tensão negativa no terminal dopado, as lacunas são "atraídas", ou seja, a espessura da camada intermediária aumenta, ao mesmo tempo que a espessura da camada condutora diminui, causando um aumento no valor da resistência do memristor. Tal estado é conhecido como "OFF", ou alta resistência. 
+Por outro lado, ao se aplicar uma tensão negativa no terminal dopado, as lacunas são "atraídas", ou seja, a espessura da camada intermediária aumenta, ao mesmo tempo que a espessura 
+da camada condutora diminui, causando um aumento no valor da resistência do memristor. Tal estado é conhecido como "OFF", ou alta resistência. 
 
-Ainda pode-se analisar o comportamento do memristor nos momentos em que não há aplicação de tensão elétrica, ou seja, quando a fonte de alimentação for desligada. Nesta situação, as camadas pura e dopada permanecem no mesmo estado que estavam anteriormente. Assim, no momento em que uma tensão for aplicada, a memristência começa do ponto em que tinha estacionado antes. %% no momento == quando
+Ainda pode-se analisar o comportamento do memristor nos momentos em que não há aplicação de tensão elétrica, ou seja, quando a fonte de alimentação for desligada. Nesta situação, as 
+camadas pura e dopada permanecem no mesmo estado que estavam anteriormente. Assim, no momento em que uma tensão for aplicada, a memristência começa do ponto em que tinha 
+estacionado antes. %% no momento == quando
 
-Assim, o princípio básico do funcionamento de um memristor é a mudança de posição dos átomos quando sofre influência de uma tensão elétrica, processo que é facilitado por ocorrer em escala nanométrica. %% por que?
+Assim, o princípio básico do funcionamento de um memristor é a mudança de posição dos átomos quando sofre influência de uma tensão elétrica, processo que é facilitado por ocorrer em 
+escala nanométrica. %% por que? equacao 1/D^2
 
 \section{Fundamentos Matemáticos}\label{analise-matematica}
-O \emph{memristor}, a princípio, em 1971, foi definido por Chua \cite{artigo} como elemento de circuito de duplo-terminal caracterizado pela relação do tipo $g(\varphi, q)=0$. Diz-se que um memristor é controlado por carga se a relação entre fluxo e carga é expressa como uma função de carga elétrica $q$, e diz-se que é controlado por fluxo se é expressa em função do $\varphi$. Para um memristor controlado por carga tem-se:
+O \emph{memristor}, a princípio, em 1971, foi definido por Chua \cite{artigo} como elemento de circuito de duplo-terminal caracterizado pela relação do tipo $g(\varphi, q)=0$. Diz-se que 
+um memristor é controlado por carga se a relação entre fluxo e carga é expressa como uma função de carga elétrica $q$, e diz-se que é controlado por fluxo se é expressa em função do 
+fluxo $\varphi$. Para um memristor controlado por carga tem-se a Equação (\ref{mem-charge}) e derivando-se ambos os termos consegue-se a Equação (\ref{derivate-q}).
 
 \begin{equation}\label{mem-charge}
 \varphi = f(q)
 \end{equation}
 
-Derivando ambos os termos da Equação (\ref{mem-charge}):
-
+%Derivando ambos os termos da Equação (\ref{mem-charge}):
 \begin{equation}\label{derivate-q}
 \dfrac{d\varphi}{dt}=\dfrac{f(q)}{dq} \ \dfrac{dq}{dt}
 \end{equation}
+\vspace{0.1cm}
 
-Sabendo-se ainda que $v(t)=\dfrac{d\varphi}{dt}$ e $i(t)=\dfrac{dq}{dt}$, reescreve-se a Equação (\ref{derivate-q}) como:
+Sabendo-se ainda que $v(t)=\dfrac{d\varphi}{dt}$ e $i(t)=\dfrac{dq}{dt}$ descrevem, respectivamente, a tensão e corrente elétrica no memristor, 
+reescreve-se a Equação (\ref{derivate-q}) como:
 
 \begin{gather}\label{derivate-q}
 v(t)=M(q)\ i(t)
-
-\noindent \text{onde $M(q) =\dfrac{df(q)}{dq}$}.
 \end{gather}
 
-%pela relação $d\varphi=M dq$, da qual equivalentemente tem-se $v=M(q)i$.
-%, na qual tem-se que a \emph{memristência} $M$ é mensurada na mesma unidade que a resistência. 
-Entretanto, a simples relação é incapaz de descrever o dispositivo completamente, diante disso, a equipe HP Laboratories observou que seriam necessárias essencialmente duas equações: Equações (\ref{eq01}) e (\ref{eq02}), sendo que a Equação (\ref{eq02}) abrange o aspecto físico do componente, já apresentado na Seção \ref{funcionamento-estrutural}.
+\begin{flalign} \label{M}
+\text{onde\qquad} M(q) &=\dfrac{df(q)}{dq}.&
+\end{flalign}
+
+$M$ é chamada de \textit{memristência}, e é mensurada na mesma unidade que a resistência (\textit{Ohms} - $\Omega$). A memristência, definida pela Equação (\ref{M}), define uma relação linear entre tensão e corrente, enquanto a carga for constante. Logo se $M$ é constante, o memristor comporta-se como um resistor.
+
+Para um memristor controlado por fluxo tem-se a Equação (\ref{mem-flux}) e derivando-se ambos os termos, a Equação (\ref{derivate-phi}).
+
+\begin{equation}\label{mem-flux}
+q = f(\varphi)
+\end{equation}
+
+\begin{equation}\label{derivate-phi}
+\dfrac{dq}{dt}=\dfrac{f(\varphi)}{d\varphi} \ \dfrac{d\varphi}{dt}
+\end{equation}
+\vspace{0.1cm}
+
+Reescrevendo a Equação (\ref{derivate-q}) utilizando-se as definições de tensão e corrente tem-se:
+
+\begin{gather}\label{derivate-q}
+i(t)=W(\varphi)\ v(t)
+\end{gather}
+
+\begin{flalign} \label{M}
+\text{onde\qquad} W(\varphi) &=\dfrac{df(\varphi)}{d\varphi}.&
+\end{flalign}
+
+Então, $W$ é chamado de \textit{memductância} e tem mesma unidade da condutância (\textit{Siemens} - $S$).
+
+Entretanto, a relação não abrange a propriedade de memória do dispositivo, o que levou Chua juntamente com seu aluno de graduação Kang \cite{1976}, em 1976, a reconhecer que, enfaticamente, o \emph{memristor} seria um componente passivo com \emph{estado}, ou seja é um componente cuja propriedade de memória é definida por um ou mais \emph{variáveis de estado}.
+Diante disso, a equipe HP Laboratories modelou matematicamente um \emph{memristor}, essencialmente, a partir de duas equações (Equações (\ref{eq01}) e (\ref{eq02})), sendo que a Equação (\ref{eq02}) considera a interação física intrínseca do componente por meio da variável de estado $w$.
 
 \begin{equation}\label{eq01}
 v=M( w) \ i
@@ -180,7 +217,18 @@ COMPUTAÇÃO PARALELA”, Escola Politécnica da Universidade de São Paulo, Dep
     L. Chua,
     “Memristor - the missing circuit element”, 
     in \emph{IEEE Transactions on circuit theory}, VOL. CT-18, NO. 5, Setembro 1971.
-    
+ 
+\bibitem{1976}	
+    L. Chua, S. M. Kang,
+    “Memristive devices and systems”, 
+    in \emph{Proceedings IEEE}, 1976, vol. CT-18, no. 5, pp. 507-519.
+   
+\bibitem{nature}	
+     D.B. Strukov, G.S. Snider, D.R. Stewart,  R.S Williams, 
+"The missing memristor found", 
+\emph{Nature}, 2008, 1 May 2008, vol. 453, pp. 80-83.
+
+
 \begin{comment}
 \bibitem{cibelly1}	
     D. Biolek, Z. Biolek, and V. Biolková, “\uppercase{SPICE modeling of memristive,
