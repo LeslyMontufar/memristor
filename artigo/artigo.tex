@@ -26,7 +26,7 @@
 
 \begin{multicols}{2}
 
-\textbf{\emph{Resumo} - Um estudo sobre o comportamento do quarto elemento de circuito fundamental idealizado por Leon Chua em 1971 e implementado primeiramente pela equipe da HP Labs liderada por Stanley Williams em 2008 é apresentado. Chamado de \emph{memristor}, o novo elemento de circuito passivo de duplo terminal relaciona as variáveis de carga $q(t)=\int_{-\infty}^t i(\tau)\, d\tau$ e fluxo $\varphi(t)=\int_{-\infty}^t v(\tau)\, d\tau$ e comporta-se como um resistor não-linear com memória. Sua propriedade peculiar advém da capacidade do material de manter seu último estado, e permite aplicações em diversos contextos, como em memórias ReRam e inteligência artificial.} %% aplicacoes a completar
+\textbf{\emph{Resumo} - Um estudo sobre o comportamento do quarto elemento de circuito fundamental idealizado por Leon Chua em 1971 e implementado primeiramente pela equipe da \emph{HP Labs} liderada por R. Stanley Williams em 2008 é apresentado. Chamado de \emph{memristor}, o novo elemento de circuito passivo de duplo terminal relaciona as variáveis de carga $q(t)=\int_{-\infty}^t i(\tau)\, d\tau$ e fluxo $\varphi(t)=\int_{-\infty}^t v(\tau)\, d\tau$ e comporta-se como um resistor não-linear com memória. Sua propriedade peculiar advém da capacidade do material de manter seu último estado, e permite aplicações em diversos contextos, como em memórias ReRam e inteligência artificial.} %% aplicacoes a completar
 \vspace*{10pt}
 
 \textbf{\emph{Palavras-Chave} - Inteligência Artificial, Memórias ReRam, Memristor.}
@@ -38,7 +38,7 @@
 \noindent\textbf{\large \uppercase{Physicochemical and Mathematical Foundations of a Memristor}}
 \end{center}
 
-\textbf{\emph{Abstract} - A study of the behavior of the fourth fundamental circuit element devised by Leon Chua in 1971 and first implemented by the HP Labs team led by Stanley Williams in 2008 is presented. Called \emph {memristor}, the new two-terminal passive circuit element lists the variables of charge $q(t)=\int_{-\infty}^t i(\tau)\, d\tau$ and flux $\varphi(t)=\int_{-\infty}^t v(\tau)\, d\tau$ and behaves like a nonlinear resistor with memory. Its peculiar property comes from the material's ability to maintain its last state, and allows applications in various contexts, such as ReRam memories and artificial intelligence.}
+\textbf{\emph{Abstract} - A study of the behavior of the fourth fundamental circuit element devised by Leon Chua in 1971 and first implemented by the \emph{HP Labs} team led by R. Stanley Williams in 2008 is presented. Called \emph {memristor}, the new two-terminal passive circuit element lists the variables of charge $q(t)=\int_{-\infty}^t i(\tau)\, d\tau$ and flux $\varphi(t)=\int_{-\infty}^t v(\tau)\, d\tau$ and behaves like a nonlinear resistor with memory. Its peculiar property comes from the material's ability to maintain its last state, and allows applications in various contexts, such as ReRam memories and artificial intelligence.}
 \vspace*{10pt}
 
 \textbf{\emph{Keywords} - Artificial Intelligence, Memristor, ReRam memories.}
@@ -46,17 +46,19 @@
 
 \section{Introdução}
 %% completar com a palestra de R. Stanley Williams
-A teoria de circuitos elétricos abrangia, há 150 anos, basicamente três componentes passivos fundamentais: o capacitor (1745), o resistor (1827) e o indutor (1831). No entanto, em 1971, o professor phD da Universidade da Califórnia, Leon Chua, apresentou novas considerações a partir da análise de possíveis combinações entre as quatro variáveis fundamentais de circuitos: corrente elétrica $i$, tensão elétrica $v$, carga $q$ e fluxo magnético $\varphi$ – sendo as duas últimas descritas como integrais no tempo da corrente mediante $q(t)=\int_{-\infty}^t i(\tau)\, d\tau$ e da tensão, $\varphi(t)=\int_{-\infty}^t v(\tau)\, d\tau$, respectivamente.
+A teoria de circuitos elétricos, há 150 anos, abrangia basicamente três componentes passivos fundamentais: o capacitor (1745), o resistor (1827) e o indutor (1831). No entanto, em 1971, o professor phD da Universidade da Califórnia, Leon Chua, apresentou novas considerações a partir da análise das possíveis combinações entre as quatro variáveis fundamentais de circuitos: corrente elétrica $i$, tensão elétrica $v$, carga elétrica $q$ e fluxo magnético $\varphi$ – sendo as duas últimas descritas como integrais no tempo da corrente, $q(t)=\int_{-\infty}^t i(\tau)\, d\tau$, e da tensão, $\varphi(t)=\int_{-\infty}^t v(\tau)\, d\tau$, respectivamente.
 
-Chua observou que o capacitor é definido pela relação entre carga $q(t)$ e tensão $v(t)$ via $qd=C dv$. Similarmente, o resistor pela relação entre a corrente $i(t)$ e tensão $v(t)$ via $dv=R di$, e o indutor pela relação entre o fluxo magnético $\varphi(t)$ e a corrente $i(t)$ via $d\varphi(t)=L di$. Teria-se então que a combinação das quatro variáveis fundamentais de circuitos resultaria em somente três componentes fundamentais passivos. Desse modo, baseando-se no argumento de simetria, o estudioso postulou que haveria um elemento de circuito faltante capaz de associar a carga $q(t)$ e o fluxo magnético $\varphi(t)$, o que o levou, em 1971, a publicar um artigo no qual idealiza um novo componente, definido pela relação $d\varphi=M dq$ e denominado de \emph{memristor}, uma contração de \emph{memory resistor} \cite{artigo}. 
+Chua observou que o capacitor é definido pela relação entre carga $q(t)$ e tensão $v(t)$ via $qd=C dv$. Similarmente, o resistor pela relação entre corrente $i(t)$ e tensão $v(t)$ via $dv=R di$, e o indutor pela relação entre fluxo magnético $\varphi(t)$ e corrente $i(t)$ via $d\varphi(t)=L di$. Teria-se então que a combinação das quatro variáveis fundamentais de circuitos resultaria em somente três componentes fundamentais.
+% passivos.
+Desse modo, baseando-se no argumento da simetria, o estudioso postulou que haveria um elemento de circuito faltante, capaz de associar a carga $q(t)$ e o fluxo magnético $\varphi(t)$, o que o levou, em 1971, a publicar um artigo no qual idealiza o novo componente, definido pela relação $d\varphi=M dq$ e que denominou \emph{memristor}, uma contração de \emph{memory resistor} \cite{artigo}. 
 
 %, em português \emph{resistor com memória} 
-Portanto, considerado como o quarto elemento fundamental dos circuitos eletrônicos, ao lado do capacitor, resistor e indutor, o \emph{memristor} destaca-se por apresentar uma propriedade peculiar, cuja explanação e abordagem teórica é tratada adiante. Assim como um resistor não-linear, é definido como um componente eletrônico passivo de duplo terminal utilizado para limitar a corrente em um circuito e dissipar energia térmica, entretanto, para o \emph{memristor}, essa limitação, chamada de resistência ou impedância, além de se alterar conforme a quantidade de carga elétrica que flui em si, mantém o valor da última resistência obtida até a aplicação de nova carga.
+Portanto, considerado como o quarto elemento fundamental dos circuitos eletrônicos, ao lado do capacitor, resistor e indutor, o \emph{memristor} destaca-se por apresentar uma propriedade peculiar, cuja explanação e abordagem teórica é tratada adiante. É definido, assim como um resistor, como um componente eletrônico passivo de duplo terminal, utilizado para limitar a corrente em um circuito e dissipar energia térmica, com o diferencial de que, para o \emph{memristor}, essa limitação, chamada de resistência ou impedância, alterar-se conforme a quantidade de carga elétrica que flui em si e mantém o valor da última resistência obtida até a aplicação de nova carga.
 
-Apesar da proposta teórica do \emph{memristor} ter sido apresentada por Chua em 1971, sua primeira implementação prática ocorreu apenas em 2008, nos \emph{Laboratórios da Hewllet-Packard} (\emph{HP}), graças à equipe liderada pelo físico-químico Dr. Richard Stanley Williams, que desenvolveu linhas de memristores com base em dióxido de titânio ($TiO_2$) em escala nanométrica \cite{nature}. A demora deve-se, principalmente, à dificuldade em encontrar materiais que fossem capazes de conferir a propriedade de reter memória ao dispositivo eletrônico e satisfazer a base teórica apresentada por Chua \cite{artigo}.
-Dessa forma, o componente recentemente sintetizado apresenta a propriedade da não-volatilidade, que, aliada a possibilidade de ser trabalhado em escala nanométrica, o torna promissor em aplicações e garante sua contribuição na validação da Lei de Moore.
+Apesar da proposta teórica do \emph{memristor} ter sido apresentada por Chua em 1971, sua primeira implementação prática ocorreu apenas em 2008, nos \emph{Laboratórios da Hewllet-Packard} (\emph{HP}), graças à equipe liderada pelo físico-químico Dr. Richard Stanley Williams, que desenvolveu linhas de memristores com base no dióxido de titânio ($TiO_2$) em escala nanométrica \cite{nature}. A demora deve-se, principalmente, à dificuldade em encontrar materiais que fossem capazes de conferir a propriedade de reter memória ao dispositivo eletrônico e que satisfizessem a base teórica apresentada por Chua \cite{artigo}.
+Dessa forma, o componente recentemente sintetizado contém a propriedade da não-volatilidade, que, aliada a possibilidade de ser trabalhado em escala nanométrica, o torna promissor em aplicações e garante sua contribuição na validação da Lei de Moore.
 
-Pissardini \cite{memcomputacao} atenta para aplicações de memelementos na elaboração de novas arquiteturas computacionais, que, corroborado pelos ideais da Arquitetura de Von Neumann, são capazes de realizar tarefas específicas. 
+Pissardini \cite{memcomputacao} atenta para aplicações de \emph{memelementos} na elaboração de novas arquiteturas computacionais, que, corroborado pelos ideais da Arquitetura de Von Neumann, são capazes de realizar tarefas específicas. Essa abordagem tem sido conhecida como \emph{memcomputação}.
 %% que tarefas? não sei
 
 %% completar paragrafo de aplicacoes:
@@ -66,7 +68,7 @@ Pissardini \cite{memcomputacao} atenta para aplicações de memelementos na elab
 %% Computacao neuromorfica, AI, redes neurais CNN
 %% Termistores - proposto primeiramente por Chua
 
-Sob essa perspectiva, a temática deste artigo basear-se-á na descrição detalhada desse novo componente, nos âmbito físico, químico, eletrônico e matemático, com intuito de compreender como o mecanismo interno converge para as propriedades impostas a um elemento \emph{memristor} por Chua. É de interesse ainda discutir acerca de aplicabilidades do dispositivo, para assim poder expor o impacto de sua descoberta na teoria de circuitos e importância para o crescimento tecnológico. %% eletronico com SPICE
+Sob essa perspectiva, a temática deste artigo basear-se-á na descrição detalhada desse novo componente, nos âmbito físico, químico, eletrônico e matemático, com intuito de compreender como o mecanismo interno converge para as propriedades impostas,  por Chua, a um dispositivo \emph{memristor}. É de interesse ainda discutir acerca das aplicabilidades do dispositivo, para assim poder expor o impacto de sua descoberta na teoria de circuitos e importância para o crescimento tecnológico. %% eletronico com SPICE
 %% se formos acrescentar mais alguma coisa como circuito LTSpice.
 %% depende das aplicacoes
 
@@ -76,10 +78,10 @@ Na Seção \ref{estrutura} são apresentadas as características estruturais, f�
 %% precisa colocar imagem pequena para explicar que a propriedade do memristor deve-se basicamente à redistribuição das lacunas(+) devido à deficiencia em oxigenio.
 %% de preferencia a msm imagem do R. Stanley Williams
 \section{Características estruturais de um memristor} \label{estrutura}
-Dispositivos de resistência variável com base em óxidos 
-possuem vasta aplicabilidade devido à capacidade de reter memória, como são definidos os \emph{memristores}, uma vez que
+Dispositivos de resistência variável baseados em óxidos 
+possuem vasta aplicabilidade, devido à capacidade de reter memória, pois
 admitem características de alta velocidade, alta densidade e operação em baixa energia, 
-assim como a não-volatilidade, do que se conclui que o dispositivo possui certa estabilidade no armazenamento da última resistência obtida \cite{conceito}. 
+assim como a não-volatilidade \cite{conceito}. Desse modo, os materiais óxidos são ideiais para a criação de um \emph{memristor}, sendo recentemente utilizados óxidos de titânio e tântalo ($TiO_x$, $TaO_x$)\cite{us}.
 
 \begin{figure}[H]
 \centering
