@@ -63,7 +63,7 @@ Portanto, considerado como o quarto elemento fundamental dos circuitos eletrôni
 Apesar da proposta teórica do \emph{memristor} ter sido apresentada por Chua em 1971, sua primeira implementação prática ocorreu apenas em 2008, nos \emph{Laboratórios da Hewllet-Packard} (\emph{HP}), graças à equipe liderada pelo físico-químico Dr. Richard Stanley Williams, que desenvolveu linhas de memristores com base no dióxido de titânio ($TiO_2$) em escala nanométrica \cite{nature}. A demora deve-se, principalmente, à dificuldade em encontrar materiais que fossem capazes de conferir a propriedade de reter memória ao dispositivo eletrônico e que satisfizessem a base teórica apresentada por Chua \cite{artigo}.
 Dessa forma, o componente recentemente sintetizado contém a propriedade da não-volatilidade, que, aliada a possibilidade de ser trabalhado em escala nanométrica, o torna promissor em aplicações e garante sua contribuição na validação da Lei de Moore.
 
-Pissardini \cite{memcomputacao} atenta para aplicações de \emph{memelementos} na elaboração de novas arquiteturas computacionais, que, corroborado pelos ideais da Arquitetura de Von Neumann, são capazes de realizar tarefas específicas. Essa abordagem tem sido conhecida como \emph{memcomputação}, que, ao contrário dos modelos convencionais, propõe que seja possível processar e armazenar dados no mesmo dispositivo (elemento físico), o qual seria o memristor em si. Prezioso \cite{rneurais} propõe que existem também aplicações de memristores e de memelementos nas chamadas redes neurais, as quais são sistemas que se baseiam em princípios de Inteligência Artificial, podendo aprender e reconhecer padrões, e que podem ser aprimoradas com o uso da memresistência. Dong e Qi \cite{chines}, em seu artigo acerca de circuitos lógicos,
+Pissardini \cite{memcomputacao} atenta para aplicações de \emph{memelementos} na elaboração de novas arquiteturas computacionais, que, corroborado pelos ideais da Arquitetura de Von Neumann, são capazes de realizar tarefas específicas. Essa abordagem tem sido conhecida como \emph{memcomputação}, que, ao contrário dos modelos convencionais, propõe que seja possível processar e armazenar dados no mesmo dispositivo (elemento físico), o qual seria o memristor em si. Prezioso \cite{rneurais} propõe que existem também aplicações de memristores e de memelementos nas chamadas redes neurais, as quais são sistemas que se baseiam em princípios de Inteligência Artificial, podendo aprender e reconhecer padrões, e que podem ser aprimoradas com o uso da memresistência devido ao caráter de não-volatilidade dos memristores. Dong e Qi \cite{chines}, em seu artigo acerca de circuitos lógicos, analisam a importância de memristores 
 
 
 %% que tarefas? não sei
@@ -152,7 +152,7 @@ fluxo $\varphi$. Para um memristor controlado por carga tem-se a Equação (\ref
 \vspace{0.1cm}
 
 Sabendo-se ainda que $v(t)=\dfrac{d\varphi}{dt}$ e $i(t)=\dfrac{dq}{dt}$ descrevem, respectivamente, a tensão e corrente elétrica no memristor, 
-reescreve-se a Equação (\ref{derivate-q}) como na Equação (\ref{derivate-q}) 
+reescreve-se a Equação (\ref{derivate-q}) como na Equação (\ref{M}) 
 
 \begin{gather}\label{vMi}
 v(t)=M(q)\ i(t)
@@ -176,9 +176,9 @@ q = f(\varphi)
 \end{equation}
 \vspace{0.1cm}
 
-Reescrevendo a Equação (\ref{derivate-q}) utilizando-se as definições de tensão e corrente tem-se:
+Reescrevendo a Equação (\ref{derivate-phi}) utilizando-se as definições de tensão e corrente tem-se a  Equação (\ref{}).
 
-\begin{gather}\label{derivate-q}
+\begin{gather}\label{}
 i(t)=W(\varphi)\ v(t)
 \end{gather}
 
@@ -214,23 +214,23 @@ v=M(w, i)i
 
 \subsection{Modelo de Deriva Linear}
 Continuacao:
-\begin{equation}\label{derivate-q}
+\begin{equation}\label{}
 M(w)=\dfrac{w}{D}R_{ON}+\Big(1 - \dfrac{w}{D}\Big) R_{OFF}
 \end{equation}
 
-\begin{equation}\label{derivate-q}
+\begin{equation}\label{}
 \dfrac{dw}{dt}=v_D \text{given by}=\dfrac{\mu_D R_{ON}}{D}i(t)
 \end{equation}
 
 Integrando-se: divide por D...
-\begin{equation}\label{derivate-q}
+\begin{equation}\label{}
 \dfrac{w(t)}{D}=\dfrac{w_0}{D}+\dfrac{\mu_D R_{OFF}}{D^2}q(t)
 \end{equation}
 
-\begin{equation}\label{derivate-q}
+\begin{equation}\label{}
 \dfrac{w(t)}{D}=\dfrac{w_0}{D}+\dfrac{q(t)}{Q_D}
 \end{equation}
-\begin{equation}\label{derivate-q}
+\begin{equation}\label{}
 x(t)=x(t_0)+\dfrac{q(t)}{Q_D}
 \end{equation}
 
@@ -240,7 +240,7 @@ M(t)=R_{ON}\ x(t)+ R_OFF(1-x(t))
 \end{equation}
 
 t=0 inicio do gather!!!
-\begin{align}\label{derivate-q}
+\begin{align}\label{}
 M_0&=R_{ON}\ x(t_0)+ R_OFF(1-x(t_0))&\\
     &=R_{ON}\Bigg( x(t_0)+ \dfrac{R_{OFF}}{R_{ON}} (1-x(t_0))\Bigg)&\\
     &=R_{ON}\Bigg( x(t_0)+ \dfrac{R_{OFF}}{R_{ON}} (1-x(t_0))\Bigg)&\\
@@ -252,37 +252,37 @@ Substitui x(t) em M(x) = ...
 M(q)=R_{OFF}\Bigg( 1-\dfrac{q(t)}{Q_D}\Bigg)
 \end{equation}
 
-\begin{equation}\label{derivate-q}% essa direto
+\begin{equation}\label{}% essa direto
 M(q)=M_0-\Delta R\Bigg(\dfrac{q(t)}{Q_D}\Bigg)
 \end{equation}
 
 Substitui na relacao geral:
-\begin{equation}\label{derivate-q}
+\begin{equation}\label{}
 v(t)=\bigg(M_0-\Delta R\Big(\dfrac{q(t)}{Q_D}\Big)\bigg)\dfrac{dq}{dt} = \dfrac{d}{dt} \bigg(M_0 q-\dfrac{\Delta R\ q^2(t)}{2 Q_D}\bigg)
 \end{equation}
 
 Integra e báskara e usa M=dphi/dq:
-\begin{equation}\label{derivate-q}
+\begin{equation}\label{}
 q(t)=\dfrac{Q_D\ M_0}{\Delta R}\Bigg(1\pm\sqrt{1-\dfrac{2\, \Delta R}{Q_D\ M^2_0}\varphi(t)}\Bigg)
 \end{equation} 
 
 Aproximacoes:
-\begin{equation}\label{derivate-q}
+\begin{equation}\label{}
 q(t)=Q_D\Bigg(1-\sqrt{1-\dfrac{2}{Q_D\ R_{OFF}}\varphi(t)}\Bigg)
 \end{equation} 
 
 Estado inrerno do memristor:
 % ... operações com align
-\begin{equation}\label{derivate-q}
+\begin{equation}\label{}
 x(t)=1-\sqrt{1-\dfrac{2\mu_D}{r\; D^2}\varphi(t)}
 \end{equation} 
 
 Assim: escala nanometrica!
-\begin{equation}\label{derivate-q}
+\begin{equation}\label{}
 M(q)=R_{OFF}\Bigg(\sqrt{1-\dfrac{2\mu_D}{r\; D^2}\varphi(t) }\Bigg)
 \end{equation}
 
-\begin{equation}\label{derivate-q}
+\begin{equation}\label{}
 i(t)=\dfrac{v(t)}{R_{OFF}\Bigg(\sqrt{1-\dfrac{2\mu_D}{r\; D^2}\varphi(t) }\Bigg)}
 \end{equation} 
 
@@ -412,7 +412,6 @@ A. Martins, "ReRAM - A próxima geração de memórias e CPU’s", 2010. Dispon�
 
 
 \end{thebibliography}
-
 
 
 \end{multicols}
