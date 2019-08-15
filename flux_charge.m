@@ -68,10 +68,10 @@ ylabel('corrente i(t)');
 legend('w_0','2 w_0');
 
 
-##
-##figure(4)
-##plot(t, i, 'LineWidth', 2);
-##title('Time-current-voltage curve');
-##grid on;
-##xlabel('tempo');
-##ylabel('fluxo');
+
+figure(4)
+plot(t, i, 'LineWidth', 2);
+title('Time-current-voltage curve');
+grid on;
+xlabel('tempo');
+ylabel('fluxo');
