@@ -60,7 +60,7 @@ Desse modo, baseando-se no argumento da simetria, o estudioso postulou que haver
 %, em português \emph{resistor com memória} 
 Portanto, considerado como o quarto elemento fundamental dos circuitos eletrônicos, ao lado do capacitor, resistor e indutor, o \emph{memristor} destaca-se por apresentar uma propriedade peculiar, cuja explanação e abordagem teórica é tratada adiante. É definido, assim como um resistor, como um componente eletrônico passivo de duplo terminal, utilizado para limitar a corrente em um circuito e dissipar energia térmica, com o diferencial de que, para o \emph{memristor}, essa limitação, chamada de resistência ou impedância, alterar-se conforme a quantidade de carga elétrica que flui em si e mantém o valor da última resistência obtida até a aplicação de nova carga.
 
-Apesar da proposta teórica do \emph{memristor} ter sido apresentada por Chua em 1971, sua primeira implementação prática ocorreu apenas em 2008, nos \emph{Laboratórios da Hewllet-Packard} (\emph{HP}), graças à equipe liderada pelo físico-químico Dr. Richard Stanley Williams, que desenvolveu linhas de memristores com base no dióxido de titânio ($TiO_2$) em escala nanométrica \cite{nature}. A demora deve-se, principalmente, à dificuldade em encontrar materiais que fossem capazes de conferir a propriedade de reter memória ao dispositivo eletrônico e que satisfizessem a base teórica apresentada por Chua \cite{artigo}.
+Apesar da proposta teórica do \emph{memristor} ter sido apresentada por Chua em 1971, sua primeira implementação prática ocorreu apenas em 2008, nos \emph{Laboratórios da Hewllet-Packard} (\emph{HP}), graças à equipe liderada pelo físico-químico Dr. Richard Stanley Williams, que desenvolveu em escala nanométrica linhas de memristores com base no dióxido de titânio ($TiO_2$) \cite{nature}. A demora deve-se, principalmente, à dificuldade em encontrar materiais capazes de conferir a propriedade de reter memória ao dispositivo eletrônico e que satisfizessem a base teórica apresentada por Chua \cite{artigo}.
 Dessa forma, o componente recentemente sintetizado contém a propriedade da não-volatilidade, que, aliada a possibilidade de ser trabalhado em escala nanométrica, o torna promissor em aplicações e garante sua contribuição na validação da Lei de Moore.
 
 Pissardini \cite{memcomputacao} atenta para aplicações de \emph{memelementos} na elaboração de novas arquiteturas computacionais, que, corroborado pelos ideais da Arquitetura de Von Neumann, são capazes de realizar tarefas específicas. Essa abordagem tem sido conhecida como \emph{memcomputação}, que, ao contrário dos modelos convencionais, propõe que seja possível processar e armazenar dados no mesmo dispositivo (elemento físico), o qual seria o memristor em si. Prezioso et al. \cite{rneurais} propõe que existem também aplicações de memristores e de memelementos nas chamadas redes neurais, as quais são sistemas que se baseiam em princípios de Inteligência Artificial, podendo aprender e reconhecer padrões, e que podem ser aprimoradas com o uso da memresistência devido ao caráter de não-volatilidade dos memristores. Dong et al. \cite{chines}, em seu artigo acerca de circuitos lógicos, analisam a importância de memristores para otimizar
@@ -183,14 +183,14 @@ v=M(w, i)i
 \end{equation}
 \vspace{0.05cm}
 
-Assim, a definição matemática rigorosa revela que, conforme a Equação (\ref{sm1}), a \emph{memristência} $M$ depende do estado do dispositivo, que por sua vez, conforme a Equação (\ref{sm2}), varia com o tempo como integral da função contínua de corrente $f$. Uma representação física da variável de estado $w$ é ilustrada na Figura \ref{w}, a qual descreve o memristor como associação de duas resistências em série, a $R_{ON}$ e $R_{OFF}$. Nessa Figura é representado, em especial, o primeiro modelo publicado pela equipe da \emph{HP Labs} \cite{nature}, no qual o transporte dos portadores de carga ocorre pelo \emph{Modelo de Deriva Linear}, que será explicado a seguir utilizando parâmetros padrão como base, de acordo com solução proposta pela \emph{HP}, para as simulações da Seção \ref{sim}.
+Assim, a definição matemática rigorosa revela que, conforme a Equação (\ref{sm1}), a \emph{memristência} $M$ depende do estado do dispositivo, que por sua vez, conforme a Equação (\ref{sm2}), varia com o tempo como integral da função contínua de corrente $f$. Uma representação física da variável de estado $w$ é ilustrada na Figura \ref{w}, a qual descreve o memristor como associação de duas resistências em série, $R_{ON}$ e $R_{OFF}$. Nessa Figura é representado, em especial, o primeiro modelo publicado pela equipe da \emph{HP Labs} \cite{nature}, no qual o transporte dos portadores de carga ocorre pelo \emph{Modelo de Deriva Linear}, que será explicado a seguir utilizando parâmetros padrão como base, de acordo com solução proposta pela \emph{HP}, para as simulações da Seção \ref{sim}.
 
 Para o \emph{Modelo de Deriva Linear}, é primeiramente suposto um campo elétrico uniforme através do dispositivo. Portanto existe uma relação linear entre a velocidade de deriva-difusão e o campo elétrico líquido. Assim, a memristência $M(w)$ define-se como na Equação (\ref{Mw}) e a relação geral para o movimento das nanopartículas positivas que era dado como $v=\mu\, E$ será como na Equação (\ref{vD}), sendo a mobilidade $\mu_D \sim 10^{-10} cm^2/V.s$, o comprimento do memristor utilizado $D\sim10nm$, $R_{ON}\sim 100\Omega$, $R_{OFF}\sim 16K\Omega$ e portanto $\Delta R = (R_{OFF} - R_{ON}) \approx R_{OFF}$ para a modelagem nos parâmetros do memristor sintetizado pela \emph{HP}.
 
 %\subsection{Modelo de Deriva Linear}
 \vspace{0.05cm}
 \begin{equation}\label{Mw}
-M(w)=\dfrac{w}{D}R_{ON}+\Big(1 - \dfrac{w}{D}\Big) R_{OFF}
+M(w)=\dfrac{w}{D}\, R_{ON}+\Big(1 - \dfrac{w}{D}\Big)\, R_{OFF}
 \end{equation}
 
 \begin{equation}\label{vD}
@@ -224,6 +224,7 @@ M(t)=R_{ON}\ x(t)+ R_{OFF}(1-x(t))
 Em $t_0$, define-se ainda $M_0$, dado pela Equação (\ref{t0}), em que $r=R_{OFF}/R_{ON}$. Logo, substituindo (\ref{xt}) em (\ref{Mw}) tem-se (\ref{M:M0}) ou (\ref{M:ROFF}), já que para $R_{OFF}\gg R_{ON}$, tem-se que $M_0\approx R_{OFF}$.
 \vspace{0.05cm}
 
+\begin{comment}
 \begin{equation*}
 M_0=R_{ON}\ x(t_0)+ R_{OFF}(1-x(t_0))
 \end{equation*}
@@ -231,6 +232,8 @@ M_0=R_{ON}\ x(t_0)+ R_{OFF}(1-x(t_0))
 \begin{equation*}
     M_0=R_{ON}\bigg( x(t_0)+ \dfrac{R_{OFF}}{R_{ON}} (1-x(t_0))\bigg)
 \end{equation*}
+\end{comment}
+
 
 \begin{equation}\label{t0}
 M_0  =R_{ON}\big( x(t_0)+ r\ (1-x(t_0))\big)
@@ -248,7 +251,7 @@ M(q)=R_{OFF}\bigg( 1-\dfrac{q(t)}{Q_D}\bigg)
 Subsituindo (\ref{M:M0}) em (\ref{vMi}) tem-se que a tensão $v(t)$ é dada pela Equação (\ref{dt}) e integrando no tempo, sabendo que $\varphi(t)=\int_{-\infty}^t v(\tau)\, d\tau$ e $M(q)=d\varphi/dq$,  consegue-se definir $q(t)$ como na Equação (\ref{qt}), a partir das raízes da equação quadrática resultante.
 
 \begin{equation}\label{dt}
-v(t)=\Big(M_0-\Delta \, R\Big(\dfrac{q(t)}{Q_D}\Big)\Big)\dfrac{dq}{dt} = \dfrac{d}{dt} \Big(M_0\, q-\dfrac{\Delta R\ q^2(t)}{2 Q_D}\Big)
+v(t)=\Big(M_0-\Delta \, R\Big(\dfrac{q(t)}{Q_D}\Big)\Big)\dfrac{dq}{dt} = \dfrac{d}{dt} \Big(M_0\, q-\dfrac{\Delta R\, q^2(t)}{2 Q_D}\Big)
 \end{equation}
 
 \begin{equation}\label{qt}
@@ -256,7 +259,7 @@ q(t)=\dfrac{Q_D\ M_0}{\Delta R}\Bigg(1\pm\sqrt{1-\dfrac{2\, \Delta R}{Q_D\ M^2_0
 \end{equation} 
 \vspace{0.05cm}
 
-Utilizando-se novamente que $\Delta R \approx M_0 \approx R_{OFF}$, a Equação (\ref{qt}) resulta na (\ref{q}).
+Utilizando-se novamente que $\Delta R \approx M_0 \approx R_{OFF}$, a Equação (\ref{qt}) resulta na (\ref{q}). 
 \vspace{0.05cm}
 
 \begin{equation}\label{q}
@@ -276,7 +279,7 @@ M(q)=R_{OFF}\Bigg(\sqrt{1-\dfrac{2\, \mu_D}{r\; D^2}\varphi(t) }\Bigg)
 \end{equation}
 \vspace{0.05cm}
 
-Potanto a corrente $i(t)$ é descrita como na Equação (\ref{i}).
+Portanto a corrente $i(t)$ é descrita como na Equação (\ref{i}).
 
 \begin{equation}\label{i}
 i(t)=\dfrac{v(t)}{R_{OFF}\Bigg(\sqrt{1-\dfrac{2\, \mu_D}{r\; D^2}\varphi(t) }\Bigg)}
@@ -286,10 +289,20 @@ i(t)=\dfrac{v(t)}{R_{OFF}\Bigg(\sqrt{1-\dfrac{2\, \mu_D}{r\; D^2}\varphi(t) }\Bi
 Verifica-se que a Equação (\ref{nano}) mostra a relação inverso-quadrado entre a memristência $M$ e a espessura do $TiO_2$, $D$. Assim, para menores valores de $D$, a memória apresenta características melhoradas. Portanto, a memristência torna-se mais importante para a compreensão do porquê das dimensões dos dispositivos eletrônicos estarem diminuido para a escala nanométrica.
 
 \section{Simulações} \label{sim}
+O memristor possui características marcantes que serão interpretadas graficamente via programação \emph{MATLAB} a partir das Equações (\ref{q}), (\ref{interno}) e (\ref{i}). Considere um memristor com mobilidade $\mu_D \sim 10^{-10\,} cm^2/V.s$, comprimento $D\sim10nm$, e resistências do estado \textit{ON} e \textit{OFF} como $R_{ON}\sim 100\Omega$ e $R_{OFF}\sim 16K\Omega$, respectivamente. Como $\varphi(t)=\int_{-\infty}^t v(\tau)\, d\tau$, tem-se que para uma onda senoidal do tipo $v(t)=v_0\cdot sin(\omega t)$ o fluxo é descrito pela Equação (\ref{flux}), em que $v_0$ é a amplitude da tensão de entrada e $\omega $ a frequência em \textit{rad/s}.
+
+\begin{equation}\label{flux}
+\varphi(t) = \dfrac{v_0\, (1-cos(\omega t))}{\omega}
+\end{equation}
+
+Sabendo-se que a potência em elementos passivos $p(t)$ deve ser sempre positiva para qualquer tempo $t$ e que a potência instantânea dissipada por um memristor define-se pela Equação (\ref{pot}), é preciso que a memristência $M(q)$ seja não-negativa, ou seja $M(q)\geq 0$.
+
+\begin{equation}\label{pot}
+p(t) = v(t)i(t)=M(q(t))[i(t)]^2
+\end{equation}
 
 \begin{figure}[H]
 \centering
-
 \begin{subfigure}{0.49\columnwidth}
 \centering
 \includegraphics[width=\columnwidth]{flux-charge}
