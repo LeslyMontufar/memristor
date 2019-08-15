@@ -63,7 +63,7 @@ Portanto, considerado como o quarto elemento fundamental dos circuitos eletrôni
 Apesar da proposta teórica do \emph{memristor} ter sido apresentada por Chua em 1971, sua primeira implementação prática ocorreu apenas em 2008, nos \emph{Laboratórios da Hewllet-Packard} (\emph{HP}), graças à equipe liderada pelo físico-químico Dr. Richard Stanley Williams, que desenvolveu linhas de memristores com base no dióxido de titânio ($TiO_2$) em escala nanométrica \cite{nature}. A demora deve-se, principalmente, à dificuldade em encontrar materiais que fossem capazes de conferir a propriedade de reter memória ao dispositivo eletrônico e que satisfizessem a base teórica apresentada por Chua \cite{artigo}.
 Dessa forma, o componente recentemente sintetizado contém a propriedade da não-volatilidade, que, aliada a possibilidade de ser trabalhado em escala nanométrica, o torna promissor em aplicações e garante sua contribuição na validação da Lei de Moore.
 
-Pissardini \cite{memcomputacao} atenta para aplicações de \emph{memelementos} na elaboração de novas arquiteturas computacionais, que, corroborado pelos ideais da Arquitetura de Von Neumann, são capazes de realizar tarefas específicas. Essa abordagem tem sido conhecida como \emph{memcomputação}, que, ao contrário dos modelos convencionais, propõe que seja possível processar e armazenar dados no mesmo dispositivo (elemento físico), o qual seria o memristor em si. Prezioso \cite{rneurais} propõe que existem também aplicações de memristores e de memelementos nas chamadas redes neurais, as quais são sistemas que se baseiam em princípios de Inteligência Artificial, podendo aprender e reconhecer padrões, e que podem ser aprimoradas com o uso da memresistência devido ao caráter de não-volatilidade dos memristores. Dong e Qi \cite{chines}, em seu artigo acerca de circuitos lógicos, analisam a importância de memristores para otimizar
+Pissardini \cite{memcomputacao} atenta para aplicações de \emph{memelementos} na elaboração de novas arquiteturas computacionais, que, corroborado pelos ideais da Arquitetura de Von Neumann, são capazes de realizar tarefas específicas. Essa abordagem tem sido conhecida como \emph{memcomputação}, que, ao contrário dos modelos convencionais, propõe que seja possível processar e armazenar dados no mesmo dispositivo (elemento físico), o qual seria o memristor em si. Prezioso et al. \cite{rneurais} propõe que existem também aplicações de memristores e de memelementos nas chamadas redes neurais, as quais são sistemas que se baseiam em princípios de Inteligência Artificial, podendo aprender e reconhecer padrões, e que podem ser aprimoradas com o uso da memresistência devido ao caráter de não-volatilidade dos memristores. Dong et al. \cite{chines}, em seu artigo acerca de circuitos lógicos, analisam a importância de memristores para otimizar
 seu funcionamento, devido à característica não linear que possuem.
 
 Sob essa perspectiva, a temática deste artigo basear-se-á na descrição detalhada desse novo componente, nos âmbito físico, químico e matemático, com intuito de compreender como o mecanismo interno converge para as propriedades impostas,  por Chua, a um dispositivo \emph{memristor}. É de interesse ainda discutir acerca das aplicabilidades do dispositivo, para assim poder expor o impacto de sua descoberta na teoria de circuitos e importância para o crescimento tecnológico. %% eletronico com SPICE
@@ -93,7 +93,7 @@ Ademais, esses valores limite de tensão e de tempo necessários para a formaç�
 \begin{figure}[H]
 \centering
 \includegraphics[width=\columnwidth]{oxygen-vacancies}
-\caption{(a) Distribuição de vacâncias de oxigênio na camada intermediária de um memristor. (b) Aplicando-se tensão positiva os íons livres são repelidos. (b) Aplicando-se tensão negativa os íons livres são atraídos.}\label{estrutura}
+\caption{(a) Distribuição de vacâncias de oxigênio na camada intermediária de um memristor. (b) Aplicando-se tensão positiva os íons livres são repelidos. (c) Aplicando-se tensão negativa os íons livres são atraídos.}\label{estrutura}
 \end{figure}
 
 Devido à flexibilidade de variação de valores de resistência, ao memristor podem ser atribuídos \emph{status} como “OFF”, quando a parte não-dopada é dominante portanto o estado é de alta resistência; “ON”, quando a parte dopada é dominante portanto há baixa resistência, e ainda estados intermediários. Assim, pode armazenar dados na forma binária e multinível, como ocorre na Figura \ref{estrutura}(a). As nanopartículas utilizadas na dopagem possuem carga $+2$ (vacâncias de oxigênio) como é representado, e percebe-se uma proporção igualitária entre parte dopada e não dopada. 
@@ -150,7 +150,15 @@ q = f(\varphi)
 \vspace{0.05cm}
 
 Reescrevendo a Equação (\ref{derivate-phi}) utilizando-se as definições de tensão e corrente tem-se a  Equação (\ref{iWv}).
+% \columnbreak
 
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\columnwidth]{new-w}
+\caption{Variáveis de estado do memristor: $w$ é o comprimento da parte dopada e $D$ de toda a camada intermediária \cite{image}.}\label{w}
+\end{figure}
+
+\vspace{-0.2cm}
 \begin{gather}\label{iWv}
 i(t)=W(\varphi)\ v(t)
 \end{gather}
@@ -163,21 +171,9 @@ W(\varphi) =\dfrac{df(\varphi)}{d\varphi}
 
 Nesse caso, $W$, da Equação \ref{W}, é chamado de \textit{memductância} e tem mesma unidade da condutância (\textit{Siemens} - $S$).
 
-Entretanto, em especial para o memristor controlado por por carga, as relações das Equações (\ref{vMi}) e (\ref{vMi}) não abrangem a propriedade de memória do dispositivo, o que levou Chua juntamente com seu aluno de graduação Kang \cite{1976}, em 1976, a reconhecer que, enfaticamente, o \emph{memristor} seria um componente passivo com \emph{estado}, ou seja, cuja propriedade de memória é definida por uma ou mais \emph{variáveis de estado}.
-Diante disso, a equipe HP Laboratories modelou matematicamente um \emph{memristor}, essencialmente, a partir das equações propastas por Chua e Kang \cite{1976} para sistemas memristivos (Equações \ref{sm1} e \ref{sm2}).
+Entretanto, em especial para o memristor controlado por por carga, as relações das Equações (\ref{vMi}) e (\ref{M}) não abrangem toda a interação física do componente que valida a propriedade de memória do dispositivo, o que levou Chua juntamente com seu então aluno de graduação Kang, em 1976, a reconhecer que, enfaticamente, o \emph{memristor} seria um componente passivo com \emph{estado}, ou seja, cuja propriedade de memória é definida por uma ou mais \emph{variáveis de estado}.
+Diante disso, a equipe \emph{HP Labs} modelou matematicamente um memristor, essencialmente, a partir das equações propostas por Chua e Kang \cite{1976} para sistemas memristivos em (\ref{sm1}) e (\ref{sm2}).
 
-\begin{comment}
-\begin{equation}\label{eq01}
-v=M( w) \ i
-\end{equation}
-\begin{equation}\label{eq02}
-\dfrac{dw}{dt} =f(i) 
-\end{equation}
-\end{comment}
-
-Assim, a definição matemática rigorosa revela que, conforme a Equação (\ref{eq01}), a \emph{memristência} $M$ depende do estado do dispositivo, em determinado instante de tempo $t$, que por sua vez também varia com o tempo como integral da função contínua de corrente $f$, como descrito pela Equação (\ref{eq02}).  Uma representação física da variável de estado $w$ é ilustrada na Figura \ref{w}. 
-
-Sistemas memristivos Chua e Kang:
 \begin{equation}\label{sm1}
 v=M(w, i)i
 \end{equation}
@@ -185,52 +181,70 @@ v=M(w, i)i
 \begin{equation}\label{sm2}
 \dfrac{dw}{dt}=f(w, i)
 \end{equation}
+\vspace{0.05cm}
 
+Assim, a definição matemática rigorosa revela que, conforme a Equação (\ref{sm1}), a \emph{memristência} $M$ depende do estado do dispositivo, que por sua vez varia com o tempo como integral da função contínua de corrente $f$, como descrito pela Equação (\ref{sm2}). Uma representação física da variável de estado $w$ é ilustrada na Figura \ref{w}, a qual descreve o memristor como associação de duas resistências em série, a $R_{ON}$ e $R_{OFF}$. Nessa Figura é representado, em especial, o primeiro modelo publicado pela equipe da \emph{HP Labs} \cite{nature}, no qual o transporte dos portadores de carga ocorre pelo \emph{Modelo de Deriva Linear}, que será explicado a seguir com as especificações utilizadas como base para as simulações da Seção \ref{sim}.
 
-\subsection{Modelo de Deriva Linear}
-Continuacao:
-\begin{equation}\label{}
+Para o \emph{Modelo de Deriva Linear}, é primeiramente suposto um campo elétrico uniforme através do dispositivo. Portanto existe uma relação linear entre a velocidade de deriva-difusão e o campo elétrico líquido. Assim, a memristência $M(w)$ define-se como na Equação (\ref{Mw}) e a relação geral para o movimento das nanopartículas positivas que era dado como $v=\mu\, E$ será como na Equação (\ref{vD}), sendo a mobilidade $\mu_D \sim 10^{-10} cm^2/V.s$, o comprimento do memristor utilizado $D\sim10nm$, $R_{ON}\sim 100\Omega$, $R_{OFF}\sim 16K\Omega$ e portanto $\Delta R = (R_{OFF} - R_{ON}) \approx R_{OFF}$.
+
+%\subsection{Modelo de Deriva Linear}
+
+\begin{equation}\label{Mw}
 M(w)=\dfrac{w}{D}R_{ON}+\Big(1 - \dfrac{w}{D}\Big) R_{OFF}
 \end{equation}
 
-\begin{equation}\label{}
-\dfrac{dw}{dt}=v_D \text{given by}=\dfrac{\mu_D R_{ON}}{D}i(t)
+\begin{equation}\label{vD}
+\dfrac{dw}{dt}=v_D=\dfrac{\mu_D R_{ON}}{D}i(t)
 \end{equation}
+\vspace{0.05cm}
 
-Integrando-se: divide por D...
-\begin{equation}\label{}
+Integrando-se a Equação (\ref{vD}) e depois dividindo seus termos por $D$ tem-se a Equação (\ref{wd}).
+A partir dela, reescreve-se na Equação (\ref{qD}) tem-se que $Q_D=D^2/\mu_D R_{ON}$ é a carga necessária para mover a deriva de $w(t_0)$, onde $w\rightarrow 0$, para$w(t_D)$, onde $w\rightarrow D$.
+
+\begin{equation}\label{wd}
 \dfrac{w(t)}{D}=\dfrac{w_0}{D}+\dfrac{\mu_D R_{OFF}}{D^2}q(t)
 \end{equation}
 
-\begin{equation}\label{}
+\begin{equation}\label{qD}
 \dfrac{w(t)}{D}=\dfrac{w_0}{D}+\dfrac{q(t)}{Q_D}
 \end{equation}
-\begin{equation}\label{}
+\vspace{0.05cm}
+
+Assim, estabelecendo uma variável de estado $x(t)=\frac{w(t)}{D}$, é possível reescrever a Equação (\ref{qD}) como em (\ref{xt}) e a Equação (\ref{Mw}) como em (\ref{Mx}).
+
+\begin{equation}\label{xt}
 x(t)=x(t_0)+\dfrac{q(t)}{Q_D}
 \end{equation}
 
-Agora a variavel de estado x:
-\begin{equation}\label{}
-M(t)=R_{ON}\ x(t)+ R_OFF(1-x(t))
+\begin{equation}\label{Mx}
+M(t)=R_{ON}\ x(t)+ R_{OFF}(1-x(t))
+\end{equation}
+\vspace{0.05cm}
+
+Para $t=0$, tem-se ainda $M_0$ dado pela Equação (\ref{t0}), em que $r=\frac{R_{OFF}}{R_{ON}}$. Logo, substituindo (\ref{xt}) em (\ref{Mw}) tem-se (\ref{M:M0}).
+\begin{align*}
+M_0&=R_{ON}\ x(t_0)+ R_{OFF}(1-x(t_0))&\\
+    &=R_{ON}\bigg( x(t_0)+ \dfrac{R_{OFF}}{R_{ON}} (1-x(t_0))\bigg)&\\
+    &=R_{ON}\bigg( x(t_0)+ \dfrac{R_{OFF}}{R_{ON}} (1-x(t_0))\bigg)&\\
+    &=R_{ON}\big( x(t_0)+ r\ (1-x(t_0))\big)&
+\end{align*}
+
+\begin{equation}\label{t0}
+M_0  =R_{ON}\big( x(t_0)+ r\ (1-x(t_0))\big)
 \end{equation}
 
-t=0 inicio do gather!!!
-\begin{align}\label{}
-M_0&=R_{ON}\ x(t_0)+ R_OFF(1-x(t_0))&\\
-    &=R_{ON}\Bigg( x(t_0)+ \dfrac{R_{OFF}}{R_{ON}} (1-x(t_0))\Bigg)&\\
-    &=R_{ON}\Bigg( x(t_0)+ \dfrac{R_{OFF}}{R_{ON}} (1-x(t_0))\Bigg)&\\
-    &=R_{ON}( x(t_0)+ r (1-x(t_0)))&
-\end{align}
-
+\begin{comment}
 Substitui x(t) em M(x) = ...
 \begin{equation}\label{}% exclui essa talvez
 M(q)=R_{OFF}\Bigg( 1-\dfrac{q(t)}{Q_D}\Bigg)
 \end{equation}
+\end{comment}
 
-\begin{equation}\label{}% essa direto
-M(q)=M_0-\Delta R\Bigg(\dfrac{q(t)}{Q_D}\Bigg)
+\begin{equation}\label{M:M0}% essa direto
+M(q)=M_0-\Delta R\bigg(\dfrac{q(t)}{Q_D}\bigg)
 \end{equation}
 
+%%% AQUI
 Substitui na relacao geral:
 \begin{equation}\label{}
 v(t)=\bigg(M_0-\Delta R\Big(\dfrac{q(t)}{Q_D}\Big)\bigg)\dfrac{dq}{dt} = \dfrac{d}{dt} \bigg(M_0 q-\dfrac{\Delta R\ q^2(t)}{2 Q_D}\bigg)
@@ -320,50 +334,57 @@ Dispositivos memresistivos podem mudar o paradigma padrão da computação ao pe
     R. S. Pissardini,
     “MEMCOMPUTAÇÃO: CARACTERÍSTICAS E APLICAÇÕES EM
 COMPUTAÇÃO PARALELA”, Escola Politécnica da Universidade de São Paulo, Departamento de Engenharia de Transportes, Laboratório de Topografia e Geodesia.
- Disponível em:
- \url{https://www.ime.usp.br/~gold/cursos/2015/MAC5742/reports/MemComputacao.pdf}. Acesso em: jun. 2019.
+% Disponível em: \url{https://www.ime.usp.br/~gold/cursos/2015/MAC5742/reports/MemComputacao.pdf}. Acesso em: jun. 2019.
  
  \bibitem{rneurais}	
-   M. Prezioso, F. Merrikh-Bayat, B. D. Hoskins, G. C. Adam, K. K. Likharev, D. B. StrukovTraining, "\uppercase{Training and operation of anintegrated neuromorphic
-network based on metal-oxide memristors}", 
+   M. Prezioso, F. Merrikh-Bayat, B. D. Hoskins, G. C. Adam, K. K. Likharev, D. B. StrukovTraining, "Training and operation of anintegrated neuromorphic
+network based on metal-oxide memristors", 
 Department of Electrical and Computer Engineering, University of California at Santa Barbara, Santa Barbara, California 93106, USA. 
 Department of Physics and Astronomy, Stony Brook University,
-Stony Brook, New York 11794, USA. Disponível em: https://www.ece.ucsb.edu/~strukov/papers/2015/Nature2015.pdf. Acesso em 13/08/2019
+Stony Brook, New York 11794, USA. 
+%Disponível em: https://www.ece.ucsb.edu/~strukov/papers/2015/Nature2015.pdf. Acesso em ago. 2019.
 
 \bibitem{chines}
-    Z. Dong, D. Qi, Y. He, Z. Xu, X. Hu, S. Duan, "\uppercase{Easily Cascaded Memristor-CMOS Hybrid Circuit
-for High-Efficiency Boolean Logic Implementation}", School of Computer and Information Science,
+    Z. Dong, D. Qi, Y. He, Z. Xu, X. Hu, S. Duan, "Easily Cascaded Memristor-CMOS Hybrid Circuit
+for High-Efficiency Boolean Logic Implementation", School of Computer and Information Science,
 College of Electronics and Information Engineering,
-Southwest University, Chongqing 400715, P. R. China . Disponível em:\url{https://www.researchgate.net/publication/329039458\_Easily\_Cascaded\_Memristor-CMOS\_Hybrid\_Circuit\_for\_High-Efficiency\_Boolean\_Logic\_Implementation}. Acesso em ago. 2019.
-
-\begin{comment}
-\bibitem{cibelly1}	
-    D. Biolek, Z. Biolek, and V. Biolková, “\uppercase{SPICE modeling of memristive,
-    memcapacitative and meminductive systems},” in Proc. of the European
-    Conference on Circuit Theory and Design (ECCTD09), Antalya,
-    Turkey, 2009, pp. 249-252. %% ainda não
-\end{comment}
+Southwest University, Chongqing 400715, P. R. China.
+% Disponível em:\url{https://www.researchgate.net/publication/329039458\_Easily\_Cascaded\_Memristor-CMOS\_Hybrid\_Circuit\_for\_High-Efficiency\_Boolean\_Logic\_Implementation}. Acesso em ago. 2019.
 
 %% FUNCIONAMENTO ESTRUTURAL
 \bibitem{conceito}	
     J. P. Strachan, A. C. Torrezan, F. Miao, M. D. Pickett, J. J. Yang; W. Yi, G. M. Ribeiro, R. S. Williams, “STATE DYNAMICS AND MODELING OF TANTALUM OXIDE MEMRISTORS”, Disponível em: \url{https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=6542012}. Acesso em ago. 2019.
  
 \bibitem{construcao}	
-   F.S.Barachati, "ESTUDO E PREPARAÇÃO DE MEMORISTORES PARA SUA APLICAÇÃO EM DISPOSITIVOS ELETRÔNICOS". Escola de Engenharia de São Carlos, da Universidade de São Paulo. Disponível em: \url{http://www.tcc.sc.usp.br/tce/disponiveis/18/180450/tce-26032012-090929/publico/Barachati_Fabio_Souza.pdf}. 
-   Acesso em ago. 2019.   
+   F.S.Barachati, "ESTUDO E PREPARAÇÃO DE MEMORISTORES PARA SUA APLICAÇÃO EM DISPOSITIVOS ELETRÔNICOS". Escola de Engenharia de São Carlos, da Universidade de São Paulo. 
+% Disponível em: \url{http://www.tcc.sc.usp.br/tce/disponiveis/18/180450/tce-26032012-090929/publico/Barachati_Fabio_Souza.pdf}.  Acesso em ago. 2019.   
 
 \bibitem{us}	
     United States Patent; Patent No: US 9035272 B2. “NANOPARTICLE-BASED MEMRISTOR STRUCTURE”. Disponível em: \url{https://patentimages.storage.googleapis.com/0e/70/e0/6b8926f49e7cd8/US9035272.pdf}. Acesso em ago. 2019.
     
 
 %% MATEMATICA
-\bibitem{elusive} % indescritivel
-    Y. N. Joglekar, S. J. Wolf, "The elusive memristor: properties of basic electrical circuits", Department of Physics, Indiana University Purdue, 2009.
+\bibitem{image}	
+Y. Yang, W. Lu,
+"Nanoscale resistive switching devices: mechanisms and modeling",
+in \emph{Nanoscale},
+2013, Vol. 5, 10076-10092, \emph{The Royal Society of Chemistry}, 10.1039/C3NR03472K. 
+Disponível em: \url{http://dx.doi.org/10.1039/C3NR03472K}. Acesso em ago. 2019.
 
 \bibitem{1976}	
     L. Chua, S. M. Kang,
     “Memristive devices and systems”, 
     in \emph{Proceedings IEEE}, 1976, vol. CT-18, no. 5, pp. 507-519.
+
+\bibitem{elusive} % indescritivel
+    Y. N. Joglekar, S. J. Wolf, "The elusive memristor: properties of basic electrical circuits", Department of Physics, Indiana University Purdue, 2009.
+
+\bibitem{study}	
+    K. Kekur,
+    “A Study of the Memristor, the Fourth Circuit Element”, 
+   B.E., Visvesvaraya Technological University, 2007.
+
+
 
 %% APLICACOES
 
@@ -376,7 +397,7 @@ Southwest University, Chongqing 400715, P. R. China . Disponível em:\url{https:
     %% bem recente :)
     
 \bibitem{hp}
-A. Martins, "ReRAM - A próxima geração de memórias e CPU’s", 2010. Disponível em: \url{https://brainstormdeti.wordpress.com/2010/09/15/reram-\%E2\%80\%93-a-proxima-geracao-de-memorias-e-cpu\%E2\%80\%99s/}. Acesso em ago.2019
+A. Martins, "ReRAM: A próxima geração de memórias e CPU's", 2010. Disponível em: \url{https://brainstormdeti.wordpress.com/2010/09/15/reram-\%E2\%80\%93-a-proxima-geracao-de-memorias-e-cpu\%E2\%80\%99s/}. Acesso em ago.2019
 
 %% CIRCUITOS LOGICOS
 
