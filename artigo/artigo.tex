@@ -158,7 +158,7 @@ Reescrevendo a Equação (\ref{derivate-phi}) utilizando-se as definições de t
 \caption{Variáveis de estado do memristor: $w$ é o comprimento da parte dopada e $D$ de toda a camada intermediária \cite{image}.}\label{w}
 \end{figure}
 
-\vspace{-0.2cm}
+\vspace{-0.4cm}
 \begin{gather}\label{iWv}
 i(t)=W(\varphi)\ v(t)
 \end{gather}
@@ -181,11 +181,11 @@ v=M(w, i)i
 \begin{equation}\label{sm2}
 \dfrac{dw}{dt}=f(w, i)
 \end{equation}
-\vspace{0.05cm}
+\vspace{0.01cm}
 
 Assim, a definição matemática rigorosa revela que, conforme a Equação (\ref{sm1}), a \emph{memristência} $M$ depende do estado do dispositivo, que por sua vez, conforme a Equação (\ref{sm2}), varia com o tempo como integral da função contínua de corrente $f$. Uma representação física da variável de estado $w$ é ilustrada na Figura \ref{w}, a qual descreve o memristor como associação de duas resistências em série, $R_{ON}$ e $R_{OFF}$. Nessa Figura é representado, em especial, o primeiro modelo publicado pela equipe da \emph{HP Labs} \cite{nature}, no qual o transporte dos portadores de carga ocorre pelo \emph{Modelo de Deriva Linear}, que será explicado a seguir utilizando parâmetros padrão como base, de acordo com solução proposta pela \emph{HP}, para as simulações da Seção \ref{sim}.
 
-Para o \emph{Modelo de Deriva Linear}, é primeiramente suposto um campo elétrico uniforme através do dispositivo. Portanto existe uma relação linear entre a velocidade de deriva-difusão e o campo elétrico líquido. Assim, a memristência $M(w)$ define-se como na Equação (\ref{Mw}) e a relação geral para o movimento das nanopartículas positivas que era dado como $v=\mu\, E$ será como na Equação (\ref{vD}), sendo a mobilidade $\mu_D \sim 10^{-10} cm^2/V.s$, o comprimento do memristor utilizado $D\sim10nm$, $R_{ON}\sim 100\Omega$, $R_{OFF}\sim 16K\Omega$ e portanto $\Delta R = (R_{OFF} - R_{ON}) \approx R_{OFF}$ para a modelagem nos parâmetros do memristor sintetizado pela \emph{HP}.
+Para o \emph{Modelo de Deriva Linear}, é primeiramente suposto um campo elétrico uniforme através do dispositivo. Portanto existe uma relação linear entre a velocidade de deriva-difusão e o campo elétrico líquido. Assim, a memristência $M(w)$ define-se como na Equação (\ref{Mw}) e a relação geral para o movimento das nanopartículas positivas que era dado como $v_D=\mu\, E$ será como na Equação (\ref{vD}), sendo a mobilidade $\mu_D \sim 10^{-10} cm^2/V.s$, o comprimento do memristor utilizado $D\sim10nm$, $R_{ON}\sim 100\Omega$, $R_{OFF}\sim 16K\Omega$ e portanto $\Delta R = (R_{OFF} - R_{ON}) \approx R_{OFF}$ para a modelagem nos parâmetros do memristor sintetizado pela \emph{HP}.
 
 %\subsection{Modelo de Deriva Linear}
 \vspace{0.05cm}
@@ -289,35 +289,70 @@ i(t)=\dfrac{v(t)}{R_{OFF}\Bigg(\sqrt{1-\dfrac{2\, \mu_D}{r\; D^2}\varphi(t) }\Bi
 Verifica-se que a Equação (\ref{nano}) mostra a relação inverso-quadrado entre a memristência $M$ e a espessura do $TiO_2$, $D$. Assim, para menores valores de $D$, a memória apresenta características melhoradas. Portanto, a memristência torna-se mais importante para a compreensão do porquê das dimensões dos dispositivos eletrônicos estarem diminuido para a escala nanométrica.
 
 \section{Simulações} \label{sim}
-O memristor possui características marcantes que serão interpretadas graficamente via programação \emph{MATLAB} a partir das Equações (\ref{q}), (\ref{interno}) e (\ref{i}). Considere um memristor com mobilidade $\mu_D \sim 10^{-10\,} cm^2/V.s$, comprimento $D\sim10nm$, e resistências do estado \textit{ON} e \textit{OFF} como $R_{ON}\sim 100\Omega$ e $R_{OFF}\sim 16K\Omega$, respectivamente. Como $\varphi(t)=\int_{-\infty}^t v(\tau)\, d\tau$, tem-se que para uma onda senoidal do tipo $v(t)=v_0\cdot sin(\omega t)$ o fluxo é descrito pela Equação (\ref{flux}), em que $v_0$ é a amplitude da tensão de entrada e $\omega $ a frequência em \textit{rad/s}.
+O memristor possui características marcantes que serão interpretadas graficamente via programação \emph{MATLAB} a partir das Equações (\ref{q}), (\ref{interno}) e (\ref{i}). Considere um memristor com mobilidade $\mu_D \sim 10^{-10\,} cm^2/V.s$, comprimento $D\sim10nm$, e resistências do estado \textit{ON} e \textit{OFF} como $R_{ON}\sim 100\Omega$ e $R_{OFF}\sim 16K\Omega$, respectivamente. Como $\varphi(t)=\int_{-\infty}^t v(\tau)\, d\tau$, tem-se que para uma tensão senoidal do tipo $v(t)=v_0\cdot sin(\omega t)$ o fluxo é descrito pela Equação (\ref{flux}), em que $v_0$ é a amplitude da tensão de entrada e $\omega $ a frequência em \textit{rad/s}.
 
 \begin{equation}\label{flux}
 \varphi(t) = \dfrac{v_0\, (1-cos(\omega t))}{\omega}
 \end{equation}
 
-Sabendo-se que a potência em elementos passivos $p(t)$ deve ser sempre positiva para qualquer tempo $t$ e que a potência instantânea dissipada por um memristor define-se pela Equação (\ref{pot}), é preciso que a memristência $M(q)$ seja não-negativa, ou seja $M(q)\geq 0$.
+Sabendo-se que a potência em elementos passivos $p(t)$ deve ser sempre positiva para qualquer tempo $t$ e que a potência instantânea dissipada por um memristor define-se pela Equação (\ref{pot}), é preciso que a memristência $M(q)$ seja não-negativa, isto é $M(q)\geq 0$. Graficamente na Figura \ref{flux-charge}, $M(q)$ é a inclinação da curva $\varphi$-$q$, que será, portanto, sempre monótona crescente \cite{artigo}.
 
 \begin{equation}\label{pot}
 p(t) = v(t)i(t)=M(q(t))[i(t)]^2
 \end{equation}
 
+\begin{comment}
+\begin{figure}[H]
+\includegraphics[width=0.95\columnwidth]{flux-charge}
+\caption{Curva $\varphi-q$, onde a inclinação é a memristência $M(q)$.}\label{flux-charge}
+\end{figure}
 \begin{figure}[H]
 \centering
-\begin{subfigure}{0.49\columnwidth}
+\includegraphics[width=0.95\columnwidth]{oxygen-vacancies}
+\caption{(a) Distribuição de vacâncias de oxigênio na camada intermediária de um memristor. (b) Aplicando-se tensão positiva os íons livres são repelidos. (c) Aplicando-se tensão negativa os íons livres são atraídos.}\label{estrutura}
+\end{figure}
+\end{comment}
+
+\begin{figure*}[ht]
+\centering
+\begin{subfigure}{0.33\textwidth}
 \centering
 \includegraphics[width=\columnwidth]{flux-charge}
-\caption{Left figure} \label{fig:left}
+\caption{} \label{flux-charge}
 \end{subfigure}
 \hfill
-\begin{subfigure}{0.49\columnwidth}
+\begin{subfigure}{0.33\textwidth}
 \centering
-\includegraphics[width=\columnwidth]{pinched-hysteresis-loop}
-\caption{Right figure} \label{fig:right}
+\includegraphics[width=\columnwidth]{vt-xt}
+\caption{} \label{vt:xt}
+\end{subfigure}
+\hfill
+\begin{subfigure}{0.33\textwidth}
+\centering
+\includegraphics[width=\columnwidth]{ww0}
+\caption{} \label{pinched}
+\end{subfigure}
+ 
+\begin{subfigure}{0.33\textwidth}
+\centering
+\includegraphics[width=\columnwidth]{w0}
+\caption{} \label{spice:pinched}
+\end{subfigure}
+\hfill
+\begin{subfigure}{0.33\textwidth}
+\centering
+\includegraphics[width=\columnwidth]{2w0}
+\caption{} \label{spice:vt-it}
+\end{subfigure}
+\hfill
+\begin{subfigure}{0.33\textwidth}
+\centering
+\includegraphics[width=\columnwidth]{w0}
+\caption{} \label{-}
 \end{subfigure}
 
-\caption{}\label{}
-\end{figure}
-
+\caption{(a) Curva $\varphi$-$q$}\label{}
+\end{figure*}
 %% Lisajous Figures
 
 

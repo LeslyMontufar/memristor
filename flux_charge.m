@@ -1,4 +1,5 @@
 clear all;
+close all;
 % MATLAB code for simulating a memristor 
 v0=1; % amplitude of the input wave 
 omega=3; % frequency (rad/s) 
@@ -27,15 +28,30 @@ Mt = M0 - (deltaR)*(charge(n))/q0;
 end 
 
 figure(1) 
-plot(flux,charge);%Plot of charge versus flux 
-title('Flux-charge curve');
+plot(flux, charge, 'LineWidth', 2);%Plot of charge versus flux 
+%title('Flux-charge curve');
 grid on;
+xlabel('fluxo');
+ylabel('carga');
 
-figure(2) 
-plot (vt,i);%plot of current versus voltage  
-title('Voltage-current curve');
+figure(2)
+plot(t, vt, 'LineWidth', 2);
+%title('Time-voltage curve');
 grid on;
+hold on;
+plot(t,width, 'LineWidth', 2);
+legend('Tensão v(t)','Variável x(t)');
 
+figure(3) 
+plot (vt,i, 'LineWidth', 2);%plot of current versus voltage  
+%title('Voltage-current curve');
+grid on;
+xlabel('tensão v(t)');
+ylabel('corrente i(t)');
+
+figure(4);
+plot(vt, i, 'LineWidth', 2);
+grid on;
 hold on;
 omega = 6;
 vt=v0*sin(omega*t);%input voltage 
@@ -45,16 +61,17 @@ i(n)=(vt(n))/(ROFF*sqrt(1-((2*MD*flux(n))/(r*(D^2))))); %Current
 charge(n)=(q0*(1-sqrt(1-((2*flux(n))/(q0*ROFF)))));%charge 
 width(n)= 1-sqrt(1-((2*MD*flux(n))/(r*(D^2))));%internal state of memristor 
 end 
-plot(vt, i);
-
-figure(3)
-plot(t, vt);
-title('Time-voltage curve');
+plot(vt, i, 'LineWidth', 2);
 grid on;
-hold on;
-plot(t,width);
+xlabel('tensão v(t)');
+ylabel('corrente i(t)');
+legend('w_0','2 w_0');
 
-figure(4)
-plot(t, i);
-title('Time-current curve');
-grid on;
+
+##
+##figure(4)
+##plot(t, i, 'LineWidth', 2);
+##title('Time-current-voltage curve');
+##grid on;
+##xlabel('tempo');
+##ylabel('fluxo');
