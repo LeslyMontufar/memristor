@@ -84,7 +84,7 @@ admitem características de alta velocidade, alta densidade e operação em baix
 assim como a não-volatilidade. Desse modo, os materiais óxidos são ideiais para implementar o conceito de um \emph{memristor}, sendo recentemente utilizados para esse fim os óxidos de titânio e tântalo ($TiO_x$, $TaO_x$) \cite{conceito}. %% Física do estado sólido
 
 Para analisar o funcionamento de um memristor, é interessante compreender o dispositivo \emph{crossbarlatch}, estudado em 2006 pela
-\emph{HP Labs}, posteriormente passou a ser conhecido como o próprio memristor. O crossbarlatch era uma espécie de sanduíche, possuindo partes externas constituídas por Platina ($Pt$), com espessura cerca de 3 nanômetros, e uma camada intermediária isolante subdividida em duas partes, sendo a primeira formada de óxido de titânio ($TiO_2$), conhecida como parte pura ou não dopada,e a segunda pela mesma substânca porém deficiente em oxigênio ($TiO_{2-x}$), conhecida como parte dopada \cite{construcao}.  Nesse sentido, o funcionamento molecular de um memristor é baseado no movimento de íons livres, no meio dielétrico (óxido), o que torna possível o comportamento memristivo, pois cria mudanças locais na condutividade a partir da modelagem de filamentos condutores entre os eletrodos.
+\emph{HP Labs}, que posteriormente passou a ser conhecido como o próprio memristor. O crossbarlatch era uma espécie de sanduíche, possuindo partes externas constituídas por Platina ($Pt$), com espessura cerca de 3 nanômetros, e uma camada intermediária isolante subdividida em duas partes, uma formada de óxido de titânio ($TiO_2$), conhecida como parte pura ou não dopada, e outra pela mesma substânca porém deficiente em oxigênio ($TiO_{2-x}$), conhecida como parte dopada \cite{construcao}.  Nesse sentido, o funcionamento molecular de um memristor é baseado no movimento de íons livres, no meio dielétrico (óxido), o que torna possível o comportamento memristivo, pois cria mudanças locais na condutividade a partir da modelagem de filamentos condutores entre os eletrodos.
 
 Esses filamentos condutores entre os eletrodos no meio inicialmente dielétrico são resultantes de um processo conhecido como \emph{eletroformação}, do inglês \emph{electroforming}, que consiste na aplicação de uma tensão elétrica suficientemente alta, ou seja um valor limite de tensão, entre os dois eletrodos por um período de tempo suficiente para a formação de um canal condutivo local no meio isolante, o que significa o rompimento de sua rigidez dielétrica.
 Ademais, esses valores limite de tensão e de tempo necessários para a formação do canal condutivo dependem dos materiais que constituem os dielétricos e os eletrodos, além da estrutura geométrica do dispositivo \cite{us}. 
@@ -96,7 +96,7 @@ Ademais, esses valores limite de tensão e de tempo necessários para a formaç�
 \caption{(a) Distribuição de vacâncias de oxigênio na camada intermediária de um memristor. (b) Aplicando-se tensão positiva os íons livres são repelidos. (c) Aplicando-se tensão negativa os íons livres são atraídos.}\label{estrutura}
 \end{figure}
 
-Devido à flexibilidade de variação de valores de resistência, ao memristor podem ser atribuídos \emph{status} como “OFF”, quando a parte não-dopada é dominante portanto o estado é de alta resistência; “ON”, quando a parte dopada é dominante portanto há baixa resistência, e ainda estados intermediários. Assim, pode armazenar dados na forma binária e multinível, como ocorre na Figura \ref{estrutura}(a). As nanopartículas utilizadas na dopagem possuem carga $+2$ (vacâncias de oxigênio) como é representado, e percebe-se uma proporção igualitária entre parte dopada e não dopada. 
+Devido à flexibilidade de variação de valores de resistência, ao memristor podem ser atribuídos \emph{status} como “OFF”, quando a parte não-dopada é dominante portanto o estado é de alta resistência; “ON”, quando a parte dopada é dominante portanto há baixa resistência, e ainda estados intermediários. Assim, pode armazenar dados na forma binária e multinível, como representado na Figura \ref{estrutura}(a). As nanopartículas utilizadas na dopagem possuem carga $+2$ (vacâncias de oxigênio) e percebe-se uma proporção igualitária entre parte dopada e não dopada para o memristor nesse estado. 
 
 Observa-se ainda que, a partir de um estado inicial qualuer como o da Figura \ref{estrutura}(a), ao se aplicar uma tensão elétrica positiva 
 no terminal dopado, as lacunas (vacâncias de oxigênio), que comportam-se como cargas positivas, migram para o lado oposto, ou seja, cargas negativas se deslocam para a parte dopada.
@@ -169,10 +169,10 @@ W(\varphi) =\dfrac{df(\varphi)}{d\varphi}
 \end{equation}
 \vspace{0.05cm}
 
-Nesse caso, $W$, da Equação \ref{W}, é chamado de \textit{memductância} e tem mesma unidade da condutância (\textit{Siemens} - $S$).
+Nesse caso, $W$, na Equação (\ref{W}), é chamado de \textit{memductância} e tem mesma unidade da condutância (\textit{Siemens} - $S$).
 
-Entretanto, em especial para o memristor controlado por por carga, as relações das Equações (\ref{vMi}) e (\ref{M}) não abrangem toda a interação física do componente que valida a propriedade de memória do dispositivo, o que levou Chua juntamente com seu então aluno de graduação Kang, em 1976, a reconhecer que, enfaticamente, o \emph{memristor} seria um componente passivo com \emph{estado}, ou seja, cuja propriedade de memória é definida por uma ou mais \emph{variáveis de estado}.
-Diante disso, a equipe \emph{HP Labs} modelou matematicamente um memristor, essencialmente, a partir das equações propostas por Chua e Kang \cite{1976} para sistemas memristivos em (\ref{sm1}) e (\ref{sm2}).
+Entretanto, em especial para o memristor controlado por por carga, as relações das Equações (\ref{vMi}) e (\ref{M}) não abrangem a interação física do componente que proporciona a propriedade de memória ao dispositivo, o que levou Chua juntamente com seu então aluno de graduação Kang, em 1976, a reconhecer que, enfaticamente, o \emph{memristor} seria um componente passivo com \emph{estado}, ou seja, cuja propriedade de memória é definida por uma ou mais \emph{variáveis de estado}.
+Diante disso, a equipe \emph{HP Labs} conseguiu modelar matematicamente um memristor, essencialmente, a partir das equações propostas por Chua e Kang \cite{1976} para sistemas memristivos em (\ref{sm1}) e (\ref{sm2}).
 
 \begin{equation}\label{sm1}
 v=M(w, i)i
@@ -183,12 +183,12 @@ v=M(w, i)i
 \end{equation}
 \vspace{0.05cm}
 
-Assim, a definição matemática rigorosa revela que, conforme a Equação (\ref{sm1}), a \emph{memristência} $M$ depende do estado do dispositivo, que por sua vez varia com o tempo como integral da função contínua de corrente $f$, como descrito pela Equação (\ref{sm2}). Uma representação física da variável de estado $w$ é ilustrada na Figura \ref{w}, a qual descreve o memristor como associação de duas resistências em série, a $R_{ON}$ e $R_{OFF}$. Nessa Figura é representado, em especial, o primeiro modelo publicado pela equipe da \emph{HP Labs} \cite{nature}, no qual o transporte dos portadores de carga ocorre pelo \emph{Modelo de Deriva Linear}, que será explicado a seguir com as especificações utilizadas como base para as simulações da Seção \ref{sim}.
+Assim, a definição matemática rigorosa revela que, conforme a Equação (\ref{sm1}), a \emph{memristência} $M$ depende do estado do dispositivo, que por sua vez, conforme a Equação (\ref{sm2}), varia com o tempo como integral da função contínua de corrente $f$. Uma representação física da variável de estado $w$ é ilustrada na Figura \ref{w}, a qual descreve o memristor como associação de duas resistências em série, a $R_{ON}$ e $R_{OFF}$. Nessa Figura é representado, em especial, o primeiro modelo publicado pela equipe da \emph{HP Labs} \cite{nature}, no qual o transporte dos portadores de carga ocorre pelo \emph{Modelo de Deriva Linear}, que será explicado a seguir utilizando parâmetros padrão como base, de acordo com solução proposta pela \emph{HP}, para as simulações da Seção \ref{sim}.
 
-Para o \emph{Modelo de Deriva Linear}, é primeiramente suposto um campo elétrico uniforme através do dispositivo. Portanto existe uma relação linear entre a velocidade de deriva-difusão e o campo elétrico líquido. Assim, a memristência $M(w)$ define-se como na Equação (\ref{Mw}) e a relação geral para o movimento das nanopartículas positivas que era dado como $v=\mu\, E$ será como na Equação (\ref{vD}), sendo a mobilidade $\mu_D \sim 10^{-10} cm^2/V.s$, o comprimento do memristor utilizado $D\sim10nm$, $R_{ON}\sim 100\Omega$, $R_{OFF}\sim 16K\Omega$ e portanto $\Delta R = (R_{OFF} - R_{ON}) \approx R_{OFF}$.
+Para o \emph{Modelo de Deriva Linear}, é primeiramente suposto um campo elétrico uniforme através do dispositivo. Portanto existe uma relação linear entre a velocidade de deriva-difusão e o campo elétrico líquido. Assim, a memristência $M(w)$ define-se como na Equação (\ref{Mw}) e a relação geral para o movimento das nanopartículas positivas que era dado como $v=\mu\, E$ será como na Equação (\ref{vD}), sendo a mobilidade $\mu_D \sim 10^{-10} cm^2/V.s$, o comprimento do memristor utilizado $D\sim10nm$, $R_{ON}\sim 100\Omega$, $R_{OFF}\sim 16K\Omega$ e portanto $\Delta R = (R_{OFF} - R_{ON}) \approx R_{OFF}$ para a modelagem nos parâmetros do memristor sintetizado pela \emph{HP}.
 
 %\subsection{Modelo de Deriva Linear}
-
+\vspace{0.05cm}
 \begin{equation}\label{Mw}
 M(w)=\dfrac{w}{D}R_{ON}+\Big(1 - \dfrac{w}{D}\Big) R_{OFF}
 \end{equation}
@@ -199,7 +199,7 @@ M(w)=\dfrac{w}{D}R_{ON}+\Big(1 - \dfrac{w}{D}\Big) R_{OFF}
 \vspace{0.05cm}
 
 Integrando-se a Equação (\ref{vD}) e depois dividindo seus termos por $D$ tem-se a Equação (\ref{wd}).
-A partir dela, reescreve-se na Equação (\ref{qD}) tem-se que $Q_D=D^2/\mu_D R_{ON}$ é a carga necessária para mover a deriva de $w(t_0)$, onde $w\rightarrow 0$, para$w(t_D)$, onde $w\rightarrow D$.
+A partir dela, reescreve-se na Equação (\ref{qD}), pois tem-se que $Q_D=D^2/\mu_D R_{ON}$ é a carga necessária para mover a deriva de $w(t_0)$, onde $w\rightarrow 0$, para $w(t_D)$, onde $w\rightarrow D$.
 
 \begin{equation}\label{wd}
 \dfrac{w(t)}{D}=\dfrac{w_0}{D}+\dfrac{\mu_D R_{OFF}}{D^2}q(t)
@@ -210,7 +210,7 @@ A partir dela, reescreve-se na Equação (\ref{qD}) tem-se que $Q_D=D^2/\mu_D R_
 \end{equation}
 \vspace{0.05cm}
 
-Assim, estabelecendo uma variável de estado $x(t)=\frac{w(t)}{D}$, é possível reescrever a Equação (\ref{qD}) como em (\ref{xt}) e a Equação (\ref{Mw}) como em (\ref{Mx}).
+Ainda é possível estabelecer uma variável de estado $x(t)=w(t)/D$, e assim reescrever a Equação (\ref{qD}) como em (\ref{xt}) e a Equação (\ref{Mw}) como em (\ref{Mx}).
 
 \begin{equation}\label{xt}
 x(t)=x(t_0)+\dfrac{q(t)}{Q_D}
@@ -221,61 +221,69 @@ M(t)=R_{ON}\ x(t)+ R_{OFF}(1-x(t))
 \end{equation}
 \vspace{0.05cm}
 
-Para $t=0$, tem-se ainda $M_0$ dado pela Equação (\ref{t0}), em que $r=\frac{R_{OFF}}{R_{ON}}$. Logo, substituindo (\ref{xt}) em (\ref{Mw}) tem-se (\ref{M:M0}).
-\begin{align*}
-M_0&=R_{ON}\ x(t_0)+ R_{OFF}(1-x(t_0))&\\
-    &=R_{ON}\bigg( x(t_0)+ \dfrac{R_{OFF}}{R_{ON}} (1-x(t_0))\bigg)&\\
-    &=R_{ON}\bigg( x(t_0)+ \dfrac{R_{OFF}}{R_{ON}} (1-x(t_0))\bigg)&\\
-    &=R_{ON}\big( x(t_0)+ r\ (1-x(t_0))\big)&
-\end{align*}
+Em $t_0$, define-se ainda $M_0$, dado pela Equação (\ref{t0}), em que $r=R_{OFF}/R_{ON}$. Logo, substituindo (\ref{xt}) em (\ref{Mw}) tem-se (\ref{M:M0}) ou (\ref{M:ROFF}), já que para $R_{OFF}\gg R_{ON}$, tem-se que $M_0\approx R_{OFF}$.
+\vspace{0.05cm}
+
+\begin{equation*}
+M_0=R_{ON}\ x(t_0)+ R_{OFF}(1-x(t_0))
+\end{equation*}
+
+\begin{equation*}
+    M_0=R_{ON}\bigg( x(t_0)+ \dfrac{R_{OFF}}{R_{ON}} (1-x(t_0))\bigg)
+\end{equation*}
 
 \begin{equation}\label{t0}
 M_0  =R_{ON}\big( x(t_0)+ r\ (1-x(t_0))\big)
 \end{equation}
 
-\begin{comment}
-Substitui x(t) em M(x) = ...
-\begin{equation}\label{}% exclui essa talvez
-M(q)=R_{OFF}\Bigg( 1-\dfrac{q(t)}{Q_D}\Bigg)
-\end{equation}
-\end{comment}
-
 \begin{equation}\label{M:M0}% essa direto
-M(q)=M_0-\Delta R\bigg(\dfrac{q(t)}{Q_D}\bigg)
+M(q)=M_0-\Delta R\, \bigg(\dfrac{q(t)}{Q_D}\bigg)
 \end{equation}
 
-%%% AQUI
-Substitui na relacao geral:
-\begin{equation}\label{}
-v(t)=\bigg(M_0-\Delta R\Big(\dfrac{q(t)}{Q_D}\Big)\bigg)\dfrac{dq}{dt} = \dfrac{d}{dt} \bigg(M_0 q-\dfrac{\Delta R\ q^2(t)}{2 Q_D}\bigg)
+\begin{equation}\label{M:ROFF}% exclui essa talvez
+M(q)=R_{OFF}\bigg( 1-\dfrac{q(t)}{Q_D}\bigg)
+\end{equation}
+\vspace{0.05cm}
+
+Subsituindo (\ref{M:M0}) em (\ref{vMi}) tem-se que a tensão $v(t)$ é dada pela Equação (\ref{dt}) e integrando no tempo, sabendo que $\varphi(t)=\int_{-\infty}^t v(\tau)\, d\tau$ e $M(q)=d\varphi/dq$,  consegue-se definir $q(t)$ como na Equação (\ref{qt}), a partir das raízes da equação quadrática resultante.
+
+\begin{equation}\label{dt}
+v(t)=\Big(M_0-\Delta \, R\Big(\dfrac{q(t)}{Q_D}\Big)\Big)\dfrac{dq}{dt} = \dfrac{d}{dt} \Big(M_0\, q-\dfrac{\Delta R\ q^2(t)}{2 Q_D}\Big)
 \end{equation}
 
-Integra e báskara e usa M=dphi/dq:
-\begin{equation}\label{}
+\begin{equation}\label{qt}
 q(t)=\dfrac{Q_D\ M_0}{\Delta R}\Bigg(1\pm\sqrt{1-\dfrac{2\, \Delta R}{Q_D\ M^2_0}\varphi(t)}\Bigg)
 \end{equation} 
+\vspace{0.05cm}
 
-Aproximacoes:
-\begin{equation}\label{}
+Utilizando-se novamente que $\Delta R \approx M_0 \approx R_{OFF}$, a Equação (\ref{qt}) resulta na (\ref{q}).
+\vspace{0.05cm}
+
+\begin{equation}\label{q}
 q(t)=Q_D\Bigg(1-\sqrt{1-\dfrac{2}{Q_D\ R_{OFF}}\varphi(t)}\Bigg)
 \end{equation} 
+\vspace{0.05cm}
 
-Estado inrerno do memristor:
-% ... operações com align
-\begin{equation}\label{}
-x(t)=1-\sqrt{1-\dfrac{2\mu_D}{r\; D^2}\varphi(t)}
+Tem-se ainda que (\ref{q}) em (\ref{xt}) resulta no estado interno do memristor definido como em (\ref{interno}). Constata-se ainda que (\ref{q}) em (\ref{M:ROFF}) resulta em (\ref{nano}).
+\vspace{0.001cm}
+
+\begin{equation}\label{interno}
+x(t)=1-\sqrt{1-\dfrac{2\, \mu_D}{r\; D^2}\varphi(t)}
 \end{equation} 
 
-Assim: escala nanometrica!
-\begin{equation}\label{}
-M(q)=R_{OFF}\Bigg(\sqrt{1-\dfrac{2\mu_D}{r\; D^2}\varphi(t) }\Bigg)
+\begin{equation}\label{nano}
+M(q)=R_{OFF}\Bigg(\sqrt{1-\dfrac{2\, \mu_D}{r\; D^2}\varphi(t) }\Bigg)
 \end{equation}
+\vspace{0.05cm}
 
-\begin{equation}\label{}
-i(t)=\dfrac{v(t)}{R_{OFF}\Bigg(\sqrt{1-\dfrac{2\mu_D}{r\; D^2}\varphi(t) }\Bigg)}
+Potanto a corrente $i(t)$ é descrita como na Equação (\ref{i}).
+
+\begin{equation}\label{i}
+i(t)=\dfrac{v(t)}{R_{OFF}\Bigg(\sqrt{1-\dfrac{2\, \mu_D}{r\; D^2}\varphi(t) }\Bigg)}
 \end{equation} 
+\vspace{0.05cm}
 
-
+Verifica-se que a Equação (\ref{nano}) mostra a relação inverso-quadrado entre a memristência $M$ e a espessura do $TiO_2$, $D$. Assim, para menores valores de $D$, a memória apresenta características melhoradas. Portanto, a memristência torna-se mais importante para a compreensão do porquê das dimensões dos dispositivos eletrônicos estarem diminuido para a escala nanométrica.
 
 \section{Simulações} \label{sim}
 
