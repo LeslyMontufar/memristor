@@ -32,10 +32,10 @@
 
 \begin{multicols}{2}
 
-\textbf{\emph{Resumo} - Um estudo sobre o comportamento do quarto elemento de circuito fundamental idealizado por Leon Chua em 1971 e implementado primeiramente pela equipe da \emph{HP Labs} liderada por R. Stanley Williams em 2008 é apresentado. Chamado de \emph{memristor}, o novo elemento de circuito passivo de duplo terminal relaciona as variáveis de carga $q(t)=\int_{-\infty}^t i(\tau)\, d\tau$ e fluxo $\varphi(t)=\int_{-\infty}^t v(\tau)\, d\tau$ e comporta-se como um resistor não-linear com memória. Sua propriedade peculiar advém da capacidade do material de manter seu último estado, e permite aplicações em diversos contextos, como em memórias ReRam e inteligência artificial.} %% aplicacoes a completar
+\textbf{\emph{Resumo} - Um estudo sobre o comportamento do quarto elemento de circuito fundamental idealizado por Leon Chua em 1971 e implementado primeiramente pela equipe da \emph{HP Labs} liderada por R. Stanley Williams em 2008 é apresentado. Chamado de \emph{memristor}, o novo elemento de circuito passivo de duplo terminal relaciona as variáveis de carga $q(t)=\int_{-\infty}^t i(\tau)\, d\tau$ e fluxo $\varphi(t)=\int_{-\infty}^t v(\tau)\, d\tau$ e comporta-se como um resistor não-linear com memória. Sua propriedade peculiar advém da capacidade do material de manter seu último estado, e permite aplicações em diversos contextos, como em memórias ReRam e computação neuromórfica.} %% aplicacoes a completar
 \vspace*{10pt}
 
-\textbf{\emph{Palavras-Chave} - Inteligência Artificial, Memórias ReRam, Memristor.}
+\textbf{\emph{Palavras-Chave} - Aplicações, Físico-Químico, Matemática, Memristor.}
 
 
 \begin{center}
@@ -44,10 +44,10 @@
 \noindent\textbf{\large \uppercase{Physicochemical and Mathematical Foundations of a Memristor}}
 \end{center}
 
-\textbf{\emph{Abstract} - A study of the behavior of the fourth fundamental circuit element devised by Leon Chua in 1971 and first implemented by the \emph{HP Labs} team led by R. Stanley Williams in 2008 is presented. Called \emph {memristor}, the new two-terminal passive circuit element lists the variables of charge $q(t)=\int_{-\infty}^t i(\tau)\, d\tau$ and flux $\varphi(t)=\int_{-\infty}^t v(\tau)\, d\tau$ and behaves like a nonlinear resistor with memory. Its peculiar property comes from the material's ability to maintain its last state, and allows applications in various contexts, such as ReRam memories and artificial intelligence.}
+\textbf{\emph{Abstract} - A study of the behavior of the fourth fundamental circuit element devised by Leon Chua in 1971 and first implemented by the \emph{HP Labs} team led by R. Stanley Williams in 2008 is presented. Called \emph {memristor}, the new two-terminal passive circuit element lists the variables of charge $q(t)=\int_{-\infty}^t i(\tau)\, d\tau$ and flux $\varphi(t)=\int_{-\infty}^t v(\tau)\, d\tau$ and behaves like a nonlinear resistor with memory. Its peculiar property comes from the material's ability to maintain its last state, and allows applications in various contexts, such as ReRam memories and neuromorphic computing.}
 \vspace*{10pt}
 
-\textbf{\emph{Keywords} - Artificial Intelligence, Memristor, ReRam memories.}
+\textbf{\emph{Keywords} - Applications, Mathematics, Memristor, Physicochemical.}
 
 
 \section{Introdução}
@@ -63,23 +63,16 @@ Portanto, considerado como o quarto elemento fundamental dos circuitos eletrôni
 Apesar da proposta teórica do \emph{memristor} ter sido apresentada por Chua em 1971, sua primeira implementação prática ocorreu apenas em 2008, nos \emph{Laboratórios da Hewllet-Packard} (\emph{HP}), graças à equipe liderada pelo físico-químico Dr. Richard Stanley Williams, que desenvolveu linhas de memristores com base no dióxido de titânio ($TiO_2$) em escala nanométrica \cite{nature}. A demora deve-se, principalmente, à dificuldade em encontrar materiais que fossem capazes de conferir a propriedade de reter memória ao dispositivo eletrônico e que satisfizessem a base teórica apresentada por Chua \cite{artigo}.
 Dessa forma, o componente recentemente sintetizado contém a propriedade da não-volatilidade, que, aliada a possibilidade de ser trabalhado em escala nanométrica, o torna promissor em aplicações e garante sua contribuição na validação da Lei de Moore.
 
-Pissardini \cite{memcomputacao} atenta para aplicações de \emph{memelementos} na elaboração de novas arquiteturas computacionais, que, corroborado pelos ideais da Arquitetura de Von Neumann, são capazes de realizar tarefas específicas. Essa abordagem tem sido conhecida como \emph{memcomputação}, que, ao contrário dos modelos convencionais, propõe que seja possível processar e armazenar dados no mesmo dispositivo (elemento físico), o qual seria o memristor em si. Prezioso \cite{rneurais} propõe que existem também aplicações de memristores e de memelementos nas chamadas redes neurais, as quais são sistemas que se baseiam em princípios de Inteligência Artificial, podendo aprender e reconhecer padrões, e que podem ser aprimoradas com o uso da memresistência devido ao caráter de não-volatilidade dos memristores. Dong e Qi \cite{chines}, em seu artigo acerca de circuitos lógicos, analisam a importância de memristores 
+Pissardini \cite{memcomputacao} atenta para aplicações de \emph{memelementos} na elaboração de novas arquiteturas computacionais, que, corroborado pelos ideais da Arquitetura de Von Neumann, são capazes de realizar tarefas específicas. Essa abordagem tem sido conhecida como \emph{memcomputação}, que, ao contrário dos modelos convencionais, propõe que seja possível processar e armazenar dados no mesmo dispositivo (elemento físico), o qual seria o memristor em si. Prezioso \cite{rneurais} propõe que existem também aplicações de memristores e de memelementos nas chamadas redes neurais, as quais são sistemas que se baseiam em princípios de Inteligência Artificial, podendo aprender e reconhecer padrões, e que podem ser aprimoradas com o uso da memresistência devido ao caráter de não-volatilidade dos memristores. Dong e Qi \cite{chines}, em seu artigo acerca de circuitos lógicos, analisam a importância de memristores para otimizar
+seu funcionamento, devido à característica não linear que possuem.
 
-
-%% que tarefas? não sei
-
-%% completar paragrafo de aplicacoes:
-%% circuitos lógicos CMOS
-%% voice encryption - drive
-%% memória ReRam !!
-%% Computacao neuromorfica, AI, redes neurais CNN
-%% Termistores - proposto primeiramente por Chua
-
-Sob essa perspectiva, a temática deste artigo basear-se-á na descrição detalhada desse novo componente, nos âmbito físico, químico, eletrônico e matemático, com intuito de compreender como o mecanismo interno converge para as propriedades impostas,  por Chua, a um dispositivo \emph{memristor}. É de interesse ainda discutir acerca das aplicabilidades do dispositivo, para assim poder expor o impacto de sua descoberta na teoria de circuitos e importância para o crescimento tecnológico. %% eletronico com SPICE
+Sob essa perspectiva, a temática deste artigo basear-se-á na descrição detalhada desse novo componente, nos âmbito físico, químico e matemático, com intuito de compreender como o mecanismo interno converge para as propriedades impostas,  por Chua, a um dispositivo \emph{memristor}. É de interesse ainda discutir acerca das aplicabilidades do dispositivo, para assim poder expor o impacto de sua descoberta na teoria de circuitos e importância para o crescimento tecnológico. %% eletronico com SPICE
 %% se formos acrescentar mais alguma coisa como circuito LTSpice.
 %% depende das aplicacoes
 
-Na Seção \ref{estrutura} são apresentadas as características estruturais, físico-químicas, de um \emph{memristor}, com ênfase para o modelo da \emph{HP Labs}. Para, na Seção \ref{analise-matematica}, analisá-lo matematicamente e, assim, provar a natureza de suas propriedades e peculiaridades a partir do equaciomento e disposição de gráficos. Além disso, a Seção \ref{sim} apresenta simulações computacionais nos ambientes \emph{MATLAB} e \emph{LTSPICE} que exemplificam suas características marcantes. Finalmente, na Seção \ref{aplicacoes}, é explicitada algumas de suas aplicações e recentes estudos.
+Na Seção \ref{estrutura} são apresentadas as características estruturais, físico-químicas, de um \emph{memristor}, com ênfase para o modelo da \emph{HP Labs}. Para, na Seção \ref{analise-matematica}, analisá-lo matematicamente e, assim, provar a natureza de suas propriedades e peculiaridades a partir do equaciomento e disposição de gráficos. Além disso, a Seção \ref{sim} apresenta simulações computacionais no ambiente \emph{MATLAB}
+% e \emph{LTSPICE} 
+que exemplificam suas características marcantes. Finalmente, na Seção \ref{aplicacoes}, é explicitada algumas de suas aplicações e recentes estudos.
 
 
 %% precisa colocar imagem pequena para explicar que a propriedade do memristor deve-se basicamente à redistribuição das lacunas(+) devido à deficiencia em oxigenio.
@@ -88,52 +81,32 @@ Na Seção \ref{estrutura} são apresentadas as características estruturais, f�
 Dispositivos de resistência variável baseados em óxidos 
 possuem vasta aplicabilidade, devido à capacidade de reter memória, pois
 admitem características de alta velocidade, alta densidade e operação em baixa energia, 
-assim como a não-volatilidade \cite{conceito}. Desse modo, os materiais óxidos são ideiais para a criação de um \emph{memristor}, sendo recentemente utilizados óxidos de titânio e tântalo ($TiO_x$, $TaO_x$)\cite{us}.
+assim como a não-volatilidade. Desse modo, os materiais óxidos são ideiais para implementar o conceito de um \emph{memristor}, sendo recentemente utilizados para esse fim os óxidos de titânio e tântalo ($TiO_x$, $TaO_x$) \cite{conceito}. %% Física do estado sólido
 
-Para analisar o funcionamento prático de um memristor, pode-se analisar o funcionamento prático de um dispositivo que foi a base para a existência do memristor, o "crossbarlatch", estudado em 2006 pelos %% volta no tempo, poderia colocar essa parte mais para o inicio antes do electroforming
-laboratórios da HP. Tal dispositivo passou a ser conhecido como o próprio memristor posteriormente. O "crossbarlatch" era uma espécie de sanduíche, possuindo suas partes externas constituídas por Platina (Pt), com espessura cerca de 3 nanômetros, e sua camada intermediária isolante dividida em duas partes, sendo a primeira formada de óxido de titânio($TiO_2$) e a segunda formada pela mesma substânca, porém deficiente em oxigênio ($TiO_2-x$) \cite{construcao}.  Assim, o funcionamento molecular de um memristor é baseado no movimento de íons livres no meio dielétrico (óxido), o que torna possível o comportamento “memristivo” pois cria mudanças locais na condutividade, causando, assim, a modelagem de filamentos condutores entre os eletrodos formado devido às nanopartículas, que podem ser vacâncias de oxigênio, as quais fornecem um caminho condutivo entre os eletrodos. \cite{us}. 
+Para analisar o funcionamento de um memristor, é interessante compreender o dispositivo \emph{crossbarlatch}, estudado em 2006 pela
+\emph{HP Labs}, posteriormente passou a ser conhecido como o próprio memristor. O crossbarlatch era uma espécie de sanduíche, possuindo partes externas constituídas por Platina ($Pt$), com espessura cerca de 3 nanômetros, e uma camada intermediária isolante subdividida em duas partes, sendo a primeira formada de óxido de titânio ($TiO_2$), conhecida como parte pura ou não dopada,e a segunda pela mesma substânca porém deficiente em oxigênio ($TiO_{2-x}$), conhecida como parte dopada \cite{construcao}.  Nesse sentido, o funcionamento molecular de um memristor é baseado no movimento de íons livres, no meio dielétrico (óxido), o que torna possível o comportamento memristivo, pois cria mudanças locais na condutividade a partir da modelagem de filamentos condutores entre os eletrodos.
 
+Esses filamentos condutores entre os eletrodos no meio inicialmente dielétrico são resultantes de um processo conhecido como \emph{eletroformação}, do inglês \emph{electroforming}, que consiste na aplicação de uma tensão elétrica suficientemente alta, ou seja um valor limite de tensão, entre os dois eletrodos por um período de tempo suficiente para a formação de um canal condutivo local no meio isolante, o que significa o rompimento de sua rigidez dielétrica.
+Ademais, esses valores limite de tensão e de tempo necessários para a formação do canal condutivo dependem dos materiais que constituem os dielétricos e os eletrodos, além da estrutura geométrica do dispositivo \cite{us}. 
+
+\vspace{-0.26cm}
 \begin{figure}[H]
 \centering
-
-\begin{subfigure}{0.49\columnwidth}
-\centering
 \includegraphics[width=\columnwidth]{oxygen-vacancies}
-\caption{oxigenio positivo} \label{fig:left}
-\end{subfigure}
-\hfill
-\begin{subfigure}{0.49\columnwidth}
-\centering
-\includegraphics[width=\columnwidth]{memristor-w}
-\caption{Eletroforming} \label{fig:right}
-\end{subfigure}
-
-\caption{Figuras aleatorias que ainda serão mudadas.}\label{}
+\caption{(a) Distribuição de vacâncias de oxigênio na camada intermediária de um memristor. (b) Aplicando-se tensão positiva os íons livres são repelidos. (b) Aplicando-se tensão negativa os íons livres são atraídos.}\label{estrutura}
 \end{figure}
 
+Devido à flexibilidade de variação de valores de resistência, ao memristor podem ser atribuídos \emph{status} como “OFF”, quando a parte não-dopada é dominante portanto o estado é de alta resistência; “ON”, quando a parte dopada é dominante portanto há baixa resistência, e ainda estados intermediários. Assim, pode armazenar dados na forma binária e multinível, como ocorre na Figura \ref{estrutura}(a). As nanopartículas utilizadas na dopagem possuem carga $+2$ (vacâncias de oxigênio) como é representado, e percebe-se uma proporção igualitária entre parte dopada e não dopada. 
 
-Para a formação de tais filamentos condutores entre os eletrodos no meio inicialmente dielétrico (meio entre os dois eletrodos), é necessário realizar um processo conhecido, em inglês, como “electroforming”, ou “eletroformação”. Tal %% o electroforming está na patente?
-processo consiste em aplicar uma tensão elétrica suficientemente alta, ou seja, um valor limite, entre os dois eletrodos por um período de tempo suficiente para ser originado um canal condutivo local no meio isolante. O que ocorre é, basicamente, o rompimento da rigidez dielétrica do material que permanece entre os eletrodos. %% explicacao do electrofoming terminou
-Os valores limite de tensão e de tempo necessários para ser formado o canal condutivo dependem de qual dielétrico foi utilizado e do material do qual são formados os dois eletrodos, além da estrutura geométrica do dispositivo \cite{us}.Consequentemente, é possível formar diferentes “status” do memristor, como “OFF”, ou seja, um estado de alta resistência; “ON”, ou seja, um estado de baixa resistência, e ainda estados intermediários. %% armazena dados em multinível e não apenas na forma binária. MLC? 
-%% Multi Layer Cell ou, traduzindo, Células de Múltiplas Camadas. Esse é o significado de MLC. Aqui, cada célula de memória é capaz de armazenar dois bits em vez de apenas um: 00, 01, 10 ou 11.
-%% memórias MLC são muito usadas em SSDs para computadores domésticos.
+Observa-se ainda que, a partir de um estado inicial qualuer como o da Figura \ref{estrutura}(a), ao se aplicar uma tensão elétrica positiva 
+no terminal dopado, as lacunas (vacâncias de oxigênio), que comportam-se como cargas positivas, migram para o lado oposto, ou seja, cargas negativas se deslocam para a parte dopada.
+ Dessa forma, a espessura da camada intermediária não-dopada diminui, ao mesmo tempo que a espessura da camada dopada e de maior condutividade aumenta, o que resulta na diminuição do valor da resistência do dispositivo. Tal estado do memristor é conhecido como "ON", ou de baixa resistência, e é ilustrado na Figura \ref{estrutura}(b). 
+%
+Por outro lado, ao se aplicar uma tensão negativa no terminal dopado, as lacunas são atraídas, ou seja, a espessura da camada intermediária não-dopada aumenta, ao mesmo tempo que a espessura 
+da camada de maior condutividade diminui, causando um aumento no valor da resistência do memristor. Tal estado, ilustrado na Figura \ref{estrutura}(c), é conhecido como "OFF", ou de alta resistência. 
 
-Para analisar o funcionamento prático de um memristor, pode-se analisar o funcionamento prático de um dispositivo que foi a base para a existência do memristor, o "crossbarlatch", estudado em 2006 pelos %% volta no tempo, poderia colocar essa parte mais para o inicio antes do electroforming
-laboratórios da HP. Tal dispositivo passou a ser conhecido como o próprio memristor posteriormente. O "crossbarlatch" era uma espécie de sanduíche, possuindo suas partes externas constituídas por Platina(Pt), com espessura cerca de 3 nanômetros, e sua camada intermediária sendo dividida em duas partes, sendo a primeira formada de óxido de titânio($TiO_2$) e a segunda formada pela mesma substânica, porém deficiente em oxigênio ($TiO_2-x$) \cite{construcao}.  
-
-A parte constituída por $TiO_2$ é conhecida como a parte pura(ou não dopada) e a parte deficiente em oxigênio é conhecida como a parte dopada. Ao se aplicar uma tensão elétrica positiva 
-no terminal dopado, as lacunas (onde falta oxigênio) se comportam como cargas positivas e "migram" para o outro lado, ou seja, cargas negativas se deslocam para a parte dopada. Dessa 
-forma, a espessura da camada intermediária diminui, ao mesmo tempo que a espessura da camada condutora aumenta, o que resulta na diminuição do valor da resistência do dispositivo. Tal 
-estado do memristor é conhecido como "ON", ou baixa resistência. %% Stanley fala isso na palestra, procurar documento que tem oq ele diz na forma de artigo fácil de entender
-
-Por outro lado, ao se aplicar uma tensão negativa no terminal dopado, as lacunas são "atraídas", ou seja, a espessura da camada intermediária aumenta, ao mesmo tempo que a espessura 
-da camada condutora diminui, causando um aumento no valor da resistência do memristor. Tal estado é conhecido como "OFF", ou alta resistência. 
-
-Ainda pode-se analisar o comportamento do memristor nos momentos em que não há aplicação de tensão elétrica, ou seja, quando a fonte de alimentação for desligada. Nesta situação, as 
-camadas pura e dopada permanecem no mesmo estado que estavam anteriormente. Assim, no momento em que uma tensão for aplicada, a memristência começa do ponto em que tinha 
-estacionado antes. %% no momento == quando
-
-Assim, o princípio básico do funcionamento de um memristor é a mudança de posição dos átomos quando sofre influência de uma tensão elétrica, processo que é facilitado por ocorrer em 
+Assim, o princípio básico do funcionamento de um memristor consiste basicamente na redistribuição das lacuna sob a influência de uma tensão elétrica aplicada e, quando cessada, as 
+camadas pura e dopada permanecem como no último estado atingido, dessa forma memorizam o último valor de resistência alcançado, e esse processo é facilitado por ocorrer em 
 escala nanométrica. %% por que? equacao 1/D^2
 
 \section{Fundamentos Matemáticos}\label{analise-matematica}
@@ -145,7 +118,6 @@ fluxo $\varphi$. Para um memristor controlado por carga tem-se a Equação (\ref
 \varphi = f(q)
 \end{equation}
 
-%Derivando ambos os termos da Equação (\ref{mem-charge}):
 \begin{equation}\label{derivate-q}
 \dfrac{d\varphi}{dt}=\dfrac{df(q)}{dq} \ \dfrac{dq}{dt}
 \end{equation}
@@ -162,8 +134,9 @@ v(t)=M(q)\ i(t)
 \begin{equation} \label{M}
 M(q) =\dfrac{df(q)}{dq}
 \end{equation}
+\vspace{0.05cm}
 
-$M$ é chamada de \textit{memristência}, e é mensurada na mesma unidade que a resistência (\textit{Ohms} - $\Omega$). A memristência, definida pela Equação (\ref{M}), define uma relação linear entre tensão e corrente, enquanto a carga for constante. Logo se $M$ é constante, o memristor comporta-se como um resistor.
+$M$ é chamada de \textit{memristência}, e é mensurada na mesma unidade que a resistência (\textit{Ohms} - $\Omega$). A memristência, definida pela Equação (\ref{M}), define uma relação linear entre tensão e corrente, enquanto a carga for constante. Logo, se $M$ é constante, o memristor comporta-se como um resistor.
 
 Para um memristor controlado por fluxo tem-se a Equação (\ref{mem-flux}) e derivando-se ambos os termos, a Equação (\ref{derivate-phi}).
 
@@ -174,40 +147,42 @@ q = f(\varphi)
 \begin{equation}\label{derivate-phi}
 \dfrac{dq}{dt}=\dfrac{df(\varphi)}{d\varphi} \ \dfrac{d\varphi}{dt}
 \end{equation}
-\vspace{0.1cm}
+\vspace{0.05cm}
 
-Reescrevendo a Equação (\ref{derivate-phi}) utilizando-se as definições de tensão e corrente tem-se a  Equação (\ref{}).
+Reescrevendo a Equação (\ref{derivate-phi}) utilizando-se as definições de tensão e corrente tem-se a  Equação (\ref{iWv}).
 
-\begin{gather}\label{}
+\begin{gather}\label{iWv}
 i(t)=W(\varphi)\ v(t)
 \end{gather}
 
 \noindent onde
-\begin{equation} \label{M}
+\begin{equation} \label{W}
 W(\varphi) =\dfrac{df(\varphi)}{d\varphi}
 \end{equation}
+\vspace{0.05cm}
 
-Nesse caso, $W$ é chamado de \textit{memductância} e tem mesma unidade da condutância (\textit{Siemens} - $S$).
+Nesse caso, $W$, da Equação \ref{W}, é chamado de \textit{memductância} e tem mesma unidade da condutância (\textit{Siemens} - $S$).
 
-Entretanto, a relação não abrange a propriedade de memória do dispositivo, o que levou Chua juntamente com seu aluno de graduação Kang \cite{1976}, em 1976, a reconhecer que, enfaticamente, o \emph{memristor} seria um componente passivo com \emph{estado}, ou seja é um componente cuja propriedade de memória é definida por um ou mais \emph{variáveis de estado}.
-Diante disso, a equipe HP Laboratories modelou matematicamente um \emph{memristor}, essencialmente, a partir de duas equações: a Equação (\ref{eq01}) - similar à Equação (\ref{derivate-q}) - e a Equação (\ref{eq02}) - que considera a interação física intrínseca do componente.
+Entretanto, em especial para o memristor controlado por por carga, as relações das Equações (\ref{vMi}) e (\ref{vMi}) não abrangem a propriedade de memória do dispositivo, o que levou Chua juntamente com seu aluno de graduação Kang \cite{1976}, em 1976, a reconhecer que, enfaticamente, o \emph{memristor} seria um componente passivo com \emph{estado}, ou seja, cuja propriedade de memória é definida por uma ou mais \emph{variáveis de estado}.
+Diante disso, a equipe HP Laboratories modelou matematicamente um \emph{memristor}, essencialmente, a partir das equações propastas por Chua e Kang \cite{1976} para sistemas memristivos (Equações \ref{sm1} e \ref{sm2}).
 
+\begin{comment}
 \begin{equation}\label{eq01}
 v=M( w) \ i
 \end{equation}
-
 \begin{equation}\label{eq02}
 \dfrac{dw}{dt} =f(i) 
 \end{equation}
+\end{comment}
 
 Assim, a definição matemática rigorosa revela que, conforme a Equação (\ref{eq01}), a \emph{memristência} $M$ depende do estado do dispositivo, em determinado instante de tempo $t$, que por sua vez também varia com o tempo como integral da função contínua de corrente $f$, como descrito pela Equação (\ref{eq02}).  Uma representação física da variável de estado $w$ é ilustrada na Figura \ref{w}. 
 
 Sistemas memristivos Chua e Kang:
-\begin{equation}\label{derivate-q}
+\begin{equation}\label{sm1}
 v=M(w, i)i
 \end{equation}
 
-\begin{equation}\label{derivate-q}
+\begin{equation}\label{sm2}
 \dfrac{dw}{dt}=f(w, i)
 \end{equation}
 
@@ -235,7 +210,7 @@ x(t)=x(t_0)+\dfrac{q(t)}{Q_D}
 \end{equation}
 
 Agora a variavel de estado x:
-\begin{equation}\label{derivate-q}
+\begin{equation}\label{}
 M(t)=R_{ON}\ x(t)+ R_OFF(1-x(t))
 \end{equation}
 
@@ -248,7 +223,7 @@ M_0&=R_{ON}\ x(t_0)+ R_OFF(1-x(t_0))&\\
 \end{align}
 
 Substitui x(t) em M(x) = ...
-\begin{equation}\label{derivate-q}% exclui essa talvez
+\begin{equation}\label{}% exclui essa talvez
 M(q)=R_{OFF}\Bigg( 1-\dfrac{q(t)}{Q_D}\Bigg)
 \end{equation}
 
@@ -367,24 +342,19 @@ Southwest University, Chongqing 400715, P. R. China . Disponível em:\url{https:
     memcapacitative and meminductive systems},” in Proc. of the European
     Conference on Circuit Theory and Design (ECCTD09), Antalya,
     Turkey, 2009, pp. 249-252. %% ainda não
-
-\bibitem{cibelly2}	
-    D. B. Strukov, G. S. Snider, D. R. Stewart, and R. S. Williams, “\uppercase{The
-    missing memristor found}”, Nature, 2008, vol. 453, pp. 80–83. %% preciso baixar esse artigo
 \end{comment}
 
 %% FUNCIONAMENTO ESTRUTURAL
 \bibitem{conceito}	
     J. P. Strachan, A. C. Torrezan, F. Miao, M. D. Pickett, J. J. Yang; W. Yi, G. M. Ribeiro, R. S. Williams, “STATE DYNAMICS AND MODELING OF TANTALUM OXIDE MEMRISTORS”, Disponível em: \url{https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=6542012}. Acesso em ago. 2019.
-    
+ 
+\bibitem{construcao}	
+   F.S.Barachati, "ESTUDO E PREPARAÇÃO DE MEMORISTORES PARA SUA APLICAÇÃO EM DISPOSITIVOS ELETRÔNICOS". Escola de Engenharia de São Carlos, da Universidade de São Paulo. Disponível em: \url{http://www.tcc.sc.usp.br/tce/disponiveis/18/180450/tce-26032012-090929/publico/Barachati_Fabio_Souza.pdf}. 
+   Acesso em ago. 2019.   
+
 \bibitem{us}	
     United States Patent; Patent No: US 9035272 B2. “NANOPARTICLE-BASED MEMRISTOR STRUCTURE”. Disponível em: \url{https://patentimages.storage.googleapis.com/0e/70/e0/6b8926f49e7cd8/US9035272.pdf}. Acesso em ago. 2019.
     
-
-    
-\bibitem{construcao}	
-   F.S.Barachati, "ESTUDO E PREPARAÇÃO DE MEMORISTORES PARA SUA APLICAÇÃO EM DISPOSITIVOS ELETRÔNICOS". Escola de Engenharia de São Carlos, da Universidade de São Paulo. Disponível em: \url{http://www.tcc.sc.usp.br/tce/disponiveis/18/180450/tce-26032012-090929/publico/Barachati_Fabio_Souza.pdf}. 
-   Acesso em ago. 2019.
 
 %% MATEMATICA
 \bibitem{elusive} % indescritivel
