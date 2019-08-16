@@ -247,8 +247,6 @@ q(t)=Q_D\Bigg(1-\sqrt{1-\dfrac{2}{Q_D\ R_{OFF}}\varphi(t)}\Bigg)
 \vspace{0.05cm}
 
 Tem-se ainda que (\ref{q}) em (\ref{xt}) resulta no estado interno do memristor definido como em (\ref{interno}). Constata-se ainda que (\ref{q}) em (\ref{M:ROFF}) resulta em (\ref{nano}).
-\vspace{0.001cm}
-
 \begin{equation}\label{interno}
 x(t)=1-\sqrt{1-\dfrac{2\, \mu_D}{r\; D^2}\varphi(t)}
 \end{equation} 
@@ -280,6 +278,7 @@ Sabendo-se que a potência em elementos passivos $p(t)$ deve ser sempre positiva
 p(t) = v(t)i(t)=M(q(t))[i(t)]^2
 \end{equation}
 
+Na Figura \ref{vt:vx}
 
 \begin{figure*}[ht]
 %\centering
@@ -320,7 +319,7 @@ p(t) = v(t)i(t)=M(q(t))[i(t)]^2
 \caption{} \label{spice:vt-it}
 \end{subfigure}
 
-\caption{(a) Curva $\varphi$-$q$ de um memristor. (b) Relação entre a tensão de entrada $v(t)$ e a variável de estado $x(t)$. (c) Curva $v$-$i$ de um memristor, chamado de \emph{pinched hysteresis loop} por Chua.}\label{simulacao}
+\caption{No ambiente \textit{MATLAB} foram gerados os gráficos de (a)-(c), enquanto que (d)-(f) são obtidos pelo ambiente \textit{LTSPICE}. (a) Curva $\varphi$-$q$ de um memristor. (b) Relação entre a tensão de entrada $v(t)$ e a variável de estado $x(t)$ no tempo. (c) Curva $v$-$i$ de um memristor, chamado de \emph{pinched hysteresis loop} por Chua. (d) Esquema de simulação \textit{LTSPICE}. (e) \emph{Pinched hysteresis loop} de (d). (f) Curvas de tensão de entrada $v(t)$ e $i(t)$ no tempo, no qual observa-se o efeito da histerese sobre a corrente no dispositivo.}\label{simulacao}
 \end{figure*}
 %% Lisajous Figures
 
