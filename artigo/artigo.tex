@@ -301,6 +301,18 @@ Sabendo-se que a potência em elementos passivos $p(t)$ deve ser sempre positiva
 p(t) = v(t)i(t)=M(q(t))[i(t)]^2
 \end{equation}
 
+\begin{comment}
+\begin{figure}[H]
+\includegraphics[width=0.95\columnwidth]{flux-charge}
+\caption{Curva $\varphi-q$, onde a inclinação é a memristência $M(q)$.}\label{flux-charge}
+\end{figure}
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.95\columnwidth]{oxygen-vacancies}
+\caption{(a) Distribuição de vacâncias de oxigênio na camada intermediária de um memristor. (b) Aplicando-se tensão positiva os íons livres são repelidos. (c) Aplicando-se tensão negativa os íons livres são atraídos.}\label{estrutura}
+\end{figure}
+\end{comment}
+
 
 \begin{figure*}[ht]
 %\centering
@@ -321,7 +333,6 @@ p(t) = v(t)i(t)=M(q(t))[i(t)]^2
 \includegraphics[width=\columnwidth]{ww0}
 \caption{} \label{pinched}
 \end{subfigure}
-
 
 \vspace{0.2cm}
 \begin{subfigure}{0.32\textwidth}
@@ -351,29 +362,18 @@ p(t) = v(t)i(t)=M(q(t))[i(t)]^2
 \subsection{Memórias ReRam}
 A Memória Resistiva de Acesso Randômico (ReRAM) mantém os dados na falta de energia, essa propriedade deve-se especialmente pela presença do memristor em seus chips, que altera sua resistência de acordo com a passagem da corrente elétrica em resposta a variações na sua tensão de alimentação.
 Essa tecnologia assemelha ao uso de transistores nas memórias Flash, com a diferença de as células de memória ReRAM serem muito menores, consumirem menos energia elétrica e armazenarem os dados como resistência, ao invés de armazenar como carga elétrica.
-O reRAM, portanto, tem o potencial de ser extremamente denso, de baixa potência, com alta resistência, tornando-se uma tecnologia atraente para armazenamento secundário e níveis de memória de classe de armazenamento \cite{prog}. Segundo a HP, dispositivos contendo memristores oferecem cerca de 20GB por centímetro quadrado, o dobro da capacidade projetada para as memórias flash.
+
+O ReRAM, portanto, tem o potencial de ser extremamente denso, de baixa potência, com alta resistência, tornando-se uma tecnologia atraente para armazenamento secundário e níveis de memória de classe de armazenamento \cite{prog}. Segundo a HP, dispositivos contendo memristores oferecem cerca de 20GB por centímetro quadrado, o dobro da capacidade projetada para as memórias flash.
 Dispositivos memresistivos podem mudar o paradigma padrão da computação ao permitir que cálculos sejam executados nos chips onde a informação está armazenada \cite{hp}. Além disso, essa tecnologia é útil em todo tipo de dispositivo eletrônico.
 
 \subsection{Circuitos híbridos CMOS} %  logic, hybrid circuits with CMOS, and neuromorphic computing.
 Os circuitos híbridos combinam flexibilidade, confiabilidade e alta funcionalidade do subsistema CMOS com alta densidade de filme fino. Dispositivos memristivos não são componentes ativos, isto é, não podem fornecer energia para o circuito. A solução para esse problema é complementar matrizes de crossbar de dispositivos memristivos com um substrato CMOS convencional que fornece sinalização de restauração e ganho \cite{um}\cite{dois}.
 
 %A Figura \ref{cibelly} mostra um exemplo de tais circuitos, c
-Conhecido como CMOL ( Dispositivos  híbridos Cmos + MOLecular) . A combinação de circuitos CMOS e memristores não só tem um potencial para prolongar a lei de Moore para memórias digitais e circuitos lógicos booleanos reconfiguráveis, mas também podem reviver o campo da computação neuromórfica artificial.
-
-\begin{comment}
-\begin{figure}[H]
-\centering
-\includegraphics[width=\columnwidth]{cmos}
-\caption{Circuito híbrido tridimensional de CMOS / memristor com interface de área distribuída. (a) Ilustração em corte do circuito mostrando quatro camadas da barra transversal (M = 4), (b) um zoom da estrutura da barra transversal com vários pinos adjuntos para mostrar que qualquer nanodispositivo pode ser endereçado através do par de pinos apropriado (por exemplo, pinos 1 e 2 para a direita dos dois dispositivos mostrados, e pinos 1 e 2 'para o dispositivo esquerdo), (c) diagrama de circuito equivalente da camada CMOS para o arranjo de células primitivas N = 5, e (d) diagrama de circuito equivalente da matriz de barra virtual para o caso N = 5, M = 2 e r = 3.}\label{cibelly}
-\end{figure}
-\end{comment}
-
-\begin{enumerate}[1)]
-\item \emph{Redes Neuromórficas Artificiais}\\
+Conhecido como CMOL (Dispositivos  híbridos Cmos + MOLecular) . A combinação de circuitos CMOS e memristores não só tem um potencial para prolongar a lei de Moore para memórias digitais e circuitos lógicos booleanos reconfiguráveis, mas também podem reviver o campo da computação neuromórfica artificial.
+ 
 A tecnologia de circuitos híbridos é ajustada para fornecer maior conectividade entre pequenas células de circuito CMOS (escala de 100 portas) através de ligações “memristor de nanofios-nanofios”. Isso permite construir redes neuromórficas de larga escala com bom custo-benefício. Dispositivos memristivos são a base para as "sinapses", ou seja, comunicação entre as células. Consequentemente, redes neurais baseadas em CMOL podem ser eficientes, principalmente, no reconhecimento e classificação de padrões \cite{oito}.
 
- 
-\end{enumerate}
 
 \section{CONCLUSÕES}
 
@@ -401,7 +401,7 @@ COMPUTAÇÃO PARALELA”, Escola Politécnica da Universidade de São Paulo, Dep
 % Disponível em: \url{https://www.ime.usp.br/~gold/cursos/2015/MAC5742/reports/MemComputacao.pdf}. Acesso em: jun. 2019.
  
  \bibitem{rneurais}	
-   M. Prezioso, F. Merrikh-Bayat, B. D. Hoskins, G. C. Adam, K. K. Likharev, D. B. StrukovTraining, "Training and operation of anintegrated neuromorphic
+   M. Prezioso, F. Merrikh-Bayat, B. D. Hoskins, G. C. Adam, K. K. Likharev, D. B. Strukov, "Training and operation of anintegrated neuromorphic
 network based on metal-oxide memristors", 
 Department of Electrical and Computer Engineering, University of California, California 93106, USA. 
 Department of Physics and Astronomy, Stony Brook University, New York 11794, USA. 
