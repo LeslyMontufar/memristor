@@ -250,38 +250,35 @@ Tem-se ainda que (\ref{q}) em (\ref{xt}) resulta no estado interno do memristor 
 \begin{equation}\label{interno}
 x(t)=1-\sqrt{1-\dfrac{2\, \mu_D}{r\; D^2}\varphi(t)}
 \end{equation} 
-
 \begin{equation}\label{nano}
 M(q)=R_{OFF}\Bigg(\sqrt{1-\dfrac{2\, \mu_D}{r\; D^2}\varphi(t) }\Bigg)
 \end{equation}
 \vspace{0.05cm}
 
 Portanto a corrente $i(t)$ é descrita como na Equação (\ref{i}).
-
 \begin{equation}\label{i}
 i(t)=\dfrac{v(t)}{R_{OFF}\Bigg(\sqrt{1-\dfrac{2\, \mu_D}{r\; D^2}\varphi(t) }\Bigg)}
 \end{equation} 
-\vspace{0.05cm}
 
 Verifica-se que a Equação (\ref{nano}) mostra a relação inverso-quadrado entre a memristência $M$ e a espessura do $TiO_2$, $D$. Assim, para menores valores de $D$, a memória apresenta características melhoradas. Portanto, a memristência torna-se mais importante para a compreensão do porquê das dimensões dos dispositivos eletrônicos estarem diminuido para a escala nanométrica.
 
 \section{Simulações} \label{sim}
-O memristor possui características marcantes que serão interpretadas graficamente via programação \emph{MATLAB} a partir das Equações (\ref{q}), (\ref{interno}) e (\ref{i}). Considere um memristor com mobilidade $\mu_D \sim 10^{-10\,} cm^2/V.s$, comprimento $D\sim10nm$, e resistências do estado \textit{ON} e \textit{OFF}, $R_{ON}\sim 100\Omega$ e $R_{OFF}\sim 16K\Omega$, respectivamente. Como $\varphi(t)=\int_{-\infty}^t v(\tau)\, d\tau$, tem-se que para uma tensão senoidal do tipo $v(t)=v_0\cdot sin(\omega t)$ o fluxo é descrito pela Equação (\ref{flux}), em que $v_0$ é a amplitude da tensão de entrada e $\omega$ a frequência em \textit{rad/s}.
+O memristor possui características marcantes que serão interpretadas graficamente via programação \emph{MATLAB} a partir das Equações (\ref{q}), (\ref{interno}) e (\ref{i}). Considere um memristor com mobilidade $\mu_D \sim 10^{-10\,} cm^2/V.s$, comprimento $D\sim10nm$, e resistências do estado \textit{ON} e \textit{OFF}, $R_{ON}\sim 100\Omega$ e $R_{OFF}\sim 16K\Omega$, respectivamente. Como $\varphi(t)=\int_{-\infty}^t v(\tau)\, d\tau$, tem-se que para uma tensão senoidal do tipo $v(t)=v_0\cdot sin(\omega t)$, o fluxo é descrito pela Equação (\ref{flux}), em que $v_0$ é a amplitude da tensão de entrada e $\omega$ a frequência em \textit{rad/s}.
 
 \begin{equation}\label{flux}
 \varphi(t) = \dfrac{v_0\, (1-cos(\omega t))}{\omega}
 \end{equation}
 
 Sabendo-se que a potência em elementos passivos $p(t)$ deve ser sempre positiva para qualquer tempo $t$ e que a potência instantânea dissipada por um memristor define-se pela Equação (\ref{pot}), é preciso que a memristência $M(q)$ seja não-negativa, isto é $M(q)\geq 0$. Graficamente na Figura \ref{flux-charge}, tem-se $M(q)$ dada como a inclinação da curva $\varphi$-$q$, que será, portanto, sempre monótona crescente \cite{artigo}.
-
 \begin{equation}\label{pot}
 p(t) = v(t)i(t)=M(q(t))[i(t)]^2
 \end{equation}
 
-Na Figura \ref{vt:xt} comtempla-se como a variável de estado $x(t)\in[0,1]$ varia conforme a tensão aplicada % comentar ...
+Na Figura \ref{vt:xt} comtempla-se como a variável de estado $x(t)\in[0,1]$ varia conforme a tensão aplicada $v(t)$ resultante do efeito da histerese no material. % comentar ...
+%
+Já na Figura \ref{pinched} é representada uma importante característica do memristor. O gráfico em laço ou o \emph{pinched hysteresis loop}, como denominado por Chua, corresponde à curva  $v$-$i$ de um memristor e possui a forma de uma Curva de Lissajous centrada na origem. A configuração deve-se ao fenônemo da histerese, que permite conservar a o útimo valor de memristência mesmo sem o potencial originalmente aplicado.
 
-Na Figura \ref{pinched} é representada uma importante característica do memristor. O gráfico em laço ou o \emph{pinched hysteresis loop}, como denominado por Chua, corresponde à curva  $v$-$i$ de um memristor e possui a forma de uma Curva de Lissajous centrada na origem. A configuração deve-se ao fenônemo da histerese, que permite conservar a o útimo valor de memristência mesmo sem o potencial originalmente aplicado.
-
+No simulador \emph{SPICE}, o circuito da Figura \ref{spice:project} permite obter a curva $v$-$i$ da Figura \ref{spice:pinched}, do que surge o seguinte teorema fundamental que "todo dispositivo de duplo terminal que exibe um \emph{pinched hysteresis loop} no plano tensão-corrente quando conduzido por um sinal DC e/ou senoidal de qualquer frequência é um sistema memristivo" \cite{you}. Dessa forma, desde que o sistema continue no regime dos memristores, qualquer polarização simétrica de tensão de corrente alternada resulta em uma histerese de laço duplo, que colapsa em uma linha reta para altas frequências, conforme a Figura \ref{pinched}. O fenônemo também é vísivel em \ref{spice:vt-it}, a tendência do material de manter suas propriedades proporciona certa deformação da curva da corrente $i(t)$ no tempo, comparada com a curva da tensão de entrada $v(t)$.
 \begin{figure*}[ht]
 %\centering
 \begin{subfigure}{0.33\textwidth}
@@ -344,11 +341,12 @@ A tecnologia de circuitos híbridos é ajustada para fornecer maior conectividad
 
 
 \section{CONCLUSÕES}
+O \emph{}
 %% Enaltecer o memristor como em: mas não copiar
 O memristor é tão promissor que pode revolucionar os desenhos de circuitos digitais e os sistemas computacionais, além de representar um caminho inédito e possível à inteligência artificial.
 
 %% Próximos trabalhos: futuros e recentes estudos
-nanotecnologia, microeletrônica, computação e aplicações em redes neurais
+promissor no campo da nanotecnologia, microeletrônica, computação e aplicações em redes neurais.
 %==================================
 % REFERÊNCIAS
 %==================================
@@ -415,9 +413,15 @@ in \emph{Nanoscale},
     “Memristive devices and systems”, 
     in \emph{Proceedings IEEE}, 1976, vol. CT-18, no. 5, pp. 507-519.
 
+\begin{comment}
 \bibitem{elusive} % indescritivel
     Y. N. Joglekar, S. J. Wolf, "The elusive memristor: properties of basic electrical circuits", Department of Physics, Indiana University Purdue, 2009.
+\end{comment}
 
+\bibitem{you} % indescritivel
+    L. Chua,
+    "Memristor and Memristive Systems Symposium",  UC Berkeley Events, 2008.
+    Disponível em: \url{https://www.youtube.com/watch?v=QFdDPzcZwbs}. Acesso em ago. 2019.
 
 
 %% APLICACOES
