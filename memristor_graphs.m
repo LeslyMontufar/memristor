@@ -43,36 +43,36 @@ plot(t,width, 'LineWidth', 2);
 xlabel('tempo (s)');
 legend('Tensão v(t)','Variável x(t)');
 
-##figure(3) 
-##plot (vt,i, 'LineWidth', 2);%plot of current versus voltage  
-##%title('Voltage-current curve');
-##grid on;
-##xlabel('tensão v(t)');
-##ylabel('corrente i(t)');
-##
-##figure(4);
-##plot(vt, i, 'LineWidth', 2);
-##grid on;
-##hold on;
-##omega = 6;
-##vt=v0*sin(omega*t);%input voltage 
-##flux=v0*(1-cos(omega*t))/omega;%flux 
-##for n=1:n_fim
-##i(n)=(vt(n))/(ROFF*sqrt(1-((2*MD*flux(n))/(r*(D^2))))); %Current 
-##charge(n)=(q0*(1-sqrt(1-((2*flux(n))/(q0*ROFF)))));%charge 
-##width(n)= 1-sqrt(1-((2*MD*flux(n))/(r*(D^2))));%internal state of memristor 
-##end 
-##plot(vt, i, 'LineWidth', 2);
-##grid on;
-##xlabel('tensão v(t)');
-##ylabel('corrente i(t)');
-##legend('w_0','2 w_0');
-##
-##
-##
-##figure(4)
-##plot(t, i, 'LineWidth', 2);
-##title('Time-current-voltage curve');
-##grid on;
-##xlabel('tempo');
-##ylabel('fluxo');
+% figure(3) 
+% ##plot (vt,i, 'LineWidth', 2);%plot of current versus voltage  
+% ##%title('Voltage-current curve');
+% ##grid on;
+% ##xlabel('tensão v(t)');
+% ##ylabel('corrente i(t)');
+% ##
+% ##figure(4);
+% ##plot(vt, i, 'LineWidth', 2);
+% ##grid on;
+% ##hold on;
+% ##omega = 6;
+% ##vt=v0*sin(omega*t);%input voltage 
+% ##flux=v0*(1-cos(omega*t))/omega;%flux 
+% ##for n=1:n_fim
+% ##i(n)=(vt(n))/(ROFF*sqrt(1-((2*MD*flux(n))/(r*(D^2))))); %Current 
+% ##charge(n)=(q0*(1-sqrt(1-((2*flux(n))/(q0*ROFF)))));%charge 
+% ##width(n)= 1-sqrt(1-((2*MD*flux(n))/(r*(D^2))));%internal state of memristor 
+% ##end 
+% ##plot(vt, i, 'LineWidth', 2);
+% ##grid on;
+% ##xlabel('tensão v(t)');
+% ##ylabel('corrente i(t)');
+% ##legend('w_0','2 w_0');
+% ##
+% ##
+% ##
+% ##figure(4)
+% ##plot(t, i, 'LineWidth', 2);
+% ##title('Time-current-voltage curve');
+% ##grid on;
+% ##xlabel('tempo');
+% ##ylabel('fluxo');

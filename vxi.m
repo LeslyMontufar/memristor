@@ -1,7 +1,7 @@
   t = -10:0.1:10;
   v0 = 1;
   
-#  Typical parameters
+%  Typical parameters
   t0 = 0.1*10^(-3);
   w0 = 50*10^3;
   
