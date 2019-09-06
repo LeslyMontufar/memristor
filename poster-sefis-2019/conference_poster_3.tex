@@ -76,17 +76,19 @@ boxshade=plain
 
 \headerbox{Introdução}{name=introduction,column=0,row=0}{
 
-A partir da análise das possíveis combinações entre as quatro variáveis fundamentais de circuitos: corrente elétrica $i$, tensão elétrica $v$, carga elétrica $q$ e fluxo magnético $\varphi$, Chua [1] 
+A partir da análise das possíveis combinações entre as quatro variáveis fundamentais de circuitos, Chua [1] 
 %\cite{artigo}
- baseando-se no argumento da simetria, postulou que haveria um elemento de circuito faltante, capaz de associar a carga $q(t)$ e o fluxo magnético $\varphi(t)$. Por isso, em 1971, idealizou o novo componente, definido pela relação $d\varphi=M dq$, conforme a Figura \ref{memristor}, e denominou-o \emph{memristor}, uma contração de \emph{memory resistor}. 
-
+ baseando-se no argumento da simetria, postulou que haveria um elemento de circuito faltante, capaz de associar as variáveis carga $q(t)$ e fluxo magnético $\varphi(t)$. Por isso, em 1971, idealizou o novo componente, definido pela relação $d\varphi=M dq$, conforme a Figura \ref{memristor}, e denominou-o \emph{memristor}, uma contração de \emph{memory resistor}. 
+ 
+\vspace{-0.3cm}
 \begin{center}
 \includegraphics[width=0.8\linewidth]{memristor}
 \vspace{-8pt}
-\captionof{figure}{Combinação das quatro variáveis fundamentais de circuito.}
+\captionof{figure}{Combinações possíveis entre as quatro variáveis fundamentais de circuito.}
 \label{memristor}
 \end{center}
 
+\vspace{-0.2cm}
 %, em português \emph{resistor com memória} 
 Considerado, portanto, o quarto elemento fundamental dos circuitos eletrônicos, ao lado do capacitor (1745), resistor (1827) e indutor (1831), o \emph{memristor} destaca-se por apresentar uma propriedade da não-volatilidade, que, aliada a possibilidade de ser trabalhado em escala nanométrica, o torna promissor em aplicações como memórias ReRam e computação neuromórfica.
 
@@ -98,25 +100,22 @@ Considerado, portanto, o quarto elemento fundamental dos circuitos eletrônicos,
 %----------------------------------------------------------------------------------------
 
 \headerbox{Modelo de Deriva Linear}{name=methods,column=0,below=introduction}{
-O primeiro modelo foi proposto pela \emph{HP Labs}
+O primeiro modelo foi proposto pela \emph{HP Labs}, no qual primeiramente é suposto um campo elétrico uniforme através do dispositivo, que resulta em uma relação linear entre a velocidade de deriva e o campo elétrico líquido. Assim, a memristência $M(q)$ define-se como na Equação (\ref{M:ROFF}), sendo que $Q_D=D^2/\mu_D R_{ON}$ é a carga necessária para mover a deriva de $w(t_0)$, onde $w\rightarrow 0$, para $w(t_D)$, onde $w\rightarrow D$.
 
+\vspace{-0.15cm}
 \begin{equation}
-\begin{aligned}
-\min_{\mathbf{S},\mathbf{W},\mathbf{F}}&\|\mathbf{S}-\mathbf{A}\|_F^2+\alpha\mathbf{Tr}(\mathbf{F}^T\mathbf{L_s}\mathbf{F})+\\&\beta(\|(\mathbf{XW}-\mathbf{F}\|_F^2+\gamma\|\mathbf{W}\|_{2,1}) \\
-s.t.&~\mathbf{S1}=\mathbf{1},\mathbf{S}\ge\mathbf{0},\mathbf{F}^T\mathbf{F}=\mathbf{I}_c,\mathbf{F}\ge\mathbf{0}
-\end{aligned}
-\label{eq:3}
+M(q)=R_{OFF}\bigg( 1-\dfrac{q(t)}{Q_D}\bigg)
+\label{M:ROFF}
 \end{equation}
-where $\mathbf{X}\in\mathbb{R}^{n\times d}$ is the data matrix, $\mathbf{W}\in\mathbb{R}^{d\times c}$ is the projection matrix, $\beta$ and $\gamma$ are regularization parameters. Similar to [1, 2], we impose the non-negativity on F here
+
 }
 
 %----------------------------------------------------------------------------------------
 %	CONCLUSION
 %----------------------------------------------------------------------------------------
 
-\headerbox{Conclusion}{name=conclusion,column=0,below=methods}{
-
-Neste estudo, analisa-se os fundamentos físico-químicos e matemáticos do quarto elemento fundamental de circuitos: o \emph{memristor}. Idealizado por Chua em 1971, mas implementado apenas em 2008 pela \emph{HP Labs}, o novo componente tem o diferencial da propriedade de não-volatilidade, a qual é exemplificada mediante simulações nos ambientes \emph{MATLAB} e \emph{LTSPICE}, priorizando a explanação das características primeiro modelo proposto.
+\headerbox{Conclusão}{name=conclusion,column=0,below=methods}{
+Analisa-se os fundamentos físico-químicos e matemáticos do quarto elemento fundamental de circuitos: o \emph{memristor}. Estruturalmente é caracterizado pela redistribuição das nanopartículas dopantes ao longo de sua camada dielétrica, comumente composta por um óxido. No sentido matemático, demonstrou-se que a propriedade da não-volatilidade advém do \emph{pinched hysteresis loop} e que suas características aprimoram-se na redução de escala.
 
 }
 
@@ -124,7 +123,7 @@ Neste estudo, analisa-se os fundamentos físico-químicos e matemáticos do quar
 %	REFERENCES
 %----------------------------------------------------------------------------------------
 
-\headerbox{References}{name=references,column=0,below=conclusion}{
+\headerbox{Referências}{name=references,column=0,below=conclusion}{
 
 \smaller % Reduce the font size in this block
 \renewcommand{\section}[2]{\vskip 0.05em} % Get rid of the default "References" section title
@@ -148,11 +147,9 @@ Neste estudo, analisa-se os fundamentos físico-químicos e matemáticos do quar
 %\vspace{-15pt}
 
 \begin{center}
-\subfloat[]{\includegraphics[width=0.45\linewidth]{ltspice}}\hfill
-%\vspace{-8pt}
-\subfloat[]{\includegraphics[width=0.45\linewidth]{ltspice}}
+\includegraphics[width=0.95\linewidth]{estrutura2}
 \vspace{-8pt}
-\captionof{figure}{Performance of JGUFS algorithm for large variation of set of control parameters.} \label{ltspice:circuit}
+\captionof{figure}{Mecanismo interno de um \emph{memristor}} \label{ltspice:circuit}
 \end{center}
 
 
@@ -163,54 +160,28 @@ Neste estudo, analisa-se os fundamentos físico-químicos e matemáticos do quar
 %----------------------------------------------------------------------------------------
 
 \headerbox{Fundamentos Matemáticos}{name=results2,span=1,column=1,below=results1,above=bottom}{ % To reduce this block to 1 column width, remove 'span=2'
-With other two variables fixed, the following formula can be proved: 
-\begin{equation}\nonumber
-\begin{aligned}
-&\mathcal{O}(\mathbf{F}^{t+1}, \mathbf{W}^{t}，\mathbf{S}^{t}) \leq \mathcal{O}(\mathbf{F}^{t}, \mathbf{W}^{t}，\mathbf{S}^{t}), \\ &\mathcal{O}(\mathbf{F}^{t+1}, \mathbf{W}^{t+1}，\mathbf{S}^{t}) \leq \mathcal{O}(\mathbf{F}^{t+1}, \mathbf{W}^{t}，\mathbf{S}^{t}) \\ &\mathcal{O}(\mathbf{F}^{t+1}, \mathbf{W}^{t+1}，\mathbf{S}^{t+1}) \leq \mathcal{O}(\mathbf{F}^{t+1}, \mathbf{W}^{t+1}，\mathbf{S}^{t})
-\end{aligned}
-\end{equation}
 
-We conclude that JGUFS objective function monotonically decreases under the optimization in Algorithm. 1.
+Um \emph{memristor}, cujo símbolo é apresentado na Figura \ref{simbolo}, modelado a partir das primeiras especificações da \emph{HP Labs} permite extrair as Equações \ref{q}, \ref{q} e \ref{i}.
+\begin{center}
+\includegraphics[width=0.75\linewidth]{simbolo}
+\vspace{-8pt}
+\captionof{figure}{Símbolo de um \emph{memristor}}\label{simbolo} \label{ltspice:circuit}
+\end{center}
 
-\begin{algorithm}[H]
-  \renewcommand{\algorithmicrequire}{\textbf{Input:}}
-  \renewcommand{\algorithmicensure}{\textbf{Output:}}
-  \caption{Optimization to JGUFS objective function}
-    \begin{algorithmic}[1]
-    \REQUIRE Data matrix $\mathbf{X}\in\mathbb{R}^{n\times d}$, $\lambda$, $\beta$, and $\gamma$, $c$, the dimension of projected subspace c;
-    \ENSURE Rank features based on the values of $\|w_i\|_2|_{i=1}^d$ in descending order and then select the top-ranked ones.
-    \STATE Initialization. Construct the initial graph affinity matrix $\mathbf{A}$ based on the 'HeatKernel' function; Calculate $\mathbf{F}\in\mathbb{R}^{n\times c}$ by the c eigenvectors of the graph Laplacian $\mathbf{L_A}=\mathbf{D_A}-\frac{\mathbf{A}^T+\mathbf{A}}{2}$ corresponding to the c smallest eigenvalues; Initialize $\mathbf{M}\in\mathbb{R}^{d\times d}$ as an identity matrix;;
-    \WHILE {not converged}
-    \STATE Update $\mathbf{S}$ by solving:
-    \vspace{-10pt}
-    \begin{equation}\nonumber
-        \min_{S_i\mathbf{1}=1,s_i\ge0}\|s_i-(a_i-\frac{\alpha}{2}d_i)\|_F^2,
-    \end{equation}
-    
-    where, $d_{ij}=\|f_i-f_j\|_2^2$ and $d_i$ as a vector with the $j$-th element equal to $d_{ij}$. Similarly, we get $a_i$ and $s_i$.
-    \STATE Update $\mathbf{W}$ by:
-    \vspace{-7pt}
-    \begin{equation}\nonumber
-       \mathbf{W}=(\mathbf{X}^T\mathbf{X}+\gamma\mathbf{M})^{-1}\mathbf{X}^T\mathbf{F}
-    \end{equation}
-    \vspace{-15pt}
-    \STATE Update $\mathbf{M}$ by:
-    \vspace{-7pt}
-    \begin{equation}\nonumber
-        m_{ii}=\frac{1}{2\|w\|_2}=\frac{1}{2\sqrt{w_iw_i^T+\delta}}
-    \end{equation}
-    \vspace{-10pt}
-    \STATE Update $\mathbf{F}$ by:
-    \vspace{-10pt}
-    \begin{equation}\nonumber
-        d_{ij} \leftarrow \frac{(\lambda \mathbf{F})_{ij}}{\mathbf{R}\mathbf{F}+\lambda\mathbf{FF}^T\mathbf{F}}
-    \end{equation}
-    \vspace{-15pt}
-    \ENDWHILE
-    \end{algorithmic}
-    \label{alg:1}
-\end{algorithm}
+Considerando um memristor controlado por carga, da parametrização das grandezas carga elétrica $q(t)$, variável de estado $x(t)=w(t)/D$ e corrente elétrica $i(t)$ tem-se:  
 
+
+\begin{equation}\label{q}
+q(t)=Q_D\Bigg(1-\sqrt{1-\dfrac{2}{Q_D\ R_{OFF}}\varphi(t)}\Bigg)
+\end{equation} 
+
+\begin{equation}\label{x}
+x(t)=1-\sqrt{1-\dfrac{2\, \mu_D}{r\; D^2}\varphi(t)}
+\end{equation} 
+
+\begin{equation}\label{i}
+i(t)=\dfrac{v(t)}{R_{OFF}\Bigg(\sqrt{1-\dfrac{2\, \mu_D}{r\; D^2}\varphi(t) }\Bigg)}
+\end{equation} 
 %------------------------------------------------
 
 }
@@ -227,25 +198,25 @@ As Figuras \ref{ltspice:circuit}, \ref{ltspice:tempo} e \ref{ltspice:pinched}, o
 %------------------------------------------------
 
 \begin{center}
-\includegraphics[width=0.8\linewidth]{ltspice}
+\includegraphics[width=0.8\linewidth]{ltspice001}
 \vspace{-8pt}
-\captionof{figure}{Performance of JGUFS algorithm for large variation of set of control parameters.} \label{ltspice:circuit}
+\captionof{figure}{Circuito \emph{LTSPICE}} \label{ltspice:circuit}
 \end{center}
 
 %------------------------------------------------
 \vspace{-15pt}
 \begin{center}
-\includegraphics[width=0.8\linewidth]{vt-it}
+\includegraphics[width=0.8\linewidth]{ltspice002}
 \vspace{-8pt}
-\captionof{figure}{Convergence speed of JGUFS for UMIST and COIL20 data sets.} \label{ltspice:tempo}
+\captionof{figure}{Tensão e corrente de um \emph{memristor} no domínio do tempo.} \label{ltspice:tempo}
 \end{center}
 
 %------------------------------------------------
 \vspace{-15pt}
 \begin{center}
-\includegraphics[width=0.8\linewidth]{pinched}
+\includegraphics[width=0.8\linewidth]{ltspice003}
 \vspace{-8pt}
-\captionof{figure}{Convergence speed of JGUFS for UMIST and COIL20 data sets.}\label{ltspice:pinched}
+\captionof{figure}{\emph{Pinched hysteresis loop.}}\label{ltspice:pinched}
 \end{center}
 
 %------------------------------------------------
