@@ -34,8 +34,9 @@ figure(1)
 plot(flux, charge, 'LineWidth', 2);%Plot of charge versus flux 
 %title('Flux-charge curve');
 grid on;
-xlabel('fluxo');
-ylabel('carga');
+xlabel('Fluxo \phi(t)');
+ylabel('Carga q(t)');
+xlim([0 0.7]);
 
 figure(2)
 plot(t, vt, 'LineWidth', 2);
@@ -43,15 +44,15 @@ plot(t, vt, 'LineWidth', 2);
 grid on;
 hold on;
 plot(t,width, 'LineWidth', 2);
-xlabel('tempo (s)');
+xlabel('Tempo (s)');
 legend('Tensão v(t)','Variável x(t)');
 
 figure(3) 
 plot (vt,i, 'LineWidth', 2);%plot of current versus voltage  
 %title('Voltage-current curve');
 grid on;
-xlabel('tensão v(t)');
-ylabel('corrente i(t)');
+xlabel('Tensão v(t)');
+ylabel('Corrente i(t)');
 
 figure(4);
 plot(vt, i, 'LineWidth', 2);
@@ -67,8 +68,8 @@ width(n)= 1-sqrt(1-((2*MD*flux(n))/(r*(D^2))));%internal state of memristor
 end 
 plot(vt, i, 'LineWidth', 2);
 grid on;
-xlabel('tensão v(t)');
-ylabel('corrente i(t)');
+xlabel('Tensão v(t)');
+ylabel('Corrente i(t)');
 legend('w_0','2 w_0');
 
 

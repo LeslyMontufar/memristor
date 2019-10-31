@@ -12,10 +12,10 @@
 % Dados do trabalho
 \title{Fundamentos Físico-químicos e Matemáticos de um Memristor}
 
-%\author[1]{\underline{Lesly Viviane Montúfar Berrios}\thanks{leslymontufar@ufu.br}}
-%\author[1]{Cibelly Cristina Rodrigues Couto\thanks{cibelly.cris@ufu.br}}
-%\author[1]{Yasmin Delbany Cury\thanks{yasmin.cury@ufu.br}}
-%\author[2]{Paulo Henrique Oliveira Rezende\thanks{paulohenrique.rezende@ufu.br}}
+\author[1]{\underline{Lesly Viviane Montúfar Berrios}\thanks{leslymontufar@ufu.br}}
+\author[1]{Cibelly Cristina Rodrigues Couto\thanks{cibelly.cris@ufu.br}}
+\author[1]{Yasmin Delbany Cury\thanks{yasmin.cury@ufu.br}}
+\author[2]{Paulo Henrique Oliveira Rezende\thanks{paulohenrique.rezende@ufu.br}}
 
 %\author[1]{\underline{Primeiro Autor Apresentador}\thanks{apresentador@ufu.br}}
 %\author[1]{Nome do Segundo Autor\thanks{segundoautor@ufu.br}}
@@ -23,13 +23,13 @@
 %\author[2]{Nome do Autor Orientador\thanks{orientador@ufu.br}}
 %
 %
-%\affil[1]{FEELT - Universidade Federal de Uberlândia}
-%\affil[2]{FEELT - Professor Adjunto - Universidade Federal de Uberlândia}
+\affil[1]{FEELT - Universidade Federal de Uberlândia}
+\affil[2]{FEELT - Professor Adjunto - Universidade Federal de Uberlândia}
 
 \begin{document}
 
 \inserirtitulo
-\vspace{3cm}
+%\vspace{3cm}
 
 \begin{multicols}{2}
 
@@ -52,7 +52,7 @@
 
 
 \section{Introdução}
-A teoria de circuitos elétricos, há 150 anos, abrangia basicamente três componentes passivos fundamentais: o capacitor (1745), o resistor (1827) e o indutor (1831). No entanto, em 1971, o professor phD da Universidade da Califórnia, Leon Chua, apresentou novas considerações a partir da análise das possíveis combinações entre as quatro variáveis fundamentais de circuitos: corrente elétrica $i$, tensão elétrica $v$, carga elétrica $q$ e fluxo magnético $\varphi$ – sendo as duas últimas descritas como integrais no tempo da corrente, $q(t)=\int_{-\infty}^t i(\tau)\, d\tau$, e da tensão, $\varphi(t)=\int_{-\infty}^t v(\tau)\, d\tau$, respectivamente.
+A teoria de circuitos elétricos, há 150 anos, abrangia basicamente três componentes passivos fundamentais: o capacitor (1745), o resistor (1827) e o indutor (1831). No entanto, em 1971, o professor da Universidade da Califórnia, Leon Chua, apresentou novas considerações a partir da análise das possíveis combinações entre as quatro variáveis fundamentais de circuitos: corrente elétrica $i$, tensão elétrica $v$, carga elétrica $q$ e fluxo magnético $\varphi$ – sendo as duas últimas descritas como integrais no tempo da corrente, $q(t)=\int_{-\infty}^t i(\tau)\, d\tau$, e da tensão, $\varphi(t)=\int_{-\infty}^t v(\tau)\, d\tau$, respectivamente.
 
 Chua \cite{artigo} observou que o capacitor é definido pela relação entre carga $q(t)$ e tensão $v(t)$ via $qd=C dv$. Similarmente, o resistor pela relação entre corrente $i(t)$ e tensão $v(t)$ via $dv=R di$, e o indutor pela relação entre fluxo magnético $\varphi(t)$ e corrente $i(t)$ via $d\varphi(t)=L di$. Teria-se então que a combinação das quatro variáveis fundamentais de circuitos resultaria em somente três componentes fundamentais.
 % passivos.
@@ -153,8 +153,8 @@ W(\varphi) =\dfrac{df(\varphi)}{d\varphi}
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.7\columnwidth]{new-w}
-\caption{Variáveis de estado de um memristor e representação de um memristor como uma associação em série de resistores \cite{image}.}\label{w}
+\includegraphics[width=0.9\columnwidth]{new-w-modified}
+\caption{Variáveis de estado de um memristor e representação de um memristor como uma associação em série de resistores (Adaptado de \cite{image}).}\label{w}
 \end{figure}
 
 \vspace{0.2cm}
@@ -257,7 +257,7 @@ i(t)=\dfrac{v(t)}{R_{OFF}\Bigg(\sqrt{1-\dfrac{2\, \mu_D}{r\; D^2}\varphi(t) }\Bi
 Verifica-se que a Equação (\ref{nano}) mostra a relação inverso-quadrado entre a memristência $M$ e a espessura do $TiO_2$, $D$. Assim, para menores valores de $D$, a memória apresenta características melhoradas. Portanto, a memristência torna-se mais importante para a compreensão do porquê das dimensões dos dispositivos eletrônicos estarem diminuido para a escala nanométrica.
 
 \section{Simulações} \label{sim}
-O memristor possui características marcantes que serão interpretadas graficamente via programação \emph{MATLAB} a partir das Equações (\ref{q}), (\ref{interno}) e (\ref{i}). Considere um memristor com mobilidade $\mu_D \sim 10^{-10\,} cm^2/V.s$, comprimento $D\sim10nm$, e resistências do estado \textit{ON} e \textit{OFF}, $R_{ON}\sim 100\Omega$ e $R_{OFF}\sim 16K\Omega$, respectivamente. Como $\varphi(t)=\int_{-\infty}^t v(\tau)\, d\tau$, tem-se que para uma tensão senoidal do tipo $v(t)=v_0\cdot sin(\omega t)$, o fluxo é descrito pela Equação (\ref{flux}), em que $v_0$ é a amplitude da tensão de entrada e $\omega$ a frequência em \textit{rad/s}.
+O memristor possui características marcantes que serão interpretadas graficamente via programação \emph{MATLAB} a partir das Equações (\ref{q}), (\ref{interno}) e (\ref{i}). Considere um memristor com mobilidade $\mu_D \sim 10^{-10\,} cm^2/V.s$, comprimento $D\sim10nm$, e resistências do estado \textit{ON} e \textit{OFF}, $R_{ON}\sim 100\Omega$ e $R_{OFF}\sim 16K\Omega$, respectivamente. Como $\varphi(t)=\int_{-\infty}^t v(\tau)\, d\tau$, tem-se que, por exemplo, para uma tensão senoidal do tipo $v(t)=v_0\cdot sin(\omega t)$, o fluxo é descrito pela Equação (\ref{flux}), em que $v_0$ é a amplitude da tensão de entrada e $\omega$, a frequência em \textit{rad/s}.
 
 \begin{equation}\label{flux}
 \varphi(t) = \dfrac{v_0\, (1-cos(\omega t))}{\omega}
@@ -272,27 +272,27 @@ Na Figura \ref{vt:xt} comtempla-se como a variável de estado $x(t)\in[0,1]$ var
 %
 Já na Figura \ref{pinched} é representada uma importante característica do memristor. O gráfico em laço ou o \emph{pinched hysteresis loop}, como denominado por Chua, corresponde à curva  $v$-$i$ de um memristor e possui a forma de uma Curva de Lissajous centrada na origem. A configuração deve-se ao fenônemo da histerese, que permite conservar a o útimo valor de memristência mesmo sem o potencial originalmente aplicado.
 
-No simulador \emph{SPICE}, o circuito da Figura \ref{spice:project} permite obter a curva $v$-$i$ da Figura \ref{spice:pinched}, do que surge o seguinte teorema fundamental que "todo dispositivo de duplo terminal que exibe um \emph{pinched hysteresis loop} no plano tensão-corrente quando conduzido por um sinal DC e/ou senoidal de qualquer frequência é um sistema memristivo"  \cite{you}. Dessa forma, desde que o sistema continue no regime dos memristores, qualquer polarização simétrica de tensão de corrente alternada resulta em uma histerese de laço duplo, que colapsa em uma linha reta para altas frequências, conforme a Figura \ref{pinched}. O fenônemo também é vísivel em \ref{spice:vt-it}, a tendência do material de manter suas propriedades proporciona certa deformação da curva da corrente $i(t)$ no tempo, comparada com a curva da tensão de entrada $v(t)$.
+No simulador \emph{SPICE}, o circuito da Figura \ref{spice:project} permite obter a curva $v$-$i$ da Figura \ref{spice:pinched}, do que surge o seguinte teorema fundamental que "todo dispositivo de duplo terminal que exibe um \emph{pinched hysteresis loop} no plano tensão-corrente quando conduzido por um sinal DC e/ou senoidal de qualquer frequência é um sistema memristivo" \cite{you}. Dessa forma, desde que o sistema continue no regime dos memristores, qualquer polarização simétrica de tensão de corrente alternada resulta em uma histerese de laço duplo, que colapsa em uma linha reta para altas frequências, conforme a Figura \ref{pinched}. O fenônemo também é vísivel em \ref{spice:vt-it}, a tendência do material de manter suas propriedades proporciona certa deformação da curva da corrente $i(t)$ no tempo, comparada com a curva da tensão de entrada $v(t)$.
 \begin{figure*}[ht]
-%\centering
+\hspace{-0.38cm}
+%MATLAB
 \begin{subfigure}{0.33\textwidth}
 %\centering
-\includegraphics[width=\columnwidth]{flux-charge}
+\includegraphics[width=\columnwidth]{m-fluxo-carga}
 \caption{} \label{flux-charge}
-\end{subfigure}
-\hfill
-\begin{subfigure}{0.33\textwidth}
+\end{subfigure}\hspace{0.3cm}
+\begin{subfigure}{0.315\textwidth}
 %\centering
-\includegraphics[width=\columnwidth]{vt-xt}
+\includegraphics[width=\columnwidth]{m-vt-xt}
 \caption{} \label{vt:xt}
-\end{subfigure}
-\hfill
-\begin{subfigure}{0.33\textwidth}
-\centering
+\end{subfigure}\hspace{0.25cm}
+\begin{subfigure}{0.34\textwidth}
+%\centering
 \includegraphics[width=\columnwidth]{ww0}
 \caption{} \label{pinched}
 \end{subfigure}
 
+%LTSIPCE
 \vspace{0.2cm}
 \begin{subfigure}{0.32\textwidth}
 \centering
